@@ -5,7 +5,19 @@
 // They render as green Google Maps links.
 
 const TRIP = {
-  title: "Bali, Gilis, Amed & Ubud",
+  title: "Master 10-Day Bali Itinerary: Seminyak, Gili T Scuba, Amed & Ubud (Dec 18 – Dec 27, 2026)",
+
+  // Shown as a callout under the itinerary table
+  diveNote: {
+    title: "🔑 The Two-Dive Plan (Gili T → Tulamben)",
+    points: [
+      "<b>Dec 22, Gili T:</b> PADI Discover Scuba Diving (theory, pool, then one open-water boat dive to max 12 m with an instructor).",
+      "<b>Dec 24, Tulamben:</b> a guided repeat dive on the USAT Liberty wreck, still max 12 m and still with a PADI professional, because DSD is not a certification.",
+      "<b>Skipping the pool session:</b> PADI says repeat dives within a couple of weeks can skip theory and pool <i>with the same dive school</i>. <b>A different school will usually ask you to redo the pool session and safety review.</b> So either book both dives with one operator that runs trips in both places, or ask your Tulamben shop in advance and allow ~1 hour for a quick skills review.",
+      "<b>Bring proof:</b> keep your Gili T DSD record / logbook page on your phone to show in Tulamben.",
+      "<b>Flying after diving:</b> the last dive is the morning of Dec 24 and the flight home is Dec 27, about 72 hours later, well past the usual 12–18 hour guideline."
+    ]
+  },
   dates: "Fri 18 Dec – Sun 27 Dec 2026",
   group: "5 friends",
   pnr: "SFJ8RN",
@@ -77,21 +89,24 @@ const TRIP = {
     {
       day: 5, date: "Tue, Dec 22", base: "Gili Trawangan",
       rows: [
-        ["08:00 AM - 11:30 AM", "Snorkeling excursion at {{🐢 Turtle Point|Turtle Point Gili Trawangan}}", "Snorkel with wild green sea turtles over coral bommies along the sheltered northeast reef."],
-        ["12:00 PM - 01:30 PM", "Beachfront cafe lunch", "Relax in shaded bamboo cabanas with fresh tropical juices."],
-        ["02:00 PM - 05:00 PM", "Island downtime & swimming", "Leisurely afternoon swimming in the turquoise lagoon or enjoying an open-air massage."],
-        ["05:30 PM - 07:30 PM", "Sunset drinks on the west coast", "Acoustic beach music and chilled drinks as the light fades."],
+        ["08:30 AM - 10:00 AM", "PADI Discover Scuba: Theory & Gear Fitting", "Meet your instructor at a beachfront dive resort on Gili T. Safety briefing, breathing rules, and gear fitting."],
+        ["10:00 AM - 11:30 AM", "PADI Discover Scuba: Pool Skills Training", "Dedicated training pool session practicing regulator clearing, breathing, and buoyancy control."],
+        ["11:30 AM - 12:45 PM", "Lunch & surface interval on Gili T", "Beachfront lunch and hydration before boarding the dive boat."],
+        ["12:45 PM - 02:45 PM", "PADI Discover Scuba: Open Ocean Boat Dive", "Boat dive down to 12 metres at {{🐠 Halik Reef|Halik dive site Gili Trawangan}} or {{🐢 Turtle Point|Turtle Point Gili Trawangan}}. Spot wild green sea turtles, clownfish, and reef sharks with a dedicated PADI instructor."],
+        ["02:45 PM - 03:30 PM", "Debrief & DSD Certificate", "Shower, debrief, log your dive, and receive your official PADI DSD registration."],
+        ["03:30 PM - 05:30 PM", "Afternoon beach downtime & rest", "Relax on the sand, enjoy a fresh coconut, or get a beachside massage."],
+        ["05:30 PM - 07:30 PM", "Sunset drinks on Gili T's west coast", "Acoustic beach music and chilled drinks as the light fades behind Mount Agung."],
         ["07:30 PM - 09:00 PM", "Beachside barbecue dinner", "Fresh seafood and Indonesian dishes served right on the beach."],
         ["09:00 PM - 01:00 AM", "Tuesday night party on Gili T", "Weekly party at {{🎉 Jiggy Bar|Jiggy Bar Gili Trawangan}} followed by live reggae on the sand at {{🎶 Sama Sama Reggae Bar|Sama Sama Reggae Bar Gili Trawangan}}."]
       ],
-      tip: "Gili T's party night moves between bars and guides disagree on which bar hosts Tuesday. Ask at your hotel or look for the posters that day. Sama Sama has live reggae most nights regardless.",
-      extras: "Some guides list a Tuesday pub crawl and Mad Monkey foam parties on Tuesdays."
+      tip: "Book the Discover Scuba session in advance for all 5. Everyone fills in a medical questionnaire, and conditions like asthma, heart issues or recent ear/sinus problems need a doctor's sign-off, so check before the trip. No heavy drinking the night before (Dec 21). Gili T's party night moves between bars, so confirm the Tuesday venue locally. Sama Sama has live reggae most nights.",
+      extras: "Not diving? Snorkel {{🐢 Turtle Point|Turtle Point Gili Trawangan}} from the beach while the others dive."
     },
     {
       day: 6, date: "Wed, Dec 23", base: "Amed",
       rows: [
         ["07:30 AM - 08:30 AM", "Breakfast & check-out on Gili T", "Walk luggage to the harbour pier for the morning boat back to mainland Bali."],
-        ["09:00 AM - 11:30 AM", "Fast boat: Gili Trawangan to {{🚗 Padang Bai Harbour|Padang Bai Harbour Bali}}", "Morning catamaran crossing back across the Lombok Strait (~1 hour 30 minutes to 2 hours 30 minutes)."],
+        ["09:00 AM - 11:30 AM", "Fast boat: Gili Trawangan to {{🚗 Padang Bai Harbour|Padang Bai Harbour Bali}}", "Morning catamaran crossing back across the Lombok Strait (~1 hour 30 minutes to 2 hours 30 minutes). Sea-level surface transit carries zero decompression risk."],
         ["11:30 AM - 01:30 PM", "Private car: Padang Bai to {{🏖️ Amed Beach|Amed Beach Bali}}", "Scenic drive north along the coastal road (~55 km, ~1 hour 45 minutes to 2 hours)."],
         ["01:30 PM - 02:30 PM", "Beachfront warung lunch in Amed", "Casual fresh grilled fish lunch overlooking the black sand bay and outrigger canoes."],
         ["02:30 PM - 04:00 PM", "Check-in at Amed resort & rest", "Settle into your coastal room overlooking the ocean and Mount Agung."],
@@ -104,14 +119,15 @@ const TRIP = {
     {
       day: 7, date: "Thu, Dec 24", base: "Amed",
       rows: [
-        ["07:00 AM - 09:30 AM", "Snorkel / dive the {{🤿 USAT Liberty Shipwreck|USAT Liberty Shipwreck Tulamben}}", "~30-minute drive (~13 km) to Tulamben. The 120-metre WWII shipwreck lies just 30 metres off the pebble shore. Early arrival ensures calm morning glass before trade winds and day-trip vans arrive."],
-        ["10:00 AM - 11:30 AM", "Late breakfast at your resort", "Return to Amed for a full breakfast, freshwater pool dip, and relaxation."],
+        ["07:30 AM - 08:00 AM", "Transfer: Amed resort to Tulamben", "~30-minute drive (~13 km) along the coast to Tulamben."],
+        ["08:00 AM - 10:30 AM", "USAT Liberty Wreck Guided Dive / Snorkel", "Explore the 120-metre WWII {{🤿 USAT Liberty Shipwreck|USAT Liberty Shipwreck Tulamben}}, which lies just 30 metres off the pebble shore. A guided repeat Discover Scuba dive to max 12 m (see the Two-Dive Plan below); non-divers snorkel the shallow end of the wreck."],
+        ["10:30 AM - 11:30 AM", "Late breakfast & freshwater pool dip", "Return to your resort for a full breakfast, freshwater rinse, and relaxation."],
         ["12:00 PM - 01:30 PM", "Fresh seafood lunch in Amed", "Relaxed lunch at an open-air oceanfront cafe."],
         ["02:30 PM - 04:30 PM", "Snorkel the Japanese Shipwreck at {{🐠 Banyuning Bay|Japanese Shipwreck Banyuning Amed}}", "Direct shore-entry snorkel over a shallow coral-encrusted wreck and vibrant sea fans in a sheltered cove."],
         ["05:00 PM - 06:30 PM", "Sunset drinks above {{🌅 Jemeluk Bay|Jemeluk Bay viewpoint Amed}}", "Enjoy panoramic views of the curving bay and volcanic peaks from the coastal hill lookout."],
         ["07:30 PM - 09:30 PM", "Christmas Eve coastal dinner", "Festive evening meal featuring grilled mahi-mahi or tuna with local Balinese spices."]
       ],
-      tip: "Hire a local guide and gear at Tulamben (wear reef shoes for the pebble entry). Scuba needs a certification or a guided 'discover scuba' session. Snorkelling the wreck is fine for everyone. Reserve the Christmas Eve dinner in advance.",
+      tip: "Book the Tulamben dive ahead and tell the shop you did Discover Scuba on Gili T on Dec 22. Wear reef shoes for the pebble entry. Reserve the Christmas Eve dinner in advance.",
       extras: null
     },
     {

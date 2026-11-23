@@ -14,7 +14,7 @@ A simple, readable day-by-day itinerary page for a group of 5 friends travelling
 ---
 
 ## 🗺️ The Plan
-* **Route:** Seminyak (3N) ➔ Gili Trawangan (2N) ➔ Amed (2N) ➔ Ubud (2N)
+* **Route:** Seminyak (3N) ➔ Gili Trawangan (2N, PADI Discover Scuba on Dec 22) ➔ Amed (2N, USAT Liberty wreck dive on Dec 24) ➔ Ubud (2N)
 * **9 nights, ~8½ usable days** (arrival afternoon on Dec 18 + 8 full days; Dec 27 is a travel morning)
 * Nusa Penida is a day trip from Seminyak on Dec 20 (bags stay in the hotel).
 

@@ -50,6 +50,14 @@
     table.appendChild(tb);
   });
 
+  // Title + dive note
+  $("itinTitle").textContent = "📅 " + TRIP.title;
+  if (TRIP.diveNote) {
+    $("diveNote").innerHTML = `<h3>${TRIP.diveNote.title}</h3><ul>${TRIP.diveNote.points.map((p) => `<li>${p}</li>`).join("")}</ul>`;
+  } else {
+    $("diveNote").remove();
+  }
+
   // Checklist
   $("checkList").innerHTML = TRIP.checklist.map((c) =>
     `<li><span class="ic">${c.icon}</span><div><b>${c.title}</b><p>${c.text}</p></div></li>`

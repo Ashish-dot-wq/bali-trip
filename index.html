@@ -4,113 +4,136 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>Bali 2026 Itinerary</title>
-  <meta name="description" content="Day-by-day itinerary for 5 friends in Bali, the Gilis, Amed and Ubud, 18–27 Dec 2026." />
+  <meta name="description" content="Day-by-day itinerary for 5 friends: Seminyak, Gili T, Amed and Ubud, 18–27 Dec 2026." />
   <meta name="theme-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="Bali 2026" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-192.png" />
+  <link rel="apple-touch-icon" href="icon-180.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="page">
+  <a class="skip" href="#view">Skip to content</a>
 
-    <header class="top">
-      <h1>📅 Bali 2026: Seminyak, Gili T Scuba, Amed &amp; Ubud</h1>
-      <p class="sub">Fri 18 Dec – Sun 27 Dec 2026 · 5 friends · IndiGo PNR <code>[removed]</code> · 20 kg + 7 kg per person</p>
-      <nav class="jump" aria-label="Sections">
-        <a href="#glance">At a glance</a>
-        <a href="#itinerary">Itinerary</a>
-        <a href="#checklist">Before you go</a>
-      </nav>
-    </header>
+  <!-- Top app bar -->
+  <header class="appbar">
+    <div class="appbar-in">
+      <a class="brand" href="#day" aria-label="Bali 2026 home">
+        <span class="brand-t">Bali 2026</span>
+        <span class="brand-s" id="viewTitle">Itinerary</span>
+      </a>
+      <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      </button>
+    </div>
+  </header>
 
-    <!-- Trip at a glance -->
-    <section id="glance" class="card">
-      <h2>✈️ Trip at a Glance</h2>
+  <!-- Slide-in menu (top right) -->
+  <div class="scrim" id="scrim"></div>
+  <nav class="menu" id="menu" aria-label="Main menu" aria-hidden="true">
+    <div class="menu-head">
+      <div>
+        <div class="menu-t">Bali 2026</div>
+        <div class="menu-s">Fri 18 – Sun 27 Dec · 5 friends</div>
+      </div>
+      <button class="icon-btn" id="menuClose" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+      </button>
+    </div>
+    <ul class="menu-list">
+      <li><a href="#day" data-view="day"><span class="mi">📅</span><span><b>Day by day</b><small>Photos &amp; plan, or a table per day</small></span></a></li>
+      <li><a href="#table" data-view="table"><span class="mi">📋</span><span><b>Full table</b><small>All 10 days in one table</small></span></a></li>
+      <li><a href="#glance" data-view="glance"><span class="mi">✈️</span><span><b>Trip at a glance</b><small>Nights, usable days, flights, time difference</small></span></a></li>
+      <li><a href="#dive" data-view="dive"><span class="mi">🤿</span><span><b>Two-dive plan</b><small>Gili T Discover Scuba → Tulamben wreck</small></span></a></li>
+      <li><a href="#checklist" data-view="checklist"><span class="mi">✅</span><span><b>Before you go</b><small>Tick-off checklist</small></span></a></li>
+    </ul>
+    <button type="button" class="menu-share" id="shareBtn"><span class="mi">📤</span><span><b>Share with the group</b><small>Send the link on WhatsApp</small></span></button>
+    <p class="menu-tip">Tip: add this to your home screen (Share → Add to Home Screen on iPhone, ⋮ → Install app on Android). It then opens like an app and works offline once loaded.</p>
+    <div class="menu-foot">
+      IndiGo PNR <code>[removed]</code><br>
+      6E 1605 · BLR 00:55 → DPS 10:15 · Fri 18 Dec<br>
+      6E 1606 · DPS 11:15 → BLR 15:15 · Sun 27 Dec
+    </div>
+  </nav>
 
+  <main id="view" tabindex="-1"><!-- rendered by app.js --></main>
+
+  <!-- Bottom tab bar -->
+  <nav class="tabbar" aria-label="Sections">
+    <a href="#day" data-tab="day"><span class="ti" aria-hidden="true">📅</span><span>Days</span></a>
+    <a href="#table" data-tab="table"><span class="ti" aria-hidden="true">📋</span><span>Table</span></a>
+    <a href="#glance" data-tab="glance"><span class="ti" aria-hidden="true">✈️</span><span>Glance</span></a>
+    <a href="#checklist" data-tab="checklist"><span class="ti" aria-hidden="true">✅</span><span>Checklist</span></a>
+  </nav>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Trip at a glance (static markup, shown by app.js) -->
+  <template id="tpl-glance">
+    <section class="pad">
+      <h1 class="h">Trip at a glance</h1>
       <div class="stats">
         <div class="stat"><span class="num">9</span><span class="lbl">Nights</span></div>
         <div class="stat main"><span class="num">8½</span><span class="lbl">Usable days</span></div>
-        <div class="stat"><span class="num">217 h</span><span class="lbl">On the ground</span></div>
+        <div class="stat"><span class="num">217h</span><span class="lbl">On ground</span></div>
       </div>
 
-      <div class="days" id="dayStrip"><!-- filled by app.js --></div>
-      <div class="legend">
-        <span><i class="key half"></i>Arrival afternoon (free from ~1 PM)</span>
-        <span><i class="key full"></i>8 full days</span>
-        <span><i class="key fly"></i>Fly home (leave Ubud 7 AM)</span>
-      </div>
-
-      <div class="stays" id="stays"><!-- filled by app.js --></div>
-
-      <div class="grid2">
-        <div class="box">
-          <h3>🕑 Time difference: Bali is 2 h 30 m ahead</h3>
-          <div class="clocks">
-            <div class="clock india">
-              <span class="where">🇮🇳 India (IST)</span>
-              <span class="time" data-tz="Asia/Kolkata">--:--</span>
-              <span class="utc">UTC +5:30</span>
-            </div>
-            <div class="diff">+2:30</div>
-            <div class="clock bali">
-              <span class="where">🇮🇩 Bali (WITA)</span>
-              <span class="time" data-tz="Asia/Makassar">--:--</span>
-              <span class="utc">UTC +8:00</span>
-            </div>
-          </div>
-          <table class="convert">
-            <tr><th>Bali</th><td>6 AM</td><td>9 AM</td><td>12 PM</td><td>3 PM</td><td>6 PM</td><td>10 PM</td></tr>
-            <tr><th>India</th><td>3:30 AM</td><td>6:30 AM</td><td>9:30 AM</td><td>12:30 PM</td><td>3:30 PM</td><td>7:30 PM</td></tr>
-          </table>
-        </div>
-
-        <div class="box">
-          <h3>🛫 Flights (times in both zones)</h3>
-          <table class="flights">
-            <tr>
-              <th>Out · 6E 1605<br><small>Fri 18 Dec · 6h 50m</small></th>
-              <td><b>BLR 00:55</b> IST<br><small>= 03:25 Bali</small></td>
-              <td><b>DPS 10:15</b> Bali<br><small>= 07:45 India</small></td>
-            </tr>
-            <tr>
-              <th>Back · 6E 1606<br><small>Sun 27 Dec · 6h 30m</small></th>
-              <td><b>DPS 11:15</b> Bali<br><small>= 08:45 India</small></td>
-              <td><b>BLR 15:15</b> IST<br><small>= 17:45 Bali</small></td>
-            </tr>
-          </table>
-          <p class="warn">🌙 The 00:55 flight means leaving home on the night of <b>Thu 17 Dec</b>. Be at BLR T2 by ~10 PM.</p>
+      <div class="card">
+        <div class="days" id="dayStrip"></div>
+        <div class="legend">
+          <span><i class="key half"></i>Arrival afternoon</span>
+          <span><i class="key full"></i>8 full days</span>
+          <span><i class="key fly"></i>Fly home</span>
         </div>
       </div>
-    </section>
 
-    <!-- Master itinerary table -->
-    <section id="itinerary">
-      <h2 id="itinTitle">📅 Master 10-Day Bali Itinerary</h2>
-      <div class="table-wrap">
-        <table class="itin">
-          <thead>
-            <tr>
-              <th class="c-day">Day &amp; Date</th>
-              <th class="c-time">Time Window</th>
-              <th class="c-act">Scheduled Activity &amp; Highlights</th>
-              <th class="c-log">Key Logistics &amp; Details</th>
-            </tr>
-          </thead>
-          <!-- one <tbody> per day, filled by app.js -->
+      <h2 class="h2">Where you sleep</h2>
+      <ul class="stays" id="stays"></ul>
+
+      <h2 class="h2">Time difference</h2>
+      <div class="card">
+        <p class="lead">Bali is <b>2 h 30 m ahead</b> of India.</p>
+        <div class="clocks">
+          <div class="clock india"><span class="where">🇮🇳 India</span><span class="time" data-tz="Asia/Kolkata">--:--</span><span class="utc">IST · UTC+5:30</span></div>
+          <div class="clock bali"><span class="where">🇮🇩 Bali</span><span class="time" data-tz="Asia/Makassar">--:--</span><span class="utc">WITA · UTC+8</span></div>
+        </div>
+        <table class="convert">
+          <thead><tr><th>Bali</th><th>India</th></tr></thead>
+          <tbody>
+            <tr><td>6:00 AM</td><td>3:30 AM</td></tr>
+            <tr><td>9:00 AM</td><td>6:30 AM</td></tr>
+            <tr><td>12:00 PM</td><td>9:30 AM</td></tr>
+            <tr><td>6:00 PM</td><td>3:30 PM</td></tr>
+            <tr><td>10:00 PM</td><td>7:30 PM</td></tr>
+          </tbody>
         </table>
       </div>
-      <div class="callout" id="diveNote"><!-- filled by app.js --></div>
-    </section>
 
-    <!-- Checklist -->
-    <section id="checklist">
-      <h2>✅ Before You Go</h2>
-      <ul class="check" id="checkList"><!-- filled by app.js --></ul>
-      <p class="note">Fees and rules change, so check the official sites before paying. Figures were checked in Nov 2026.</p>
+      <h2 class="h2">Flights</h2>
+      <div class="card flight">
+        <div class="f-head"><b>Outbound · 6E 1605</b><span>Fri 18 Dec · 6h 50m</span></div>
+        <div class="f-row">
+          <div><span class="code">BLR</span><span class="big">00:55</span><small>IST · 03:25 in Bali</small></div>
+          <span class="f-arrow" aria-hidden="true">→</span>
+          <div class="r"><span class="code">DPS</span><span class="big">10:15</span><small>Bali · 07:45 in India</small></div>
+        </div>
+        <p class="warn">🌙 Leave home on the night of <b>Thu 17 Dec</b>. Be at BLR T2 by ~10 PM.</p>
+      </div>
+      <div class="card flight">
+        <div class="f-head"><b>Return · 6E 1606</b><span>Sun 27 Dec · 6h 30m</span></div>
+        <div class="f-row">
+          <div><span class="code">DPS</span><span class="big">11:15</span><small>Bali · 08:45 in India</small></div>
+          <span class="f-arrow" aria-hidden="true">→</span>
+          <div class="r"><span class="code">BLR</span><span class="big">15:15</span><small>IST · 17:45 in Bali</small></div>
+        </div>
+        <p class="warn">⏰ Leave Ubud at 7 AM. Be at DPS by ~8:15 AM.</p>
+      </div>
+      <p class="fine">PNR <code>[removed]</code> · 20 kg check-in + 7 kg cabin per person</p>
     </section>
-
-    <footer class="foot">
-      <a href="#glance">↑ Back to top</a>
-    </footer>
-  </div>
+  </template>
 
   <script src="data.js"></script>
   <script src="app.js"></script>

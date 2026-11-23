@@ -1,7 +1,7 @@
 // Bali 2026: offline support. Site files: network first, cached copy when offline.
 // Photos: cached after first view so they show offline too.
-const CACHE = "bali2026-v3";
-const CORE = ["./", "index.html", "style.css", "app.js", "data.js", "manifest.json", "icon-192.png"];
+const CACHE = "bali2026-v4";
+const CORE = ["./", "index.html", "manifest.json", "icon-192.png"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));
@@ -33,11 +33,12 @@ self.addEventListener("fetch", (e) => {
 
   if (url.origin === location.origin) {
     e.respondWith(
-      fetch(req).then((res) => {
+      // always revalidate with the server so a new deploy shows up straight away
+      fetch(req, { cache: "no-cache" }).then((res) => {
         const copy = res.clone();
         caches.open(CACHE).then((c) => c.put(req, copy));
         return res;
-      }).catch(() => caches.match(req).then((hit) => hit || caches.match("index.html")))
+      }).catch(() => caches.match(req, { ignoreSearch: true }).then((hit) => hit || caches.match("index.html")))
     );
   }
 });

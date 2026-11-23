@@ -63,7 +63,7 @@
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; background: var(--bg); } /* dark edges on iOS overscroll too */
 body {
   margin: 0;
   background: var(--bg);

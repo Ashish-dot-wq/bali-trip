@@ -399,6 +399,10 @@
   }
   setInterval(tick, 15000);
 
+  // Version label in the menu footer (helps spot a stale cached copy)
+  const BUILD = "Updated 23 Nov, 18:07 UTC";
+  $("#appVer").textContent = BUILD;
+
   // ---------- offline support ----------
   if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
     navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});

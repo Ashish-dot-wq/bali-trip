@@ -528,3 +528,5 @@ table.full { width: 100%; border-collapse: separate; border-spacing: 0; table-la
 /* Driving permit */
 .pad > .warn { margin: 0 0 4px; }
 .faq details p a { color: var(--link); font-weight: 600; }
+
+.ver { margin-top: 8px; font-size: 11px; color: var(--muted); opacity: .8; }

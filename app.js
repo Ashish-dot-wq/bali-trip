@@ -86,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const scheduleModal = document.getElementById("scheduleModal");
   const votingModal = document.getElementById("votingModal");
   const matrixModal = document.getElementById("matrixModal");
-  const flightModal = document.getElementById("flightModal");
   const shareModal = document.getElementById("shareModal");
   const shareSheetContent = document.getElementById("shareSheetContent");
   const nightlifeModal = document.getElementById("nightlifeModal");
@@ -849,45 +848,6 @@ document.addEventListener("DOMContentLoaded", () => {
     matrixModal.classList.add("active");
   }
 
-  // Flight Modal
-  function openFlightModal() {
-    const f = TRIP_DATA.meta.flights;
-    document.getElementById("flightSheetContent").innerHTML = `
-      <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 14px; padding: 14px; margin-bottom: 14px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span style="background: #3b82f6; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 6px;">CONFIRMED BOOKING</span>
-          <span style="font-size: 12px; font-weight: 700; color: #93c5fd;">PNR: ${TRIP_DATA.meta.pnr}</span>
-        </div>
-        <div style="font-size: 12px; color: #e2e8f0;">
-          <strong>Baggage:</strong> ${f.baggage.cabin} cabin • ${f.baggage.checkIn} check-in per adult
-        </div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 12px;">
-          <div style="font-size: 11px; font-weight: 700; color: #38bdf8; margin-bottom: 4px;">OUTBOUND FLIGHT • Fri, 18 Dec 2026</div>
-          <div style="font-size: 14px; font-weight: 800; color: #fff;">${f.outbound.airline} ${f.outbound.flightNumber}</div>
-          <div style="font-size: 12px; color: #cbd5e1; margin-top: 4px;">
-            🛫 ${f.outbound.from} at <strong>${f.outbound.departure}</strong><br/>
-            🛬 ${f.outbound.to} at <strong>${f.outbound.arrival}</strong>
-          </div>
-          <div style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Duration: ${f.outbound.duration}</div>
-        </div>
-
-        <div style="background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 12px;">
-          <div style="font-size: 11px; font-weight: 700; color: #34d399; margin-bottom: 4px;">RETURN FLIGHT • Sun, 27 Dec 2026</div>
-          <div style="font-size: 14px; font-weight: 800; color: #fff;">${f.inbound.airline} ${f.inbound.flightNumber}</div>
-          <div style="font-size: 12px; color: #cbd5e1; margin-top: 4px;">
-            🛫 ${f.inbound.from} at <strong>${f.inbound.departure}</strong><br/>
-            🛬 ${f.inbound.to} at <strong>${f.inbound.arrival}</strong>
-          </div>
-          <div style="font-size: 11px; color: #94a3b8; margin-top: 4px;">Duration: ${f.inbound.duration}</div>
-        </div>
-      </div>
-    `;
-    flightModal.classList.add("active");
-  }
-
   // Nightlife & Self-Exploration Hub Modal
   function openNightlifeModal() {
     const guide = TRIP_DATA.meta.masterNightlifeGuide;
@@ -1052,7 +1012,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("btnCompareOpen")?.addEventListener("click", openMatrixModal);
   document.getElementById("btnProblemOpen")?.addEventListener("click", openProblemModal);
   document.getElementById("btnNightlifeOpen")?.addEventListener("click", openNightlifeModal);
-  document.getElementById("flightBannerBtn")?.addEventListener("click", openFlightModal);
   document.getElementById("problemTickerBar")?.addEventListener("click", openProblemModal);
   document.getElementById("btnDismissTicker")?.addEventListener("click", (e) => {
     e.stopPropagation();

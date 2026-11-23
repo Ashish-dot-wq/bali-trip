@@ -765,8 +765,9 @@ body {
 
 /* Modals & Slide-up Drawers */
 .modal-overlay {
-  position: absolute;
+  position: fixed; /* pin to the screen, not the bottom of a long page */
   inset: 0;
+  justify-content: center;
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(8px);
   z-index: 100;
@@ -784,6 +785,7 @@ body {
 
 .modal-sheet {
   width: 100%;
+  max-width: 440px;
   max-height: 88%;
   background: var(--bg-card);
   border-radius: 24px 24px 0 0;
@@ -2653,3 +2655,180 @@ body {
   border-radius: 14px;
   padding: 16px;
 }
+
+.app-container.fullscreen-mode .modal-sheet {
+  max-width: 900px;
+}
+
+/* ===== Trip at a Glance (flight info) modal ===== */
+.tg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000; /* above the nav drawer (9999) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+.tg-overlay.active { opacity: 1; pointer-events: auto; }
+
+.tg-dialog {
+  width: 100%;
+  max-width: 420px;
+  max-height: calc(100dvh - 32px);
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-bright);
+  border-radius: 22px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8);
+  overflow: hidden;
+  transform: scale(0.96) translateY(8px);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tg-overlay.active .tg-dialog { transform: none; }
+
+.tg-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.tg-title { font-size: 16px; font-weight: 800; color: var(--text-main); }
+.tg-close {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  touch-action: manipulation;
+}
+.tg-close:hover { background: rgba(255, 255, 255, 0.18); }
+
+.tg-body {
+  padding: 14px 16px 18px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Hero stats */
+.tg-hero { display: grid; grid-template-columns: 1fr 1.2fr 1fr; gap: 8px; }
+.tg-stat {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 10px 4px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+}
+.tg-stat-main {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.18), rgba(16, 185, 129, 0.18));
+  border-color: rgba(16, 185, 129, 0.45);
+}
+.tg-num { font-size: 22px; font-weight: 900; color: var(--text-main); line-height: 1.1; }
+.tg-stat-main .tg-num { font-size: 28px; }
+.tg-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text-muted); margin-top: 2px; }
+
+/* Day strip */
+.tg-days { display: grid; grid-template-columns: repeat(10, 1fr); gap: 3px; }
+.tg-day { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.tg-dow { font-size: 8.5px; color: var(--text-dim); font-weight: 700; text-transform: uppercase; }
+.tg-date { font-size: 12px; color: var(--text-main); font-weight: 800; }
+.tg-bar { width: 100%; height: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.08); }
+.tg-day-full .tg-bar { background: var(--opt3-color); }
+.tg-day-half .tg-bar { background: linear-gradient(90deg, rgba(255,255,255,0.08) 50%, var(--accent-gold) 50%); }
+.tg-day-fly .tg-bar { background: repeating-linear-gradient(45deg, rgba(244,63,94,0.55) 0 3px, rgba(244,63,94,0.2) 3px 6px); }
+.tg-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 10.5px; color: var(--text-muted); margin-top: -4px; }
+.tg-key { display: inline-block; width: 10px; height: 6px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+.tg-key-half { background: var(--accent-gold); }
+.tg-key-full { background: var(--opt3-color); }
+.tg-key-fly { background: rgba(244, 63, 94, 0.6); }
+
+/* Cards */
+.tg-card {
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+}
+.tg-card-title { font-size: 12px; font-weight: 800; color: var(--text-main); margin-bottom: 10px; }
+
+/* Clocks */
+.tg-clocks { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 6px; }
+.tg-clock {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 8px 4px;
+  border-radius: 12px;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+}
+.tg-clock-bali { background: rgba(6, 182, 212, 0.1); border-color: rgba(6, 182, 212, 0.4); }
+.tg-flag { font-size: 10.5px; font-weight: 700; color: var(--text-muted); }
+.tg-time { font-size: 24px; font-weight: 900; font-variant-numeric: tabular-nums; color: var(--text-main); }
+.tg-utc { font-size: 10px; color: var(--text-dim); }
+.tg-diff { display: flex; flex-direction: column; align-items: center; }
+.tg-diff span {
+  font-size: 12px; font-weight: 900; color: #0b1220;
+  background: var(--accent-gold);
+  padding: 3px 8px; border-radius: 999px; white-space: nowrap;
+}
+.tg-diff small { font-size: 9.5px; color: var(--text-muted); margin-top: 3px; }
+
+.tg-ruler-head { font-size: 10.5px; color: var(--text-muted); margin: 12px 0 6px; font-weight: 700; }
+.tg-ruler { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+.tg-pair {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 6px 2px; border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  font-variant-numeric: tabular-nums;
+}
+.tg-pair-bali { color: #67e8f9; font-weight: 800; font-size: 11px; }
+.tg-pair-india { color: #fdba74; font-weight: 700; font-size: 10.5px; }
+.tg-pair-arrow { color: var(--text-dim); font-size: 10px; line-height: 1.2; }
+.tg-tip { font-size: 11px; color: var(--text-muted); line-height: 1.45; margin: 10px 0 0; }
+
+/* Flights */
+.tg-flight-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.tg-chip { font-size: 10px; font-weight: 800; padding: 2px 8px; border-radius: 6px; color: #fff; }
+.tg-chip-out { background: #0284c7; }
+.tg-chip-ret { background: #059669; }
+.tg-fno { font-size: 11px; color: var(--text-muted); font-weight: 700; }
+.tg-leg { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 6px; }
+.tg-end { display: flex; flex-direction: column; }
+.tg-end-r { align-items: flex-end; text-align: right; }
+.tg-code { font-size: 11px; font-weight: 800; color: var(--text-dim); letter-spacing: 0.06em; }
+.tg-big { font-size: 22px; font-weight: 900; color: var(--text-main); font-variant-numeric: tabular-nums; line-height: 1.15; }
+.tg-sub { font-size: 10.5px; color: var(--text-muted); }
+.tg-alt { font-size: 10.5px; color: #fdba74; font-weight: 700; margin-top: 2px; }
+.tg-path {
+  position: relative; width: 56px; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--text-dim) 0 4px, transparent 4px 8px);
+}
+.tg-path span {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  font-size: 14px; color: var(--text-main); background: var(--bg-card); padding: 0 3px;
+}
+.tg-warn {
+  font-size: 11px; line-height: 1.45; color: #fde68a;
+  background: rgba(245, 158, 11, 0.1);
+  border-radius: 8px; padding: 6px 8px; margin: 10px 0 0;
+}
+
+.tg-booking {
+  display: flex; justify-content: space-between; flex-wrap: wrap; gap: 4px 10px;
+  font-size: 11px; color: var(--text-muted);
+  padding: 0 2px;
+}
+.tg-booking b { color: var(--text-main); }

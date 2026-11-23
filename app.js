@@ -52,7 +52,7 @@
   }
 
   // ---------- views ----------
-  const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go", party: "Party guide", faq: "FAQs" };
+  const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go", party: "Party guide", faq: "FAQs", drive: "Driving permit" };
 
   function chipBar(active) {
     return `<div class="chips" role="tablist" aria-label="Choose a day">${TRIP.days.map((d) => {
@@ -264,6 +264,22 @@
     </div>`;
   }
 
+  function driveView() {
+    const d = TRIP.idp;
+    view.innerHTML = `<div class="pad">
+      <h1 class="h">International Driving Permit</h1>
+      <p class="intro">${d.intro}</p>
+      <div class="warn">⏰ ${d.deadline}</div>
+      <h2 class="h2">What you need first</h2>
+      <ul class="safety">${d.need.map((x) => `<li>${x}</li>`).join("")}</ul>
+      <h2 class="h2">How to get it (India)</h2>
+      <ol class="steps">${d.steps.map((x) => `<li><b>${x.t}.</b> ${x.d}</li>`).join("")}</ol>
+      <h2 class="h2">Riding in Bali</h2>
+      <ul class="safety">${d.bali.map((x) => `<li>${x}</li>`).join("")}</ul>
+      <p class="fine">Fees, documents and steps vary by state and change over time. Confirm on parivahan.gov.in or with your RTO.</p>
+    </div>`;
+  }
+
   function faqView() {
     view.innerHTML = `<div class="pad">
       <h1 class="h">FAQs</h1>
@@ -282,7 +298,7 @@
     let name = "day", n = null;
     const m = /^day-(\d+)$/.exec(h);
     if (m) { n = Math.min(Math.max(Number(m[1]), 1), N); }
-    else if (["table", "glance", "dive", "checklist", "party", "faq"].includes(h)) name = h;
+    else if (["table", "glance", "dive", "checklist", "party", "faq", "drive"].includes(h)) name = h;
     else if (h === "day" || h === "") n = store.get("bali2026-day", todayIndex());
     else n = 1;
 
@@ -292,6 +308,7 @@
     else if (name === "dive") diveView();
     else if (name === "party") partyView();
     else if (name === "faq") faqView();
+    else if (name === "drive") driveView();
     else checklistView();
 
     $("#viewTitle").textContent = name === "day" ? `Day ${n} · ${TRIP.days[n - 1].base}` : TITLES[name];

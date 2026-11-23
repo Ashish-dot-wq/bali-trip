@@ -524,3 +524,7 @@ table.full { width: 100%; border-collapse: separate; border-spacing: 0; table-la
 /* Dark: selected segment should read as raised, not sunken */
 :root[data-theme="dark"] .seg { background: var(--surface-2); }
 :root[data-theme="dark"] .seg button[aria-pressed="true"] { background: #3a3f46; }
+
+/* Driving permit */
+.pad > .warn { margin: 0 0 4px; }
+.faq details p a { color: var(--link); font-weight: 600; }

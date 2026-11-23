@@ -282,6 +282,31 @@ const TRIP = {
     ]
   },
 
+  // International Driving Permit (menu → Driving permit)
+  idp: {
+    intro: "Every transfer in the plan uses a private driver, so you only need this if you want to <b>rent a scooter or drive yourself</b> (e.g. around Ubud, Seminyak or Nusa Penida). Gili T has no motor vehicles at all.",
+    deadline: "Apply in the <b>first week of December at the latest</b>. RTOs usually take 3–7 working days and you fly out on the night of Thu 17 Dec.",
+    need: [
+      "<b>Two-wheeler class on your Indian licence.</b> The IDP only lists the classes on your Indian DL. For scooters you need MCWG/MCWOG (two-wheeler) on it; a car-only licence gives a car-only IDP.",
+      "<b>A permanent Indian driving licence</b> (not a learner's licence) that's valid through the trip.",
+      "<b>A valid passport.</b> Your IDP is tied to it."
+    ],
+    steps: [
+      { t: "Apply online", d: "Go to <b>parivahan.gov.in</b> → Online Services → Driving Licence Related Services → choose <b>the state that issued your licence</b> (e.g. Karnataka) → <b>Issue of International Driving Permit</b>. Enter your DL number and date of birth; this fills <b>Form 4A</b>." },
+      { t: "Upload documents", d: "Driving licence, passport (front and back pages), flight tickets, passport photo and signature. Many RTOs also ask for a <b>Form 1A medical certificate</b> signed by a registered doctor, so keep one ready." },
+      { t: "Pay the fee", d: "About <b>₹1,000</b> online, plus small service or post charges in some states." },
+      { t: "Visit your RTO", d: "Book a slot if offered and take the <b>originals</b> (DL, passport, tickets) for verification. Some RTOs issue the IDP the same day; others post it within about a week." },
+      { t: "Check the booklet", d: "Make sure the categories include <b>A (motorcycles)</b> if you plan to ride scooters. It's valid for <b>1 year</b> (or until your DL expires, if sooner)." }
+    ],
+    bali: [
+      "<b>Carry three things when riding:</b> your Indian DL, the printed IDP booklet, and the rental's registration paper (STNK). Phone photos of all three as backup.",
+      "<b>Police checks are common</b> in Seminyak and Ubud. On-the-spot fines are reported at roughly <b>IDR 300,000–1,000,000</b> for missing documents.",
+      "<b>Helmet always</b>, for driver and passenger.",
+      "<b>Insurance:</b> most travel policies don't cover scooter accidents without a valid licence and IDP. Check your policy wording.",
+      "<b>Nusa Penida roads are steep and broken.</b> Stick to a driver there, which the plan already does."
+    ]
+  },
+
   // FAQs (menu → FAQs)
   faq: [
     { q: "What's the time difference with India?", a: "Bali is <b>2 hours 30 minutes ahead</b> of India (WITA, UTC+8 vs IST, UTC+5:30). When it's 9 AM in Bali it's 6:30 AM at home." },
@@ -297,6 +322,7 @@ const TRIP = {
     { q: "Do we need a diving certificate?", a: "No. The Gili T <b>Discover Scuba</b> session is for beginners: everyone fills in a medical form first. See the Two-dive plan for the Tulamben dive." },
     { q: "What if a boat is cancelled?", a: "December seas can be rough. Operators usually move you to the next sailing. Keep the operator's WhatsApp handy, tell the next hotel, and have travel insurance that covers delays." },
     { q: "What's the weather like?", a: "Hot and humid, about <b>27–31 °C</b>, with short heavy showers, usually in the afternoon. Pack a light rain jacket." },
+    { q: "Can we rent scooters?", a: "Only with your Indian licence <b>plus an International Driving Permit that includes motorcycles</b>. See <a href=\"#drive\">Driving permit</a> for the process. Otherwise stick to drivers, Grab and Gojek." },
     { q: "Emergency numbers?", a: "<b>112</b> works from any phone in Indonesia. Save your hotel's number and the driver's WhatsApp for each stop." }
   ],
 
@@ -312,6 +338,7 @@ const TRIP = {
     { icon: "🔌", title: "Plugs", text: "Type C/F, 230 V. Indian 2-pin plugs fit; 3-pin plugs need an adapter." },
     { icon: "📶", title: "SIM & apps", text: "Buy an eSIM before flying or a Telkomsel SIM at the airport. Grab and Gojek work in Seminyak and Ubud." },
     { icon: "🧳", title: "Luggage", text: "Soft bags are easier on Gili T (no vehicles, sandy paths). Leave space under 20 kg for shopping." },
-    { icon: "🛡️", title: "Travel insurance", text: "Get a policy that covers boat delays or cancellations and water activities." }
+    { icon: "🛡️", title: "Travel insurance", text: "Get a policy that covers boat delays or cancellations and water activities." },
+    { icon: "🛵", title: "Driving permit (only if renting scooters)", text: "Get an International Driving Permit from your RTO by early December. Your Indian DL must have the two-wheeler class. See Driving permit in the menu." }
   ]
 };

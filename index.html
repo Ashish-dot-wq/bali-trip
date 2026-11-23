@@ -2,295 +2,116 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <title>Bali 2026 • 5 Friends Itinerary Selector</title>
-  <meta name="description" content="Visual swipe-based decision app for 5 friends traveling to Bali (18-27 Dec 2026). Choose between Option 2 (Gili T Island Explorer) and Option 3 (Amed Reef Loop)." />
-  <meta name="theme-color" content="#090d16" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Bali 2026 Itinerary</title>
+  <meta name="description" content="Day-by-day itinerary for 5 friends in Bali, the Gilis, Amed and Ubud, 18–27 Dec 2026." />
+  <meta name="theme-color" content="#ffffff" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page">
 
-  <!-- Desktop Mode Controls (Only visible on larger screens) -->
-  <div class="desktop-controls">
-    <button class="mode-pill-btn" id="toggleFrameBtn">🖥️ Expanded View</button>
-  </div>
-
-  <!-- Toast Notification -->
-  <div class="toast-notice" id="toastNotice">
-    <span>✨</span> <span>Ready</span>
-  </div>
-
-  <!-- Main Mobile App Shell -->
-  <div class="app-container" id="appContainer">
-
-    <!-- App Header with Overflow Menu -->
-    <header class="app-header">
-      <div class="header-top">
-        <a href="index.html" class="brand-badge-link" style="text-decoration: none; color: inherit;">
-          <div class="brand-badge">
-            <div class="brand-icon">🌴</div>
-            <div>
-              <div class="brand-title">Bali 2026 Explorer</div>
-              <div class="brand-sub">5 Friends • 18–27 Dec 2026</div>
-            </div>
-          </div>
-        </a>
-
-        <div class="header-actions">
-          <a href="schedule.html" class="header-pill-btn" title="View Full Schedule Tables">
-            <span>📅</span> Schedule
-          </a>
-          <a href="voting.html" class="header-pill-btn highlight-vote" title="Group Consensus & Voting">
-            <span>🗳️</span> Vote (5)
-          </a>
-          <!-- The Overflow Menu Button -->
-          <button class="overflow-menu-btn" id="btnOverflowMenu" title="Open Navigation Menu" aria-label="Open Navigation Menu">
-            <span class="overflow-icon">☰</span>
-            <span class="overflow-label">Menu</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Compact Flight Pill Bar -->
-      <div class="flight-pill-bar" id="flightBannerBtn" title="Click to view flight & baggage details">
-        <span class="flight-tag">✈️ IndiGo</span>
-        <span class="flight-text">BLR ⇄ DPS (6E 1605/1606) • PNR: [removed] • 20kg</span>
-        <span style="font-size: 11px; opacity: 0.7;">ℹ️</span>
-      </div>
+    <header class="top">
+      <h1>📅 Bali 2026: Seminyak, Gilis, Amed &amp; Ubud</h1>
+      <p class="sub">Fri 18 Dec – Sun 27 Dec 2026 · 5 friends · IndiGo PNR <code>[removed]</code> · 20 kg + 7 kg per person</p>
+      <nav class="jump" aria-label="Sections">
+        <a href="#glance">At a glance</a>
+        <a href="#itinerary">Itinerary</a>
+        <a href="#checklist">Before you go</a>
+      </nav>
     </header>
 
-    <!-- Itinerary Option Switcher -->
-    <div class="itinerary-toggle-container">
-      <div class="segmented-control">
-        <button class="segment-btn active opt2-active" id="segmentOpt2">
-          <span class="segment-title">🏝️ Option 2: Gili T</span>
-          <span class="segment-sub">Island Explorer (3N Gili + 3N Ubud)</span>
-        </button>
-        <button class="segment-btn" id="segmentOpt3">
-          <span class="segment-title">🤿 Option 3: Amed</span>
-          <span class="segment-sub">Reef & Culture (2N Amed + 4N Ubud)</span>
-        </button>
+    <!-- Trip at a glance -->
+    <section id="glance" class="card">
+      <h2>✈️ Trip at a Glance</h2>
+
+      <div class="stats">
+        <div class="stat"><span class="num">9</span><span class="lbl">Nights</span></div>
+        <div class="stat main"><span class="num">8½</span><span class="lbl">Usable days</span></div>
+        <div class="stat"><span class="num">217 h</span><span class="lbl">On the ground</span></div>
       </div>
-    </div>
 
-    <!-- The Problem Statement Ticker (Dismissible & Compact) -->
-    <div class="problem-ticker" id="problemTickerBar" title="Click to read the transit reality explanation">
-      <div class="problem-ticker-content">
-        <span>🚨</span>
-        <div>Why 1N Penida + 1N Gili changed: <strong>The 48h Transit Trap</strong></div>
+      <div class="days" id="dayStrip"><!-- filled by app.js --></div>
+      <div class="legend">
+        <span><i class="key half"></i>Arrival afternoon (free from ~1 PM)</span>
+        <span><i class="key full"></i>8 full days</span>
+        <span><i class="key fly"></i>Fly home (leave Ubud 7 AM)</span>
       </div>
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <div class="problem-chevron">Why? ➔</div>
-        <button id="btnDismissTicker" title="Dismiss banner" style="background: transparent; border: none; color: #fca5a5; font-size: 14px; cursor: pointer; padding: 2px 4px;">✕</button>
-      </div>
-    </div>
 
-    <!-- Card Stage / Swipeable Area -->
-    <main class="card-stage" id="cardStage">
-      <!-- Active Swipe Card rendered dynamically by app.js -->
-    </main>
+      <div class="stays" id="stays"><!-- filled by app.js --></div>
 
-    <!-- Master Table Stage (Alternative view) -->
-    <div class="table-stage" id="tableStage">
-      <!-- Master comparison table dynamically rendered by app.js -->
-    </div>
-
-    <!-- Floating Action Bar (Tinder / Stories Navigation) -->
-    <footer class="action-controls">
-      <button class="circle-btn btn-prev" id="btnPrev" title="Previous Day">
-        ◀
-      </button>
-
-      <button class="circle-btn btn-heart" id="btnHeart" title="Love this day">
-        🤍
-      </button>
-
-      <button class="circle-btn btn-schedule" id="btnSchedule" title="View hour-by-hour schedule">
-        <span>📋</span> Full Schedule
-      </button>
-
-      <button class="circle-btn btn-next" id="btnNext" title="Next Day">
-        ▶
-      </button>
-    </footer>
-
-    <!-- MODAL 1: The Problem & Transit Reality Breakdown -->
-    <div class="modal-overlay" id="problemModal">
-      <div class="modal-sheet">
-        <div class="sheet-handle"></div>
-        <div class="sheet-header">
-          <div class="sheet-title">🚨 The Reality of Island Transits</div>
-          <button class="sheet-close modal-close-trigger">✕</button>
-        </div>
-        <div class="sheet-body" id="problemSheetContent">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-    </div>
-
-    <!-- MODAL 2: Full Timed Schedule for Active Day -->
-    <div class="modal-overlay" id="scheduleModal">
-      <div class="modal-sheet">
-        <div class="sheet-handle"></div>
-        <div class="sheet-header">
-          <div class="sheet-title">⏱️ Detailed Timed Schedule</div>
-          <button class="sheet-close modal-close-trigger">✕</button>
-        </div>
-        <div class="sheet-body" id="scheduleSheetContent">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-    </div>
-
-    <!-- MODAL 3: Group of 5 Voting & Consensus Hub -->
-    <div class="modal-overlay" id="votingModal">
-      <div class="modal-sheet">
-        <div class="sheet-handle"></div>
-        <div class="sheet-header">
-          <div class="sheet-title">🗳️ 5 Friends Consensus Hub</div>
-          <button class="sheet-close modal-close-trigger">✕</button>
-        </div>
-        <div class="sheet-body" id="votingSheetContent">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-    </div>
-
-    <!-- MODAL 4: Side-by-Side Comparison Matrix -->
-    <div class="modal-overlay" id="matrixModal">
-      <div class="modal-sheet">
-        <div class="sheet-handle"></div>
-        <div class="sheet-header">
-          <div class="sheet-title">⚖️ Option 2 vs. Option 3 Matrix</div>
-          <button class="sheet-close modal-close-trigger">✕</button>
-        </div>
-        <div class="sheet-body" id="matrixSheetContent">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-    </div>
-
-    <!-- MODAL 6: Public Share Link -->
-    <div class="modal-overlay" id="shareModal">
-      <div class="modal-sheet">
-        <div class="sheet-handle"></div>
-        <div class="sheet-header">
-          <div class="sheet-title">🔗 Share with Your Friends</div>
-          <button class="sheet-close modal-close-trigger">✕</button>
-        </div>
-        <div class="sheet-body" id="shareSheetContent">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-    </div>
-
-    <!-- MODAL 7: Nightlife, Parties & Self-Exploration Hub -->
-    <div class="modal-overlay" id="nightlifeModal">
-      <div class="modal-sheet">
-        <div class="sheet-handle"></div>
-        <div class="sheet-header">
-          <div class="sheet-title">🎉 Nightlife & Exploration Guide</div>
-          <button class="sheet-close modal-close-trigger">✕</button>
-        </div>
-        <div class="sheet-body" id="nightlifeSheetContent">
-          <!-- Dynamically populated -->
-        </div>
-      </div>
-    </div>
-
-    <!-- Navigation Drawer (Overflow Menu) -->
-    <div class="nav-drawer-overlay" id="navDrawerOverlay">
-      <div class="nav-drawer" id="navDrawer">
-        <div class="drawer-header">
-          <div class="drawer-title-group">
-            <div class="drawer-icon">🌴</div>
-            <div>
-              <div class="drawer-title">Trip Navigation</div>
-              <div class="drawer-sub">Bali 2026 • 5 Friends</div>
+      <div class="grid2">
+        <div class="box">
+          <h3>🕑 Time difference: Bali is 2 h 30 m ahead</h3>
+          <div class="clocks">
+            <div class="clock india">
+              <span class="where">🇮🇳 India (IST)</span>
+              <span class="time" data-tz="Asia/Kolkata">--:--</span>
+              <span class="utc">UTC +5:30</span>
+            </div>
+            <div class="diff">+2:30</div>
+            <div class="clock bali">
+              <span class="where">🇮🇩 Bali (WITA)</span>
+              <span class="time" data-tz="Asia/Makassar">--:--</span>
+              <span class="utc">UTC +8:00</span>
             </div>
           </div>
-          <button class="drawer-close-btn" id="btnDrawerClose" aria-label="Close menu">✕</button>
+          <table class="convert">
+            <tr><th>Bali</th><td>6 AM</td><td>9 AM</td><td>12 PM</td><td>3 PM</td><td>6 PM</td><td>10 PM</td></tr>
+            <tr><th>India</th><td>3:30 AM</td><td>6:30 AM</td><td>9:30 AM</td><td>12:30 PM</td><td>3:30 PM</td><td>7:30 PM</td></tr>
+          </table>
         </div>
 
-        <div class="drawer-flight-banner" id="drawerFlightBanner">
-          <div class="flight-tag">✈️ IndiGo 6E 1605/1606</div>
-          <div class="flight-pnr">BLR ⇄ DPS • PNR: [removed] • 20kg Bag</div>
-        </div>
-
-        <nav class="drawer-links-list">
-          <a href="index.html" class="drawer-nav-item active">
-            <span class="item-icon">🃏</span>
-            <div class="item-info">
-              <div class="item-title">Daily Swipe Cards</div>
-              <div class="item-desc">Browse day-by-day photos, maps & highlights</div>
-            </div>
-          </a>
-
-          <a href="schedule.html?opt=opt2" class="drawer-nav-item">
-            <span class="item-icon">🏝️</span>
-            <div class="item-info">
-              <div class="item-title">Option 2 Schedule Table</div>
-              <div class="item-desc">Simple 10-day table for Gili T Island Explorer</div>
-            </div>
-          </a>
-
-          <a href="schedule.html?opt=opt3" class="drawer-nav-item">
-            <span class="item-icon">🤿</span>
-            <div class="item-info">
-              <div class="item-title">Option 3 Schedule Table</div>
-              <div class="item-desc">Simple 10-day table for Amed Reef & Culture</div>
-            </div>
-          </a>
-
-          <a href="parties.html" class="drawer-nav-item">
-            <span class="item-icon">🎉</span>
-            <div class="item-info">
-              <div class="item-title">Parties & Nightlife Guide</div>
-              <div class="item-desc">Seminyak clubs, Gili rotating schedule, Ubud speakeasies</div>
-            </div>
-          </a>
-
-          <a href="voting.html" class="drawer-nav-item">
-            <span class="item-icon">🗳️</span>
-            <div class="item-info">
-              <div class="item-title">Consensus & Voting Hub</div>
-              <div class="item-desc">Cast your vote, write notes & share on WhatsApp</div>
-            </div>
-          </a>
-
-          <a href="comparison.html" class="drawer-nav-item">
-            <span class="item-icon">⚖️</span>
-            <div class="item-info">
-              <div class="item-title">Option 2 vs 3 Comparison Matrix</div>
-              <div class="item-desc">Decision factors, costs, boat rides & pros/cons</div>
-            </div>
-          </a>
-
-          <a href="comparison.html#transit-reality" class="drawer-nav-item">
-            <span class="item-icon">🚨</span>
-            <div class="item-info">
-              <div class="item-title">The 48h Transit Reality</div>
-              <div class="item-desc">Why 1N Penida + 1N Gili changed & why Seminyak is 3N</div>
-            </div>
-          </a>
-        </nav>
-
-        <div class="drawer-footer-actions">
-          <button class="drawer-action-btn" id="btnToggleDeviceMode">
-            <span id="deviceModeIcon">💻</span> <span id="deviceModeText">Expanded Web View</span>
-          </button>
-          <button class="drawer-action-btn primary" id="btnDrawerShare">
-            <span>🔗</span> Share Link with Friends
-          </button>
+        <div class="box">
+          <h3>🛫 Flights (times in both zones)</h3>
+          <table class="flights">
+            <tr>
+              <th>Out · 6E 1605<br><small>Fri 18 Dec · 6h 50m</small></th>
+              <td><b>BLR 00:55</b> IST<br><small>= 03:25 Bali</small></td>
+              <td><b>DPS 10:15</b> Bali<br><small>= 07:45 India</small></td>
+            </tr>
+            <tr>
+              <th>Back · 6E 1606<br><small>Sun 27 Dec · 6h 30m</small></th>
+              <td><b>DPS 11:15</b> Bali<br><small>= 08:45 India</small></td>
+              <td><b>BLR 15:15</b> IST<br><small>= 17:45 Bali</small></td>
+            </tr>
+          </table>
+          <p class="warn">🌙 The 00:55 flight means leaving home on the night of <b>Thu 17 Dec</b>. Be at BLR T2 by ~10 PM.</p>
         </div>
       </div>
-    </div>
+    </section>
 
+    <!-- Master itinerary table -->
+    <section id="itinerary">
+      <h2>📅 Complete Master Itinerary: Bali, Gilis, Amed &amp; Ubud (Dec 18 – Dec 27, 2026)</h2>
+      <div class="table-wrap">
+        <table class="itin">
+          <thead>
+            <tr>
+              <th class="c-day">Day &amp; Date</th>
+              <th class="c-time">Time Window</th>
+              <th class="c-act">Scheduled Activity &amp; Highlights</th>
+              <th class="c-log">Key Logistics &amp; Details</th>
+            </tr>
+          </thead>
+          <!-- one <tbody> per day, filled by app.js -->
+        </table>
+      </div>
+    </section>
+
+    <!-- Checklist -->
+    <section id="checklist">
+      <h2>✅ Before You Go</h2>
+      <ul class="check" id="checkList"><!-- filled by app.js --></ul>
+      <p class="note">Fees and rules change, so check the official sites before paying. Figures were checked in Nov 2026.</p>
+    </section>
+
+    <footer class="foot">
+      <a href="#glance">↑ Back to top</a>
+    </footer>
   </div>
 
-  <!-- Scripts -->
   <script src="data.js"></script>
-  <script src="nav.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

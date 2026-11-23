@@ -1,6 +1,6 @@
-# 🌴 Bali 2026: 5 Friends Itinerary Selector (Mobile Web App)
+# 🌴 Bali 2026: 5 Friends Itinerary (18–27 Dec 2026)
 
-A mobile-first, visual swiping application built for a group of 5 friends to review, compare, and vote between **Option 2 (The Island Explorer / Gili T)** and **Option 3 (Reef, Culture & Coast Loop / Amed)** for their Bali trip (18–27 December 2026).
+A simple, readable day-by-day itinerary page for a group of 5 friends travelling to Bali, the Gilis, Amed and Ubud.
 
 ---
 
@@ -13,48 +13,20 @@ A mobile-first, visual swiping application built for a group of 5 friends to rev
 
 ---
 
-## 🚨 The Core Problem Addressed
-* **The 48-Hour Transit Trap of the Original Draft:**
-  * Original draft had 1 night in Nusa Penida + 1 night in Gili Trawangan.
-  * In that 48-hour window, the group would spend **10 to 12 hours packing bags, wading through water at boat landings, waiting at piers, and hauling 20kg luggage over unpaved sand or horse carts**.
-  * Total daylight relaxation on Gili T was less than 4 hours!
-  * December brings monsoon swells in the open Lombok Strait. A 3-hour speedboat delay wipes out a 1-night stay.
-* **The Smart Fix Implemented in Both Options:**
-  * **Seminyak is increased to 3 nights (Dec 18–21).**
-  * Sanur Port is only 35 minutes from Seminyak.
-  * The group takes a **seamless day-trip to Nusa Penida on Dec 20** with light daypacks, leaving all heavy bags safely locked in the Seminyak hotel room!
-  * Returning to Seminyak avoids all luggage drag and check-in friction.
+## 🗺️ The Plan
+* **Route:** Seminyak (3N) ➔ Gili Trawangan (2N) ➔ Amed (2N) ➔ Ubud (2N)
+* **9 nights, ~8½ usable days** (arrival afternoon on Dec 18 + 8 full days; Dec 27 is a travel morning)
+* Nusa Penida is a day trip from Seminyak on Dec 20 (bags stay in the hotel).
 
 ---
 
-## 🗺️ The Two Itineraries to Choose From
+## 📱 The Web App
+A single, simple page:
+1. **Trip at a Glance:** nights, usable days, a day strip, where you sleep each night, India ⇄ Bali time difference (Bali is 2h 30m ahead) and both flights in both time zones.
+2. **Complete Master Itinerary:** one readable table (Day & Date · Time Window · Activity · Logistics). Place names link to Google Maps; each day ends with a pro tip and optional extras.
+3. **Before You Go:** visa, arrival card, levy, bookings, cash, health and packing checklist.
 
-### 🏝️ Option 2: The Island Explorer
-* **Route:** Seminyak (3N) ➔ Gili Trawangan (3N) ➔ Ubud (3N)
-* **Vibe:** High energy tropical island vibe, car-free sandy paths, wild sea turtle snorkeling, west-coast over-water sunset swings, fresh seafood night market, and ocean crossing.
-
-### 🤿 Option 3: Reef, Culture & Coast Loop
-* **Route:** Seminyak (3N) ➔ Amed (2N) ➔ Ubud (4N)
-* **Vibe:** 100% overland scenic road transit (zero monsoon boat cancellations!), black volcanic sand beaches, dramatic Mount Agung backdrop, world-class WWII USAT Liberty shipwreck diving/snorkeling directly off the beach, Tirta Gangga water palace, and an extra 4th night in Ubud with authentic Balinese cooking class.
-
----
-
-## 📱 Interactive Mobile App Features
-1. **Dating-App / Instagram Stories Style Swiping:**
-   * **Swipe Left / Right** to navigate through Day 1 to Day 10.
-   * **Stories Progress Dashes:** Tap the left 40% or right 60% of any photo to cycle through curated high-resolution photography for each destination.
-   * **Love This Day ❤️:** Save favorites locally.
-2. **Detailed Timed Schedule Drawer:**
-   * Tap **"📋 Full Schedule"** on any card to view the hour-by-hour breakdown and pro tips.
-3. **5 Friends Consensus Hub (Live Voting):**
-   * Edit/select each of the 5 friends' names.
-   * Cast a vote for Option 2 or Option 3 with an optional note/reason.
-   * View live percentage progress bars.
-   * **📲 1-Tap WhatsApp Share:** Copies an emoji-formatted summary ready to paste straight into your group chat.
-4. **Side-by-Side Comparison Matrix:**
-   * Instant comparison across 6 categories: Transit effort, Snorkeling type, Monsoon risk, Island atmosphere, Luggage friction, and Ubud immersion.
-5. **Desktop & Mobile Adaptability:**
-   * Opens in a sleek iPhone 16 Pro mockup frame on desktop (with a toggle for expanded view) and natively fills 100% of the screen on mobile devices.
+To change the plan, edit `data.js` (the page renders from it).
 
 ---
 

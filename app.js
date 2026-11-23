@@ -34,9 +34,11 @@
     return out;
   }
 
+  // "08:30 AM - 10:00 AM" → { start: "8:30 AM", end: "10:00 AM" }
+  const trimZero = (s) => (s || "").replace(/^0(\d:)/, "$1");
   function splitTime(t) {
     const [a, b] = t.split(" - ");
-    return { start: a, end: b || "" };
+    return { start: trimZero(a), end: trimZero(b) };
   }
 
   // Which trip day is "today" in Bali (falls back to Day 1)
@@ -154,20 +156,29 @@
   }
 
   function tableView() {
-    const bodies = TRIP.days.map((d) => d.rows.map(([t, act, log], i) => `
-      <tr${i === 0 ? ' class="first"' : ""}>
-        ${i === 0 ? `<th scope="rowgroup" rowspan="${d.rows.length}" class="c-day"><a href="#day-${d.day}">Day ${d.day}</a><span>${d.date}</span><small>${d.base}</small></th>` : ""}
-        <td class="c-time">${t.replace(" - ", "<br>")}</td>
-        <td class="c-act">${linkify(act)}</td>
-        <td class="c-log">${linkify(log)}</td>
-      </tr>`).join("")).map((rows) => `<tbody>${rows}</tbody>`).join("");
+    const bodies = TRIP.days.map((d) => {
+      return `<tbody>
+        <tr class="dayrow"><th colspan="3" scope="colgroup">
+          <a href="#day-${d.day}">Day ${d.day} · ${d.date}</a><span>🏨 ${d.base}</span>
+        </th></tr>
+        ${d.rows.map(([t, act, log]) => {
+          const { start, end } = splitTime(t);
+          return `<tr>
+            <td class="c-time"><b>${start}</b><span>${end}</span></td>
+            <td class="c-act">${linkify(act)}</td>
+            <td class="c-log">${linkify(log)}</td>
+          </tr>`;
+        }).join("")}
+      </tbody>`;
+    }).join("");
 
     view.innerHTML = `<div class="pad wide">
       <h1 class="h">Full itinerary</h1>
-      <p class="hint">Swipe sideways to see all columns. Tap a day to open it.</p>
-      <div class="full-wrap" tabindex="0" aria-label="Full itinerary table, scrolls sideways">
+      <p class="hint">All 10 days. Tap a day's heading to open it with photos.</p>
+      <div class="full-wrap">
         <table class="full">
-          <thead><tr><th class="c-day">Day</th><th class="c-time">Time</th><th class="c-act">Activity</th><th class="c-log">Logistics &amp; details</th></tr></thead>
+          <colgroup><col class="w-time"><col class="w-act"><col class="w-log"></colgroup>
+          <thead><tr><th>Time</th><th>Activity</th><th>Logistics &amp; details</th></tr></thead>
           ${bodies}
         </table>
       </div>

@@ -21,12 +21,19 @@ A simple, readable day-by-day itinerary page for a group of 5 friends travelling
 ---
 
 ## 📱 The Web App
-A single, simple page:
-1. **Trip at a Glance:** nights, usable days, a day strip, where you sleep each night, India ⇄ Bali time difference (Bali is 2h 30m ahead) and both flights in both time zones.
-2. **Complete Master Itinerary:** one readable table (Day & Date · Time Window · Activity · Logistics). Place names link to Google Maps; each day ends with a pro tip and optional extras.
-3. **Before You Go:** visa, arrival card, levy, bookings, cash, health and packing checklist.
+A phone-first app (works on desktop too). The ☰ menu is top right; the tab bar at the bottom has the main views:
+1. **Days:** one day at a time. Tap a date chip or swipe left/right to change day. Two modes:
+   * **📷 Photos & plan:** swipeable photos, places for the day (Google Maps links) and the timed plan.
+   * **📋 Table:** the same day as a Time / Activity & details table.
+   Each day ends with a 💡 pro tip and ➕ optional extras.
+2. **Table:** all 10 days in one table (Day · Time · Activity · Logistics). Scrolls sideways on phones.
+3. **Glance:** nights, usable days, where you sleep, live India ⇄ Bali clocks (Bali is 2h 30m ahead) and both flights in both time zones.
+4. **Checklist:** "Before you go" items you can tick off (saved on your phone).
+5. **Two-dive plan** (in the menu): how the Gili T Discover Scuba and the Tulamben wreck dive fit together.
 
-To change the plan, edit `data.js` (the page renders from it).
+Add it to your home screen (Share → Add to Home Screen on iPhone) and it opens like an app and works offline once loaded.
+
+To change the plan, edit `data.js` (the app renders from it).
 
 ---
 

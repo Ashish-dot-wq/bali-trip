@@ -33,6 +33,12 @@ const TRIP = {
   days: [
     {
       day: 1, date: "Fri, Dec 18", base: "Seminyak",
+      title: "Touchdown & Potato Head sunset",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=70", caption: "Welcome to Bali" },
+        { url: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=70", caption: "Golden hour on Seminyak beach" },
+        { url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=70", caption: "Sunset drinks by the sea" }
+      ],
       rows: [
         ["00:55 AM - 10:15 AM", "Flight: BLR to DPS on IndiGo <b>6E 1605</b>", "Non-stop flight (6 hours 50 minutes). PNR: <code>SFJ8RN</code>. Check-in baggage 20 kg and cabin baggage 7 kg included. Leave home on the night of <b>Thu, Dec 17</b>."],
         ["10:15 AM - 12:00 PM", "Arrival formalities at {{✈️ Ngurah Rai International Airport}}", "Clear immigration with e-VoA (B213), scan customs QR from All Indonesia Arrival Card, show Bali Tourist Levy voucher, and collect bags."],
@@ -46,6 +52,12 @@ const TRIP = {
     },
     {
       day: 2, date: "Sat, Dec 19", base: "Seminyak",
+      title: "Surf, boutiques & Ku De Ta",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=70", caption: "Beach day in Seminyak" },
+        { url: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=70", caption: "Cafe breakfast in Petitenget" },
+        { url: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=70", caption: "Sunset at Ku De Ta" }
+      ],
       rows: [
         ["08:30 AM - 10:00 AM", "Specialty cafe breakfast in Seminyak", "Artisanal coffee and breakfast bowls along Petitenget or Kayu Aya."],
         ["10:30 AM - 01:00 PM", "Beginner surf lesson at {{🏄 Seminyak Beach}}", "2-hour guided lesson with qualified local instructors covering board handling and wave catching, or beach lounger relaxation."],
@@ -58,6 +70,12 @@ const TRIP = {
     },
     {
       day: 3, date: "Sun, Dec 20", base: "Seminyak",
+      title: "Nusa Penida day trip",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1534131197842-bafa0b820f91?auto=format&fit=crop&w=900&q=70", caption: "Kelingking's T-Rex headland" },
+        { url: "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=900&q=70", caption: "Broken Beach sea arch" },
+        { url: "https://images.unsplash.com/photo-1578469550956-0e16b69c6a3d?auto=format&fit=crop&w=900&q=70", caption: "Nusa Penida cliffs" }
+      ],
       rows: [
         ["06:30 AM - 07:15 AM", "Private car: Seminyak to {{🚗 Sanur Port|Sanur Harbour Bali}}", "Early morning transfer (~35 to 45 minutes). Main luggage stays safely in Seminyak room; carry only a small daypack."],
         ["07:30 AM - 08:30 AM", "Fast boat: Sanur Port to Nusa Penida", "Speedboat crossing across the Badung Strait (~45 minutes). Take motion sickness tablets prior to boarding."],
@@ -74,6 +92,12 @@ const TRIP = {
     },
     {
       day: 4, date: "Mon, Dec 21", base: "Gili Trawangan",
+      title: "Fast boat to Gili T & sunset swings",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=70", caption: "Sunset swings on Gili T" },
+        { url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=900&q=70", caption: "Car-free island lanes by bike" },
+        { url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=70", caption: "Beanbags and sunset drinks" }
+      ],
       rows: [
         ["07:00 AM - 08:30 AM", "Private car: Seminyak to {{🚗 Padang Bai Harbour|Padang Bai Harbour Bali}}", "Early morning drive through east Bali (~1 hour 30 minutes) to catch the morning boat departure."],
         ["08:30 AM - 11:30 AM", "Fast catamaran: Padang Bai to {{🏝️ Gili Trawangan}}", "High-speed multi-engine catamaran across the Lombok Strait (~1 hour 30 minutes to 2 hours 30 minutes by operator). Morning departures offer calmer sea conditions."],
@@ -88,6 +112,12 @@ const TRIP = {
     },
     {
       day: 5, date: "Tue, Dec 22", base: "Gili Trawangan",
+      title: "Discover Scuba & Tuesday party",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=70", caption: "Green sea turtles at Turtle Point" },
+        { url: "https://images.unsplash.com/photo-1582967788606-a171c1080cb0?auto=format&fit=crop&w=900&q=70", caption: "Coral and clownfish on the reef" },
+        { url: "https://images.unsplash.com/photo-1512100356356-de1b84283e18?auto=format&fit=crop&w=900&q=70", caption: "West-coast sunset" }
+      ],
       rows: [
         ["08:30 AM - 10:00 AM", "PADI Discover Scuba: Theory & Gear Fitting", "Meet your instructor at a beachfront dive resort on Gili T. Safety briefing, breathing rules, and gear fitting."],
         ["10:00 AM - 11:30 AM", "PADI Discover Scuba: Pool Skills Training", "Dedicated training pool session practicing regulator clearing, breathing, and buoyancy control."],
@@ -104,6 +134,11 @@ const TRIP = {
     },
     {
       day: 6, date: "Wed, Dec 23", base: "Amed",
+      title: "Back to Bali, on to Amed",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?auto=format&fit=crop&w=900&q=70", caption: "Black sand and jukung boats in Amed" },
+        { url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=70", caption: "Mount Agung above the coast" }
+      ],
       rows: [
         ["07:30 AM - 08:30 AM", "Breakfast & check-out on Gili T", "Walk luggage to the harbour pier for the morning boat back to mainland Bali."],
         ["09:00 AM - 11:30 AM", "Fast boat: Gili Trawangan to {{🚗 Padang Bai Harbour|Padang Bai Harbour Bali}}", "Morning catamaran crossing back across the Lombok Strait (~1 hour 30 minutes to 2 hours 30 minutes). Sea-level surface transit carries zero decompression risk."],
@@ -118,6 +153,12 @@ const TRIP = {
     },
     {
       day: 7, date: "Thu, Dec 24", base: "Amed",
+      title: "USAT Liberty wreck & Christmas Eve",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1544551763-77ef2d0cfc6c?auto=format&fit=crop&w=900&q=70", caption: "The USAT Liberty wreck, Tulamben" },
+        { url: "https://images.unsplash.com/photo-1682687220063-4742bd7fd538?auto=format&fit=crop&w=900&q=70", caption: "Reef fish around the wreck" },
+        { url: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=900&q=70", caption: "Sunset over Jemeluk Bay" }
+      ],
       rows: [
         ["07:30 AM - 08:00 AM", "Transfer: Amed resort to Tulamben", "~30-minute drive (~13 km) along the coast to Tulamben."],
         ["08:00 AM - 10:30 AM", "USAT Liberty Wreck Guided Dive / Snorkel", "Explore the 120-metre WWII {{🤿 USAT Liberty Shipwreck|USAT Liberty Shipwreck Tulamben}}, which lies just 30 metres off the pebble shore. A guided repeat Discover Scuba dive to max 12 m (see the Two-Dive Plan below); non-divers snorkel the shallow end of the wreck."],
@@ -132,6 +173,11 @@ const TRIP = {
     },
     {
       day: 8, date: "Fri, Dec 25", base: "Ubud",
+      title: "Christmas: Tirta Gangga → Ubud",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=900&q=70", caption: "Stepping stones at Tirta Gangga" },
+        { url: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=70", caption: "East Bali rice terraces" }
+      ],
       rows: [
         ["08:30 AM - 10:00 AM", "Christmas morning breakfast by the sea", "Unhurried breakfast taking in the morning sea breeze and Mount Agung vistas."],
         ["10:00 AM - 11:30 AM", "Private car: Amed to {{🏛️ Tirta Gangga|Tirta Gangga Water Palace}}", "Drive through the foothills of Karangasem (~30 km, ~45 minutes)."],
@@ -147,6 +193,13 @@ const TRIP = {
     },
     {
       day: 9, date: "Sat, Dec 26", base: "Ubud",
+      title: "Monkeys, rice terraces & holy water",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1540573133985-87b6da6d54a9?auto=format&fit=crop&w=900&q=70", caption: "Sacred Monkey Forest" },
+        { url: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=70", caption: "Tegallalang Rice Terrace" },
+        { url: "https://images.unsplash.com/photo-1558005530-a7958896ec60?auto=format&fit=crop&w=900&q=70", caption: "Tirta Empul holy spring" },
+        { url: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=70", caption: "Balinese spa" }
+      ],
       rows: [
         ["09:00 AM - 10:30 AM", "Morning walk in {{🐒 Sacred Monkey Forest Sanctuary|Sacred Monkey Forest Sanctuary Ubud}}", "Walk under giant banyan trees among wild Balinese long-tailed macaques and moss-covered ancient temples. Opens ~9 AM."],
         ["11:00 AM - 01:00 PM", "Explore {{🌾 Tegallalang Rice Terrace|Tegallalang Rice Terrace}}", "Hike along the cascading emerald terraces and visit an organic plantation for coffee and tea tastings."],
@@ -160,6 +213,10 @@ const TRIP = {
     },
     {
       day: 10, date: "Sun, Dec 27", base: "Fly home",
+      title: "Fly home",
+      photos: [
+        { url: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=70", caption: "Goodbye, Bali" }
+      ],
       rows: [
         ["06:15 AM - 07:00 AM", "Early breakfast and hotel check-out", "Quick morning breakfast and hotel departure in Ubud."],
         ["07:00 AM - 08:15 AM", "Private car: Ubud to {{✈️ Ngurah Rai International Airport}}", "Direct south-bound drive (~40 km, ~55 minutes to 1 hour 15 minutes in Sunday morning traffic)."],

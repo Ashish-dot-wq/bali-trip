@@ -103,7 +103,7 @@ const TRIP = {
         ["08:30 AM - 11:30 AM", "Fast catamaran: Padang Bai to {{🏝️ Gili Trawangan}}", "High-speed multi-engine catamaran across the Lombok Strait (~1 hour 30 minutes to 2 hours 30 minutes by operator). Morning departures offer calmer sea conditions."],
         ["11:30 AM - 01:00 PM", "Arrival & hotel check-in on Gili T", "Gili Trawangan has zero motorized vehicles. Walk or transfer luggage via bicycle or traditional horse cart (cidomo)."],
         ["01:00 PM - 02:30 PM", "Beachfront seafood lunch", "Fresh grilled fish lunch with feet in the sand along the east beach strip."],
-        ["03:00 PM - 06:00 PM", "Island perimeter bicycle tour", "Rent a cruiser bicycle (~50,000 IDR / ~300 INR) to ride the flat 7 km perimeter of the island."],
+        ["03:00 PM - 06:00 PM", "Island perimeter bicycle tour", "Rent a cruiser bicycle (~50,000 IDR / ~₹270) to ride the flat 7 km perimeter of the island."],
         ["06:00 PM - 07:30 PM", "Sunset swings and cocktails", "Watch the sun dip behind Bali's Mount Agung from the beach swings on the west coast."],
         ["07:30 PM - 09:30 PM", "Seafood dinner at {{🐟 Gili T Night Market|Gili Trawangan Night Market}}", "Pick fresh snapper, prawns, and chicken satay grilled over coconut husks on the spot."]
       ],
@@ -226,6 +226,78 @@ const TRIP = {
       tip: "Weigh bags the night before: 20 kg check-in, 7 kg cabin. The 06:15 AM breakfast is early, so ask the hotel the evening before for a packed breakfast box.",
       extras: null
     }
+  ],
+
+  // Party guide (menu → Party guide). Venue nights change often; check locally.
+  party: {
+    intro: "Where the nights are, stop by stop. Plan around the early mornings: the Nusa Penida boat (Dec 20), the Gili T dive (Dec 22), the Liberty dive (Dec 24) and the flight home (Dec 27).",
+    stops: [
+      {
+        place: "Seminyak", when: "Dec 18–20 · 3 nights", vibe: "Beach clubs at sunset, then clubs that run till ~3 AM.",
+        best: "Best night out: <b>Fri, Dec 18</b> (if the red-eye hasn't flattened you). Keep <b>Dec 19</b> early: the Nusa Penida car leaves at 6:30 AM.",
+        venues: [
+          { name: "Potato Head Beach Club", q: "Potato Head Beach Club Seminyak", tag: "Sunset", text: "Daybeds, oceanfront pool, DJs. Minimum spend on daybeds; book ahead in Christmas week." },
+          { name: "Ku De Ta", q: "Ku De Ta Seminyak", tag: "Sunset", text: "Classic beachfront sunset spot with relaxed music and cocktails." },
+          { name: "La Favela", q: "La Favela Seminyak", tag: "Late (till ~3 AM)", text: "Seminyak's best-known late club: jungle-style rooms, disco and hip-hop." },
+          { name: "Motel Mexicola", q: "Motel Mexicola Seminyak", tag: "Dinner → party", text: "Mexican cantina where dinner turns into dancing on tables." },
+          { name: "Finns Beach Club", q: "Finns Beach Club Canggu", tag: "Day & sunset", text: "Huge beach club in Canggu, ~15–20 min away. Pools, bars, festival feel." }
+        ]
+      },
+      {
+        place: "Gili Trawangan", when: "Dec 21–22 · 2 nights", vibe: "Car-free party island. One bar usually hosts the main party each night, and everyone ends up there.",
+        best: "<b>Mon, Dec 21:</b> keep it light, because the Discover Scuba session starts at 8:30 AM (no diving hungover). <b>Tue, Dec 22</b> is your big night after the dive.",
+        venues: [
+          { name: "Sama Sama Reggae Bar", q: "Sama Sama Reggae Bar Gili Trawangan", tag: "Most nights", text: "Live reggae band on the sand. A safe bet any night." },
+          { name: "Jiggy Bar", q: "Jiggy Bar Gili Trawangan", tag: "Often Tuesday", text: "Some guides list it as the Tuesday party venue. Confirm on the day." },
+          { name: "Blue Marlin", q: "Blue Marlin Gili Trawangan", tag: "Often Monday", text: "Long-running Monday night party by the sea." },
+          { name: "Tir Na Nog", q: "Tir Na Nog Gili Trawangan", tag: "Often Wednesday", text: "Big Irish pub with dance floors; also a pub-crawl meeting point." },
+          { name: "Gili T Pub Crawl", q: "Gili Trawangan pub crawl", tag: "Some nights", text: "Guided bar crawl, reportedly on Tuesdays among other nights. Easy way to meet people." }
+        ],
+        note: "The weekly rotation changes. Ask your hotel or look for posters on the main strip that afternoon."
+      },
+      {
+        place: "Amed", when: "Dec 23–24 · 2 nights", vibe: "Not a party place: sunset drinks, beach warungs, acoustic music, very dark skies for stargazing.",
+        best: "<b>Wed, Dec 23:</b> early night (Liberty dive pickup 7:30 AM). <b>Thu, Dec 24</b> is Christmas Eve: dinner and drinks by the sea.",
+        venues: [
+          { name: "Jemeluk Bay viewpoint", q: "Jemeluk Bay viewpoint Amed", tag: "Sunset", text: "Hilltop lookout over the bay and Mount Agung." },
+          { name: "Beachfront warungs", q: "Amed beach restaurants", tag: "Evenings", text: "Grilled fish, cold Bintang, occasional live acoustic sets. Most close by ~10 PM." }
+        ]
+      },
+      {
+        place: "Ubud", when: "Dec 25–26 · 2 nights", vibe: "Live music bars, cocktail lounges and one proper late spot.",
+        best: "<b>Fri, Dec 25:</b> Christmas dinner, then live music. <b>Sat, Dec 26:</b> farewell night; keep it sensible, you leave the hotel at 7 AM.",
+        venues: [
+          { name: "CP Lounge", q: "CP Lounge Ubud", tag: "Late", text: "Ubud's best-known late-night spot: live bands, dance floor, pool tables." },
+          { name: "Laughing Buddha Bar", q: "Laughing Buddha Bar Ubud", tag: "Live music", text: "Small bar with live jazz/blues most nights." },
+          { name: "No Más", q: "No Mas Bar Ubud", tag: "Cocktails", text: "Stylish cocktail bar with DJs and a younger crowd." }
+        ]
+      }
+    ],
+    safety: [
+      "<b>Drink from sealed bottles or reputable bars.</b> Illegal or cheap arak (local spirit) has caused methanol poisonings in Bali and Lombok. Be wary of very cheap cocktails and \"buckets\".",
+      "<b>No drugs, including the \"magic mushroom\" shakes advertised on Gili T.</b> Indonesian drug laws are extremely strict, with long prison sentences.",
+      "<b>Stick together</b> and agree a meeting point. Gili T has no street lights in parts; carry a phone torch.",
+      "<b>No scooters after drinking</b> (and none at all without an International Driving Permit).",
+      "<b>Hydrate</b> before dive days. Alcohol and diving don't mix."
+    ]
+  },
+
+  // FAQs (menu → FAQs)
+  faq: [
+    { q: "What's the time difference with India?", a: "Bali is <b>2 hours 30 minutes ahead</b> of India (WITA, UTC+8 vs IST, UTC+5:30). When it's 9 AM in Bali it's 6:30 AM at home." },
+    { q: "How many days do we actually get?", a: "<b>9 nights and about 8½ usable days:</b> the afternoon of Dec 18, eight full days (Dec 19–26), and Dec 27 is just the trip to the airport." },
+    { q: "What do we need to enter Indonesia?", a: "Passport valid 6+ months, an <b>e-VoA</b> (IDR 500,000, apply online), the <b>All Indonesia Arrival Card</b> (within 72 h before landing) and the <b>Bali Tourist Levy</b> (IDR 150,000). See the checklist." },
+    { q: "How much is the rupiah worth?", a: "Roughly <b>₹1 ≈ IDR 185–190</b>. Quick maths: IDR 100,000 ≈ ₹530, IDR 50,000 ≈ ₹265. Check the rate before you go." },
+    { q: "Cash or card?", a: "Cards work in most Seminyak and Ubud restaurants and shops. Carry <b>cash for Nusa Penida, Gili T and Amed</b>, where ATMs are few. Don't count on UPI; a forex card plus some cash is safest." },
+    { q: "Do restaurants add charges?", a: "Often yes: many add tax and service on top of menu prices (look for \"++\" on the menu). Tipping is not expected but rounding up is appreciated." },
+    { q: "Phone and internet?", a: "Get an <b>eSIM</b> before flying or a Telkomsel SIM at the airport. Coverage is good in Seminyak and Ubud, slower on Gili T and in Amed. This app works offline once opened." },
+    { q: "How do we get around?", a: "Pre-booked private drivers for every transfer. Grab and Gojek work in Seminyak and Ubud. On Gili T you walk, cycle or take a horse cart; there are no cars or scooters." },
+    { q: "Can we drink the tap water?", a: "<b>No.</b> Drink bottled or filtered water and use it to brush your teeth. Ice in established restaurants and bars is generally factory-made." },
+    { q: "What do we wear to temples?", a: "Shoulders covered and a <b>sarong with a sash</b> (rentable at Tirta Empul). If you go into the purification pools, bring a change of clothes and a towel." },
+    { q: "Do we need a diving certificate?", a: "No. The Gili T <b>Discover Scuba</b> session is for beginners: everyone fills in a medical form first. See the Two-dive plan for the Tulamben dive." },
+    { q: "What if a boat is cancelled?", a: "December seas can be rough. Operators usually move you to the next sailing. Keep the operator's WhatsApp handy, tell the next hotel, and have travel insurance that covers delays." },
+    { q: "What's the weather like?", a: "Hot and humid, about <b>27–31 °C</b>, with short heavy showers, usually in the afternoon. Pack a light rain jacket." },
+    { q: "Emergency numbers?", a: "<b>112</b> works from any phone in Indonesia. Save your hotel's number and the driver's WhatsApp for each stop." }
   ],
 
   checklist: [

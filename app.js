@@ -52,7 +52,7 @@
   }
 
   // ---------- views ----------
-  const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go" };
+  const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go", party: "Party guide", faq: "FAQs" };
 
   function chipBar(active) {
     return `<div class="chips" role="tablist" aria-label="Choose a day">${TRIP.days.map((d) => {
@@ -242,13 +242,47 @@
     render();
   }
 
+  function partyView() {
+    const p = TRIP.party;
+    view.innerHTML = `<div class="pad">
+      <h1 class="h">Party guide</h1>
+      <p class="intro">${p.intro}</p>
+      ${p.stops.map((st) => `
+        <section class="pg">
+          <div class="pg-head"><h2>${st.place}</h2><span>${st.when}</span></div>
+          <p class="pg-vibe">${st.vibe}</p>
+          <div class="pg-best">${st.best}</div>
+          <ul class="venues">${st.venues.map((v) => `
+            <li>
+              <div class="v-top"><a class="place" href="${mapUrl(v.name, v.q)}" target="_blank" rel="noopener">${v.name}</a><span class="tag">${v.tag}</span></div>
+              <p>${v.text}</p>
+            </li>`).join("")}</ul>
+          ${st.note ? `<p class="fine">${st.note}</p>` : ""}
+        </section>`).join("")}
+      <h2 class="h2">Stay safe</h2>
+      <ul class="safety">${p.safety.map((x) => `<li>${x}</li>`).join("")}</ul>
+    </div>`;
+  }
+
+  function faqView() {
+    view.innerHTML = `<div class="pad">
+      <h1 class="h">FAQs</h1>
+      <div class="faq">${TRIP.faq.map((f) => `
+        <details>
+          <summary>${f.q}</summary>
+          <p>${f.a}</p>
+        </details>`).join("")}</div>
+      <p class="fine">Fees, rates and rules change. Check official sources before paying.</p>
+    </div>`;
+  }
+
   // ---------- router ----------
   function route() {
     const h = location.hash.replace("#", "");
     let name = "day", n = null;
     const m = /^day-(\d+)$/.exec(h);
     if (m) { n = Math.min(Math.max(Number(m[1]), 1), N); }
-    else if (["table", "glance", "dive", "checklist"].includes(h)) name = h;
+    else if (["table", "glance", "dive", "checklist", "party", "faq"].includes(h)) name = h;
     else if (h === "day" || h === "") n = store.get("bali2026-day", todayIndex());
     else n = 1;
 
@@ -256,6 +290,8 @@
     else if (name === "table") tableView();
     else if (name === "glance") glanceView();
     else if (name === "dive") diveView();
+    else if (name === "party") partyView();
+    else if (name === "faq") faqView();
     else checklistView();
 
     $("#viewTitle").textContent = name === "day" ? `Day ${n} · ${TRIP.days[n - 1].base}` : TITLES[name];
@@ -318,6 +354,23 @@
     const t = $("#toast"); t.textContent = msg; t.classList.add("show");
     setTimeout(() => t.classList.remove("show"), 2000);
   }
+
+  // ---------- light / dark theme (dark by default) ----------
+  const themeBtn = $("#themeBtn");
+  function applyTheme(t) {
+    document.documentElement.dataset.theme = t;
+    themeBtn.setAttribute("aria-checked", String(t === "dark"));
+    $("#themeLabel").textContent = t === "dark" ? "Dark mode" : "Light mode";
+    $("#themeIcon").textContent = t === "dark" ? "🌙" : "☀️";
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", t === "dark" ? "#0e0f11" : "#ffffff");
+  }
+  applyTheme(store.get("bali2026-theme", "dark"));
+  themeBtn.addEventListener("click", () => {
+    const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+    store.set("bali2026-theme", next);
+    applyTheme(next);
+  });
 
   // ---------- live clocks (glance view) ----------
   function tick() {

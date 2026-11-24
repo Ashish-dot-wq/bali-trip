@@ -38,7 +38,7 @@ const BMKG = [
 const PLACES = {
   seminyak: /\b(seminyak|kuta|canggu|legian|petitenget|badung)\b/i,
   penida: /\b(nusa penida|kelingking|nusa lembongan|sanur)\b/i,
-  gili: /\b(gili|trawangan)\b/i,
+  gili: /\b(gilis?|trawangan)\b/i,
   lombok: /\b(lombok|rinjani|mataram|bangsal)\b/i,
   amed: /\b(amed (beach|bali|village)|tulamben|karangasem|mount agung|gunung agung|padang ?bai|amlapura|jemeluk)\b/i,
   ubud: /\b(ubud|gianyar|tegallalang)\b/i,
@@ -46,7 +46,7 @@ const PLACES = {
 };
 const ALERT = /\b(earthquake|quake|tremor|tsunami|erupt\w*|volcan\w*|ash cloud|flood\w*|landslide\w*|evacuat\w*|warning|state of emergency|emergency|closed|closure|cancel\w*|suspend\w*|strike|protest|riot|outage|blackout|water crisis|without water|disrupt\w*|shortage|delay\w*|outbreak|rabies|dengue|methanol|poison\w*|drown\w*|rip current|storm|cyclone|high waves|extreme weather|missing)\b/i;
 // Must also be about one of our areas to count as an alert
-const AREA = /\b(bali|lombok|gili|nusa penida|seminyak|kuta|canggu|ubud|amed (?:beach|bali|village)|tulamben|karangasem|agung|padang ?bai|sanur|denpasar|ngurah rai|rinjani)\b/i;
+const AREA = /\b(bali|lombok|gilis?|nusa penida|seminyak|kuta|canggu|ubud|amed (?:beach|bali|village)|tulamben|karangasem|agung|padang ?bai|sanur|denpasar|ngurah rai|rinjani)\b/i;
 
 // Same word, different topic (e.g. Odisha's "Bali Yatra" festival, brands and people called Bali)
 const NOISE = /\b(odisha|cuttack|kalinga|paradip|bali ?(yatra|jatra)|bali lawal|bali curls|amed (sk|sportif|spor)|rizespor|diyarbak\w*|kurdistan|amed\.du)\b/i;

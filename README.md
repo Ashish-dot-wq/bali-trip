@@ -33,7 +33,7 @@ A phone-first app (works on desktop too). The ☰ menu is top right; the tab bar
 7. **Packing list, Party guide, Driving permit, FAQs** (menu).
 
 ### How the news feed works
-A GitHub Action (`.github/workflows/news.yml`) runs `scripts/fetch-news.mjs` every 30 minutes. It pulls Google News searches for each stop, The Bali Sun, and BMKG earthquake data for Bali/Lombok, tags stories by place, flags alerts (quakes, volcano, floods, closures, cancellations…), and publishes `news.json` to the `news-feed` branch. The app reads it from raw.githubusercontent.com and keeps the last copy for offline use. Run it by hand from the Actions tab → "Local news feed" → Run workflow.
+A GitHub Action (`.github/workflows/news.yml`) runs `scripts/fetch-news.mjs` about every 30 minutes: each run refreshes the feed, waits 30 minutes and starts the next run itself (GitHub's cron proved unreliable here and is kept only as a backup). The loop stops after 28 Dec 2026; to stop it sooner, disable the workflow in the Actions tab. It pulls Google News searches for each stop, The Bali Sun, and BMKG earthquake data for Bali/Lombok, tags stories by place, flags alerts (quakes, volcano, floods, closures, cancellations…), and publishes `news.json` to the `news-feed` branch. The app reads it from raw.githubusercontent.com and keeps the last copy for offline use. Run it by hand from the Actions tab → "Local news feed" → Run workflow.
 
 Add it to your home screen (Share → Add to Home Screen on iPhone) and it opens like an app and works offline once loaded.
 

@@ -1,13 +1,19 @@
-# Refreshes the app's Local news feed every 30 minutes.
-# (GitHub's scheduler can start runs late or skip them, so a short interval keeps the feed fresh.)
+# Refreshes the app's Local news feed about every 30 minutes.
+#
+# How it keeps running: GitHub's cron scheduler proved unreliable for this repo (it never fired),
+# so each run refreshes the feed, waits 30 minutes, then starts the next run itself
+# (workflow_dispatch is allowed with the built-in GITHUB_TOKEN). The cron schedule stays as a
+# backup that can restart the loop if it ever breaks. Runs queue (never overlap), so there is
+# only ever one loop. The loop stops by itself after the trip.
+#
 # Builds news.json with scripts/fetch-news.mjs and publishes it to the `news-feed` branch,
-# which the app reads from raw.githubusercontent.com (so the Pages branch isn't touched).
+# which the app reads (so the Pages branch isn't touched).
 name: Local news feed
 
 on:
   schedule:
-    - cron: "17,47 * * * *"  # twice an hour, off the busy :00 mark
-  workflow_dispatch:          # "Run workflow" button in the Actions tab
+    - cron: "17,47 * * * *"  # backup only; GitHub may run these late or not at all
+  workflow_dispatch:          # also the "Run workflow" button in the Actions tab
   push:
     branches: [claude/wizardly-feynman-2ugicp]
     paths:
@@ -15,11 +21,17 @@ on:
       - .github/workflows/news.yml
 
 permissions:
-  contents: write
+  contents: write   # publish news.json to the news-feed branch
+  actions: write    # start the next run
 
+# One run at a time; a newer queued run replaces an older queued one, so loops never multiply.
 concurrency:
   group: news-feed
-  cancel-in-progress: true
+  cancel-in-progress: false
+
+env:
+  LOOP_UNTIL: "20261228"   # stop scheduling new runs after this date (UTC, YYYYMMDD)
+  WAIT_MINUTES: "30"
 
 jobs:
   refresh:
@@ -49,3 +61,26 @@ jobs:
           git add news.json
           git commit -qm "Update local news feed"
           git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" news-feed
+
+  next-run:
+    # Runs even if the refresh failed (so one bad run doesn't end the loop), but not if cancelled.
+    needs: refresh
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Wait, then start the next refresh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "$(date -u +%Y%m%d)" -gt "$LOOP_UNTIL" ]; then
+            echo "Trip is over; not scheduling more runs."
+            exit 0
+          fi
+          sleep $(( WAIT_MINUTES * 60 ))
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/news.yml/dispatches" \
+            -d "{\"ref\":\"${{ github.ref_name }}\"}"
+          echo "Next refresh started."

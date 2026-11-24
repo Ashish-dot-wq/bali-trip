@@ -24,7 +24,7 @@ const FEEDS = [
   { id: "seminyak", url: gnews("Seminyak OR Kuta OR Canggu OR Legian when:7d"), place: "seminyak" },
   { id: "penida", url: gnews("\"Nusa Penida\" OR Sanur when:10d"), place: "penida" },
   { id: "gili", url: gnews("\"Gili Trawangan\" OR \"Gili Islands\" OR \"Gili Air\" when:10d"), place: "gili" },
-  { id: "amed", url: gnews("Amed OR Tulamben OR Karangasem OR \"Padang Bai\" when:14d"), place: "amed" },
+  { id: "amed", url: gnews("\"Amed Bali\" OR Tulamben OR Karangasem OR \"Padang Bai\" OR \"Mount Agung\" when:14d"), place: "amed" },
   { id: "ubud", url: gnews("Ubud when:7d"), place: "ubud" },
   { id: "airport", url: gnews("\"Ngurah Rai\" OR \"Bali airport\" when:7d"), place: "airport" },
   { id: "boats", url: gnews("\"fast boat\" (Bali OR Gili OR Lombok) when:14d") },
@@ -40,16 +40,16 @@ const PLACES = {
   penida: /\b(nusa penida|kelingking|nusa lembongan|sanur)\b/i,
   gili: /\b(gili|trawangan)\b/i,
   lombok: /\b(lombok|rinjani|mataram|bangsal)\b/i,
-  amed: /\b(amed|tulamben|karangasem|mount agung|gunung agung|padang ?bai|amlapura)\b/i,
+  amed: /\b(amed (beach|bali|village)|tulamben|karangasem|mount agung|gunung agung|padang ?bai|amlapura|jemeluk)\b/i,
   ubud: /\b(ubud|gianyar|tegallalang)\b/i,
   airport: /\b(ngurah rai|bali airport|denpasar airport|i gusti ngurah)\b/i
 };
 const ALERT = /\b(earthquake|quake|tremor|tsunami|erupt\w*|volcan\w*|ash cloud|flood\w*|landslide\w*|evacuat\w*|warning|state of emergency|emergency|closed|closure|cancel\w*|suspend\w*|strike|protest|riot|outage|blackout|water crisis|without water|disrupt\w*|shortage|delay\w*|outbreak|rabies|dengue|methanol|poison\w*|drown\w*|rip current|storm|cyclone|high waves|extreme weather|missing)\b/i;
 // Must also be about one of our areas to count as an alert
-const AREA = /\b(bali|lombok|gili|nusa penida|seminyak|kuta|canggu|ubud|amed|tulamben|karangasem|agung|padang ?bai|sanur|denpasar|ngurah rai|rinjani)\b/i;
+const AREA = /\b(bali|lombok|gili|nusa penida|seminyak|kuta|canggu|ubud|amed (?:beach|bali|village)|tulamben|karangasem|agung|padang ?bai|sanur|denpasar|ngurah rai|rinjani)\b/i;
 
 // Same word, different topic (e.g. Odisha's "Bali Yatra" festival, brands and people called Bali)
-const NOISE = /\b(odisha|cuttack|kalinga|paradip|bali ?(yatra|jatra)|bali lawal|bali curls)\b/i;
+const NOISE = /\b(odisha|cuttack|kalinga|paradip|bali ?(yatra|jatra)|bali lawal|bali curls|amed (sk|sportif|spor)|rizespor|diyarbak\w*|kurdistan|amed\.du)\b/i;
 
 const UA = { "User-Agent": "Mozilla/5.0 (compatible; trip-news-bot/1.0)" };
 
@@ -127,12 +127,13 @@ async function main() {
       if (Date.parse(it.published) < cutoff) continue;
       const text = isGoogle ? it.title : it.text;
       if (NOISE.test(text)) continue;
-      // General feeds must actually be about our area (in the headline)
-      if (!feed.place && !AREA.test(text)) continue;
+      // The headline itself must be about our area (search engines match loosely)
       const places = Object.entries(PLACES).filter(([, re]) => re.test(text)).map(([k]) => k);
-      if (feed.place && !places.includes(feed.place)) places.push(feed.place);
-      const alert = ALERT.test(text) && (AREA.test(text) || !!feed.place);
-      items.push({ title: it.title, link: it.link, source: it.source, published: it.published, places, alert, kind: "news" });
+      if (!places.length && !AREA.test(text)) continue;
+      const alert = ALERT.test(text);
+      const natural = /\b(erupt\w*|volcan\w*|earthquake|quake|tsunami)\b/i.test(text);
+      items.push({ title: it.title, link: it.link, source: it.source, published: it.published, places, alert, kind: "news",
+        ...(alert && natural ? { detail: "News report: check BMKG / MAGMA for the current official status" } : {}) });
       kept++;
     }
     feedStats[feed.id] = kept;

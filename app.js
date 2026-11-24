@@ -88,7 +88,18 @@
   }
 
   // ---------- local news (built every 2 h by .github/workflows/news.yml) ----------
+  // Primary: GitHub API (cached ~60 s). Fallback: raw file (cached ~5 min; ignores ?t= cache-busting).
+  const NEWS_API = "https://api.github.com/repos/Ashish-dot-wq/bali-trip/contents/news.json?ref=news-feed";
   const NEWS_URL = "https://raw.githubusercontent.com/Ashish-dot-wq/bali-trip/news-feed/news.json";
+  async function fetchFeed(force) {
+    try {
+      const r = await fetch(NEWS_API, { headers: { Accept: "application/vnd.github.raw+json" }, cache: force ? "no-store" : "no-cache" });
+      if (r.ok) return await r.json();
+    } catch (e) { /* fall through to raw */ }
+    const r = await fetch(NEWS_URL, { cache: force ? "no-store" : "no-cache" });
+    if (!r.ok) throw new Error(r.status);
+    return r.json();
+  }
   const PLACE_LABEL = { seminyak: "Seminyak", penida: "Nusa Penida", gili: "Gili T", lombok: "Lombok", amed: "Amed", ubud: "Ubud", airport: "Airport" };
   const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? u : "#");
@@ -101,18 +112,18 @@
     const d = Math.round(h / 24); return `${d} day${d > 1 ? "s" : ""} ago`;
   }
   let news = store.get("bali2026-news", null); // { data, fetchedAt }
+  let newsTried = false;
   async function loadNews(force) {
     if (!force && news && Date.now() - news.fetchedAt < 15 * 60000) return news;
     try {
-      const res = await fetch(NEWS_URL + (force ? `?t=${Date.now()}` : ""), { cache: force ? "no-store" : "default" });
-      if (!res.ok) throw new Error(res.status);
-      const data = await res.json();
+      const data = await fetchFeed(force);
       if (!data || !Array.isArray(data.items)) throw new Error("bad feed");
       news = { data, fetchedAt: Date.now() };
       store.set("bali2026-news", news);
     } catch (e) {
-      if (force) toast(news ? "Couldn't refresh. Showing saved news." : "News isn't available yet.");
+      if (force) toast(news ? "Couldn't refresh. Showing saved news." : "Couldn't reach the news feed.");
     }
+    newsTried = true;
     return news;
   }
 
@@ -447,7 +458,7 @@
       view.innerHTML = `<div class="pad">
         <div class="news-head"><h1 class="h">Local news</h1>
           <button type="button" class="btn sm" id="newsRefresh">↻ Refresh</button></div>
-        <p class="fine news-meta">${d ? `Updated ${ago(d.updated)}${d.stale ? " (sources unreachable, showing last good copy)" : ""} · refreshes every 30 min` : "Loading…"}</p>
+        <p class="fine news-meta">${d ? `Updated ${ago(d.updated)}${d.stale ? " (sources unreachable, showing last good copy)" : ""} · refreshes every 30 min` : newsTried ? "Couldn't reach the news feed. Check your connection, then tap Refresh." : "Loading…"}</p>
         ${d && Date.now() - Date.parse(d.updated) > 3 * 3600000 ? `<div class="warn">⏳ The news feed is running late (GitHub's scheduler hasn't refreshed it for a while). Tap Refresh in a bit; for anything urgent, check BMKG/MAGMA below.</div>` : ""}
         <div class="filters" role="group" aria-label="Filter news">${FILTERS.map(([k, l]) =>
           `<button type="button" data-f="${k}" aria-pressed="${k === filter}">${l}</button>`).join("")}</div>
@@ -627,12 +638,25 @@
   setInterval(tick, 15000);
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 24 Nov, 10:59 UTC";
+  const BUILD = "Updated 24 Nov, 11:06 UTC";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support ----------
   if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
-    navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
+    // Pick up new versions of the app: check for an update whenever the app comes back to the foreground,
+    // and reload once when the new version takes over (not on the very first install).
+    let hadController = !!navigator.serviceWorker.controller, reloading = false;
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      if (!hadController) { hadController = true; return; }
+      if (reloading) return;
+      reloading = true;
+      location.reload();
+    });
+    navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).then((reg) => {
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") reg.update().catch(() => {});
+      });
+    }).catch(() => {});
   }
 
   route();

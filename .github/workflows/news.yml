@@ -1,7 +1,7 @@
-# Refreshes the app's Local news feed about every 30 minutes.
+# Refreshes the app's Local news feed about every 2 hours.
 #
 # How it keeps running: GitHub's cron scheduler proved unreliable for this repo (it never fired),
-# so each run refreshes the feed, waits 30 minutes, then starts the next run itself
+# so each run refreshes the feed, waits 2 hours, then starts the next run itself
 # (workflow_dispatch is allowed with the built-in GITHUB_TOKEN). The cron schedule stays as a
 # backup that can restart the loop if it ever breaks. Runs queue (never overlap), so there is
 # only ever one loop. The loop stops by itself after the trip.
@@ -12,7 +12,7 @@ name: Local news feed
 
 on:
   schedule:
-    - cron: "17,47 * * * *"  # backup only; GitHub may run these late or not at all
+    - cron: "23 */6 * * *"   # backup only (restarts the loop if it ever breaks); GitHub may run it late or not at all
   workflow_dispatch:          # also the "Run workflow" button in the Actions tab
   push:
     branches: [claude/wizardly-feynman-2ugicp]
@@ -31,7 +31,7 @@ concurrency:
 
 env:
   LOOP_UNTIL: "20261228"   # stop scheduling new runs after this date (UTC, YYYYMMDD)
-  WAIT_MINUTES: "30"
+  WAIT_MINUTES: "120"
 
 jobs:
   refresh:
@@ -67,7 +67,7 @@ jobs:
     needs: refresh
     if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 135
     steps:
       - name: Wait, then start the next refresh
         env:

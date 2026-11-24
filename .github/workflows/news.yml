@@ -1,11 +1,12 @@
-# Refreshes the app's Local news feed every 2 hours.
+# Refreshes the app's Local news feed every 30 minutes.
+# (GitHub's scheduler can start runs late or skip them, so a short interval keeps the feed fresh.)
 # Builds news.json with scripts/fetch-news.mjs and publishes it to the `news-feed` branch,
 # which the app reads from raw.githubusercontent.com (so the Pages branch isn't touched).
 name: Local news feed
 
 on:
   schedule:
-    - cron: "23 */2 * * *"   # every 2 hours (GitHub may start it a few minutes late)
+    - cron: "17,47 * * * *"  # twice an hour, off the busy :00 mark
   workflow_dispatch:          # "Run workflow" button in the Actions tab
   push:
     branches: [claude/wizardly-feynman-2ugicp]

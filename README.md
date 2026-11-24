@@ -29,11 +29,11 @@ A phone-first app (works on desktop too). The ☰ menu is top right; the tab bar
 3. **Glance:** nights, usable days, where you sleep, live India ⇄ Bali clocks (Bali is 2h 30m ahead) and both flights in both time zones.
 4. **Checklist:** "Before you go" items you can tick off (saved on your phone).
 5. **Two-dive plan** (in the menu): how the Gili T Discover Scuba and the Tulamben wreck dive fit together.
-6. **Local news & alerts** (menu, plus a headline strip on the Days screen): recent news and alerts for each stop, refreshed every 2 hours.
+6. **Local news & alerts** (menu, plus a headline strip on the Days screen): recent news and alerts for each stop, refreshed every 30 minutes.
 7. **Packing list, Party guide, Driving permit, FAQs** (menu).
 
 ### How the news feed works
-A GitHub Action (`.github/workflows/news.yml`) runs `scripts/fetch-news.mjs` every 2 hours. It pulls Google News searches for each stop, The Bali Sun, and BMKG earthquake data for Bali/Lombok, tags stories by place, flags alerts (quakes, volcano, floods, closures, cancellations…), and publishes `news.json` to the `news-feed` branch. The app reads it from raw.githubusercontent.com and keeps the last copy for offline use. Run it by hand from the Actions tab → "Local news feed" → Run workflow.
+A GitHub Action (`.github/workflows/news.yml`) runs `scripts/fetch-news.mjs` every 30 minutes. It pulls Google News searches for each stop, The Bali Sun, and BMKG earthquake data for Bali/Lombok, tags stories by place, flags alerts (quakes, volcano, floods, closures, cancellations…), and publishes `news.json` to the `news-feed` branch. The app reads it from raw.githubusercontent.com and keeps the last copy for offline use. Run it by hand from the Actions tab → "Local news feed" → Run workflow.
 
 Add it to your home screen (Share → Add to Home Screen on iPhone) and it opens like an app and works offline once loaded.
 

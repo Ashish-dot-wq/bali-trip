@@ -102,7 +102,7 @@
   }
   let news = store.get("bali2026-news", null); // { data, fetchedAt }
   async function loadNews(force) {
-    if (!force && news && Date.now() - news.fetchedAt < 30 * 60000) return news;
+    if (!force && news && Date.now() - news.fetchedAt < 15 * 60000) return news;
     try {
       const res = await fetch(NEWS_URL + (force ? `?t=${Date.now()}` : ""), { cache: force ? "no-store" : "default" });
       if (!res.ok) throw new Error(res.status);
@@ -447,10 +447,11 @@
       view.innerHTML = `<div class="pad">
         <div class="news-head"><h1 class="h">Local news</h1>
           <button type="button" class="btn sm" id="newsRefresh">↻ Refresh</button></div>
-        <p class="fine news-meta">${d ? `Updated ${ago(d.updated)}${d.stale ? " (sources unreachable, showing last good copy)" : ""} · refreshes every 2 hours` : "Loading…"}</p>
+        <p class="fine news-meta">${d ? `Updated ${ago(d.updated)}${d.stale ? " (sources unreachable, showing last good copy)" : ""} · refreshes every 30 min` : "Loading…"}</p>
+        ${d && Date.now() - Date.parse(d.updated) > 3 * 3600000 ? `<div class="warn">⏳ The news feed is running late (GitHub's scheduler hasn't refreshed it for a while). Tap Refresh in a bit; for anything urgent, check BMKG/MAGMA below.</div>` : ""}
         <div class="filters" role="group" aria-label="Filter news">${FILTERS.map(([k, l]) =>
           `<button type="button" data-f="${k}" aria-pressed="${k === filter}">${l}</button>`).join("")}</div>
-        ${!d ? `<div class="empty">The news feed is starting up. It refreshes every 2 hours, so check back soon.</div>`
+        ${!d ? `<div class="empty">The news feed is starting up. It refreshes every 30 minutes, so check back soon.</div>`
           : !items.length ? `<div class="empty">Nothing in the last two weeks for this filter. That's usually good news.</div>`
           : `<ul class="news-list">${items.map((it) => `
             <li class="${it.alert ? "alert" : ""}">
@@ -626,7 +627,7 @@
   setInterval(tick, 15000);
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 24 Nov, 07:31 UTC";
+  const BUILD = "Updated 24 Nov, 10:59 UTC";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support ----------

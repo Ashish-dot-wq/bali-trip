@@ -122,7 +122,9 @@
     const el = $("#ticker", view);
     if (!el || !news || !news.data.items.length) return;
     const items = news.data.items;
-    const pick = [...items.filter((x) => x.alert).slice(0, 3), ...items.filter((x) => !x.alert).slice(0, 5)];
+    const fresh = (x) => Date.now() - Date.parse(x.published) < 72 * 3600000;
+    const alerts = items.filter((x) => x.alert && fresh(x)).slice(0, 3);
+    const pick = [...alerts, ...items.filter((x) => !alerts.includes(x)).slice(0, 5)].map((x) => ({ ...x, alert: alerts.includes(x) }));
     let i = 0;
     const show = () => {
       const it = pick[i % pick.length];
@@ -611,7 +613,7 @@
   setInterval(tick, 15000);
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 24 Nov, 05:55 UTC";
+  const BUILD = "Updated 24 Nov, 05:57 UTC";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support ----------

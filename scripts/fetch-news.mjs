@@ -9,7 +9,9 @@ import { join } from "node:path";
 const [, , PREV = "prev.json", OUT = "news.json"] = process.argv;
 const FIXTURE_DIR = process.env.FIXTURE_DIR || "";
 const MAX_AGE_DAYS = 14;
-const MAX_ITEMS = 60;
+const MAX_ITEMS = 90;
+const PER_PLACE = 8;      // keep up to this many stories for each stop
+const MAX_GENERAL = 20;   // general Bali stories (no specific stop)
 
 const gnews = (q) =>
   `https://news.google.com/rss/search?q=${encodeURIComponent(q)}&hl=en-ID&gl=ID&ceid=ID:en`;
@@ -45,6 +47,9 @@ const PLACES = {
 const ALERT = /\b(earthquake|quake|tremor|tsunami|erupt\w*|volcan\w*|ash cloud|flood\w*|landslide\w*|evacuat\w*|warning|state of emergency|emergency|closed|closure|cancel\w*|suspend\w*|strike|protest|riot|outage|blackout|water crisis|without water|disrupt\w*|shortage|delay\w*|outbreak|rabies|dengue|methanol|poison\w*|drown\w*|rip current|storm|cyclone|high waves|extreme weather|missing)\b/i;
 // Must also be about one of our areas to count as an alert
 const AREA = /\b(bali|lombok|gili|nusa penida|seminyak|kuta|canggu|ubud|amed|tulamben|karangasem|agung|padang ?bai|sanur|denpasar|ngurah rai|rinjani)\b/i;
+
+// Same word, different topic (e.g. Odisha's "Bali Yatra" festival, brands and people called Bali)
+const NOISE = /\b(odisha|cuttack|kalinga|paradip|bali ?(yatra|jatra)|bali lawal|bali curls)\b/i;
 
 const UA = { "User-Agent": "Mozilla/5.0 (compatible; trip-news-bot/1.0)" };
 
@@ -109,20 +114,28 @@ async function main() {
   const cutoff = now - MAX_AGE_DAYS * 86400000;
   const items = [];
   let okFeeds = 0;
+  const feedStats = {};
 
   for (const feed of FEEDS) {
     const xml = await get(feed.id, feed.url);
     if (!xml) continue;
     okFeeds++;
+    let kept = 0;
+    // Google News descriptions list *other* headlines, so judge Google items by their title only
+    const isGoogle = feed.url.includes("news.google.com");
     for (const it of parseRss(xml, feed)) {
       if (Date.parse(it.published) < cutoff) continue;
-      const places = Object.entries(PLACES).filter(([, re]) => re.test(it.text)).map(([k]) => k);
+      const text = isGoogle ? it.title : it.text;
+      if (NOISE.test(text)) continue;
+      // General feeds must actually be about our area (in the headline)
+      if (!feed.place && !AREA.test(text)) continue;
+      const places = Object.entries(PLACES).filter(([, re]) => re.test(text)).map(([k]) => k);
       if (feed.place && !places.includes(feed.place)) places.push(feed.place);
-      const alert = ALERT.test(it.text) && AREA.test(it.text);
-      // Skip general-Bali stories that aren't about Bali at all
-      if (!places.length && !AREA.test(it.text)) continue;
+      const alert = ALERT.test(text) && (AREA.test(text) || !!feed.place);
       items.push({ title: it.title, link: it.link, source: it.source, published: it.published, places, alert, kind: "news" });
+      kept++;
     }
+    feedStats[feed.id] = kept;
   }
 
   for (const src of BMKG) {
@@ -155,8 +168,13 @@ async function main() {
     if (!prev) seen.set(k, it);
     else prev.alert = prev.alert || it.alert;
   }
-  let list = [...seen.values()].sort((a, b) => Date.parse(b.published) - Date.parse(a.published)).slice(0, MAX_ITEMS);
-  list = list.map((it, i) => ({ id: i + 1, ...it }));
+  // Balance: every alert, up to PER_PLACE stories per stop, then a few general Bali stories
+  const byDate = (a, b) => Date.parse(b.published) - Date.parse(a.published);
+  const all = [...seen.values()].sort(byDate);
+  const pick = new Set(all.filter((x) => x.alert));
+  for (const p of Object.keys(PLACES)) all.filter((x) => x.places.includes(p)).slice(0, PER_PLACE).forEach((x) => pick.add(x));
+  all.filter((x) => !x.places.length && !x.alert).slice(0, MAX_GENERAL).forEach((x) => pick.add(x));
+  let list = [...pick].sort(byDate).slice(0, MAX_ITEMS).map((it, i) => ({ id: i + 1, ...it }));
 
   // If every source failed, keep the previous file rather than publishing an empty feed
   if (okFeeds === 0 && existsSync(PREV)) {
@@ -166,9 +184,9 @@ async function main() {
     } catch {}
   }
 
-  const out = { updated: new Date(now).toISOString(), sources: okFeeds, alerts: list.filter((x) => x.alert).length, items: list };
+  const out = { updated: new Date(now).toISOString(), sources: okFeeds, alerts: list.filter((x) => x.alert).length, feeds: feedStats, items: list };
   writeFileSync(OUT, JSON.stringify(out, null, 1));
-  console.log(`Wrote ${list.length} items (${out.alerts} alerts) from ${okFeeds} sources`);
+  console.log(`Wrote ${list.length} items (${out.alerts} alerts) from ${okFeeds} sources`, JSON.stringify(feedStats));
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

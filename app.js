@@ -140,7 +140,7 @@
   }
 
   // ---------- views ----------
-  const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go", party: "Party guide", faq: "FAQs", drive: "Driving permit", packing: "Packing list", news: "Local news" };
+  const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go", party: "Party guide", faq: "FAQs", drive: "Driving permit", packing: "Packing list", news: "Local news", drone: "Drone (Avata 2)" };
 
   function chipBar(active) {
     const today = tripDayToday();
@@ -481,6 +481,18 @@
     if (!news) loadNews(false).then(() => { if (document.body.dataset.view === "news") render(); });
   }
 
+  function droneView() {
+    const d = TRIP.drone;
+    view.innerHTML = `<div class="pad">
+      <h1 class="h">Drone: DJI Avata 2</h1>
+      <p class="intro">${d.intro}</p>
+      ${d.sections.map((s, i) => `
+        <h2 class="h2">${s.title}</h2>
+        <ul class="safety${i === 0 ? " primary" : ""}">${s.items.map((x) => `<li>${x}</li>`).join("")}</ul>`).join("")}
+      <p class="fine">Rules here come from travel and drone guides plus airline/DJI guidance, and some points conflict between sources. Confirm with BLR Customs and the DGCA before you go, and check the DJI Fly app's GEO zones before every flight.</p>
+    </div>`;
+  }
+
   function faqView() {
     view.innerHTML = `<div class="pad">
       <h1 class="h">FAQs</h1>
@@ -501,7 +513,7 @@
     let name = "day", n = null;
     const m = /^day-(\d+)$/.exec(h);
     if (m) { n = Math.min(Math.max(Number(m[1]), 1), N); }
-    else if (["table", "glance", "dive", "checklist", "party", "faq", "drive", "packing", "news"].includes(h)) name = h;
+    else if (["table", "glance", "dive", "checklist", "party", "faq", "drive", "packing", "news", "drone"].includes(h)) name = h;
     else if (h === "day" || h === "") n = tripDayToday() || store.get("bali2026-day", 1);
     else n = 1;
 
@@ -514,6 +526,7 @@
     else if (name === "drive") driveView();
     else if (name === "packing") packingView();
     else if (name === "news") newsView();
+    else if (name === "drone") droneView();
     else checklistView();
 
     $("#viewTitle").textContent = name === "day" ? `Day ${n} · ${TRIP.days[n - 1].base}` : TITLES[name];
@@ -613,7 +626,7 @@
   setInterval(tick, 15000);
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 24 Nov, 05:57 UTC";
+  const BUILD = "Updated 24 Nov, 07:31 UTC";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support ----------

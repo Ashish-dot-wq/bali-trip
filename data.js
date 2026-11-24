@@ -355,12 +355,73 @@ const TRIP = {
       ["esim", "eSIM installed before flying (or buy a SIM at DPS)"],
       ["offline", "Offline Google Maps for Bali + this app's photos saved for offline"]
     ]},
+    { group: "Drone (DJI Avata 2)", items: [
+      ["d-drone", "Avata 2 + propeller guard (cabin bag)"],
+      ["d-goggles", "Goggles + goggles battery (cabin bag)"],
+      ["d-rc", "Controller (RC Motion / FPV remote)"],
+      ["d-batt", "Flight batteries, contacts taped or in a LiPo bag (cabin only)"],
+      ["d-charger", "Charging hub + charger"],
+      ["d-props", "Spare propellers + screwdriver"],
+      ["d-sd", "microSD cards"],
+      ["d-docs", "Purchase invoice + Export Certificate from BLR customs"]
+    ]},
     { group: "Before you lock the bag", items: [
       ["weight", "Check-in bag under 20 kg, cabin bag under 7 kg"],
       ["space", "Leave space for shopping on the way back"],
       ["liquids", "Liquids in cabin bag in 100 ml bottles"]
     ]}
   ],
+
+  // Drone page (menu → Drone: DJI Avata 2)
+  drone: {
+    intro: "Your <b>DJI Avata 2</b> weighs about <b>377 g</b>: well under Indonesia's 2 kg hobby limit, so recreational flying needs no permit. The real risks are <b>bringing it back into India</b>, <b>airport zones</b> and <b>temples</b>.",
+    sections: [
+      { title: "🇮🇳 Before you leave India (most important)", items: [
+        "<b>India has restricted imports of foreign-made drones since 2022.</b> On the way home, BLR customs can hold a DJI drone unless you can prove it left India with you.",
+        "<b>At BLR departure, go to the Customs desk before security</b> and ask for the drone, goggles and controller to be listed on an <b>Export Certificate</b> (the form used for valuables you'll bring back). Have the serial numbers ready.",
+        "<b>Carry the purchase invoice</b> (or a photo) showing it was bought in India, plus photos of the serial number stickers.",
+        "<b>Ask BLR customs in writing</b> (email) beforehand if you can. Rules changed with the 2026 Baggage Rules and blogs disagree, so their answer is the one that counts."
+      ]},
+      { title: "✈️ Flying with it (IndiGo)", items: [
+        "<b>Every battery goes in your cabin bag</b>, never checked in: flight batteries, the goggles battery and power banks.",
+        "Avata 2 batteries are about <b>31.7 Wh</b> each, well under the 100 Wh limit, so no airline approval is needed. Check the Wh printed on yours.",
+        "<b>Tape over the contacts</b> or use a LiPo-safe bag, and store batteries at ~50% charge for the flight.",
+        "Keep the drone, goggles and controller in your cabin bag too (fragile, and it keeps everything together for customs). Remember the 7 kg cabin limit."
+      ]},
+      { title: "🇮🇩 Flying rules in Indonesia", items: [
+        "<b>No permit for hobby flying under 2 kg.</b> Some guides mention pre-registering on a Bali drone system, but this is disputed; there's no clear official source.",
+        "<b>Max 150 m height, daylight only, away from people and crowds.</b>",
+        "<b>Keep it in sight.</b> With FPV goggles on, have a friend act as spotter watching the drone directly.",
+        "<b>Airports:</b> stay well clear of Ngurah Rai. Guides quote no-fly radii from about 9 km to 15 km. The DJI Fly app's GEO zones will warn you or block take-off.",
+        "<b>No military, government or police sites</b>, and no flying over ceremonies or processions.",
+        "<b>Commercial shoots</b> (paid work) need a DGCA permit. Personal videos are fine."
+      ]},
+      { title: "🛕 Temples & sacred sites", items: [
+        "<b>Don't fly over or near temples or ceremonies</b> without the temple's or village's permission. Reports mention a Bali regulation with a 5 km zone around sacred sites needing the local banjar's consent (unconfirmed).",
+        "On this trip: <b>Tirta Empul (Day 9)</b> and <b>Tirta Gangga (Day 8)</b>: ask at the ticket desk before flying; expect a no or a fee.",
+        "Some sites allow it for a small donation. <b>Always ask first</b>: fines and confiscation are possible."
+      ]},
+      { title: "📍 Where it works on this trip", items: [
+        "<b>Seminyak (Days 1–2):</b> inside Ngurah Rai's controlled airspace. <b>Don't fly here.</b>",
+        "<b>Nusa Penida (Day 3):</b> the classic drone day: Kelingking, Broken Beach, Angel's Billabong. Very busy and often windy at the cliffs; launch away from crowds and watch for gusts.",
+        "<b>Gili T (Days 4–5):</b> early morning on the north and west beaches before crowds. Sea breeze picks up by midday. Ask your hotel if they have house rules.",
+        "<b>Amed (Days 6–7):</b> sunrise over Jemeluk Bay with Mount Agung behind. Quiet, scenic, low risk. Not over the Tulamben dive site when divers are surfacing.",
+        "<b>Ubud (Days 8–9):</b> Tegallalang rice terraces early morning (some operators ask a small fee); Campuhan Ridge at sunrise. Not over the Monkey Forest temples."
+      ]},
+      { title: "🎮 Avata 2 tips for this trip", items: [
+        "<b>Over water, fly conservatively.</b> A sea landing means it's gone. Set Return-to-Home altitude above the cliff tops at Nusa Penida.",
+        "<b>Wind:</b> it's light (377 g). If the app warns about wind, especially at Kelingking and on Gili T beaches, don't launch.",
+        "<b>Heat & humidity:</b> let it acclimatise out of air-con before flying to stop lenses and goggles fogging.",
+        "<b>Charging:</b> Indonesian sockets are Type C/F 230 V; bring the charger plus a multi-plug. Chargers work on 100–240 V.",
+        "<b>Download offline maps</b> in the DJI Fly app and update firmware at home on Wi-Fi.",
+        "<b>Respect privacy</b>: no hovering over hotel pools or people sunbathing."
+      ]},
+      { title: "🏠 Coming home", items: [
+        "<b>Have the Export Certificate and invoice ready</b> at BLR arrivals.",
+        "If customs asks about drones, answer honestly. Choosing the Green Channel wrongly can mean seizure and a penalty. With the Export Certificate it's a quick check."
+      ]}
+    ]
+  },
 
   // FAQs (menu → FAQs)
   faq: [

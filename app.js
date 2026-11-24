@@ -87,8 +87,58 @@
     return { now, next };
   }
 
+  // ---------- local news (built every 2 h by .github/workflows/news.yml) ----------
+  const NEWS_URL = "https://raw.githubusercontent.com/Ashish-dot-wq/bali-trip/news-feed/news.json";
+  const PLACE_LABEL = { seminyak: "Seminyak", penida: "Nusa Penida", gili: "Gili T", lombok: "Lombok", amed: "Amed", ubud: "Ubud", airport: "Airport" };
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? u : "#");
+  function ago(iso) {
+    const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
+    if (!isFinite(m)) return "";
+    if (m < 1) return "just now";
+    if (m < 60) return `${m} min ago`;
+    const h = Math.round(m / 60); if (h < 24) return `${h} h ago`;
+    const d = Math.round(h / 24); return `${d} day${d > 1 ? "s" : ""} ago`;
+  }
+  let news = store.get("bali2026-news", null); // { data, fetchedAt }
+  async function loadNews(force) {
+    if (!force && news && Date.now() - news.fetchedAt < 30 * 60000) return news;
+    try {
+      const res = await fetch(NEWS_URL + (force ? `?t=${Date.now()}` : ""), { cache: force ? "no-store" : "default" });
+      if (!res.ok) throw new Error(res.status);
+      const data = await res.json();
+      if (!data || !Array.isArray(data.items)) throw new Error("bad feed");
+      news = { data, fetchedAt: Date.now() };
+      store.set("bali2026-news", news);
+    } catch (e) {
+      if (force) toast(news ? "Couldn't refresh. Showing saved news." : "News isn't available yet.");
+    }
+    return news;
+  }
+
+  // Headline strip on the Days screen
+  let tickerTimer = null;
+  function fillTicker() {
+    const el = $("#ticker", view);
+    if (!el || !news || !news.data.items.length) return;
+    const items = news.data.items;
+    const pick = [...items.filter((x) => x.alert).slice(0, 3), ...items.filter((x) => !x.alert).slice(0, 5)];
+    let i = 0;
+    const show = () => {
+      const it = pick[i % pick.length];
+      el.classList.toggle("alert", !!it.alert);
+      el.innerHTML = `<span class="tk-ic" aria-hidden="true">${it.alert ? "⚠️" : "📰"}</span>
+        <span class="tk-txt"><b>${it.alert ? "Alert" : "News"}</b> ${esc(it.title)}</span><span class="tk-go" aria-hidden="true">›</span>`;
+      el.setAttribute("aria-label", `${it.alert ? "Alert" : "News"}: ${it.title}. Open local news`);
+      i++;
+    };
+    el.hidden = false; show();
+    clearInterval(tickerTimer);
+    if (pick.length > 1 && !matchMedia("(prefers-reduced-motion: reduce)").matches) tickerTimer = setInterval(show, 6000);
+  }
+
   // ---------- views ----------
-  const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go", party: "Party guide", faq: "FAQs", drive: "Driving permit" };
+  const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go", party: "Party guide", faq: "FAQs", drive: "Driving permit", packing: "Packing list", news: "Local news" };
 
   function chipBar(active) {
     const today = tripDayToday();
@@ -180,7 +230,7 @@
       ${next ? `<a class="r" href="#day-${n + 1}"><small>Next ›</small><b>Day ${n + 1} · ${next.title}</b></a>` : "<span></span>"}
     </nav>`;
 
-    view.innerHTML = `${chipBar(n)}<div class="pad">${seg}<article class="day" data-day="${n}">${body}${notes}</article>${pager}</div>`;
+    view.innerHTML = `${chipBar(n)}<div class="pad"><a class="ticker" id="ticker" href="#news" hidden></a>${seg}<article class="day" data-day="${n}">${body}${notes}</article>${pager}</div>`;
 
     // segmented control
     view.querySelectorAll(".seg button").forEach((b) => b.addEventListener("click", () => {
@@ -197,6 +247,10 @@
         dots.forEach((dot, k) => dot.classList.toggle("on", k === i));
       }, { passive: true });
     }
+
+    // news strip: show saved headlines now, refresh in the background
+    fillTicker();
+    loadNews(false).then(() => { if ($(".day", view)?.dataset.day == n) fillTicker(); });
 
     // keep the active day chip visible
     const on = $(".chip.on", view);
@@ -346,6 +400,85 @@
     </div>`;
   }
 
+  function packingView() {
+    const done = new Set(store.get("bali2026-pack", []));
+    const all = TRIP.packing.flatMap((g) => g.items.map(([id]) => id));
+    const render = () => {
+      const count = all.filter((id) => done.has(id)).length;
+      view.innerHTML = `<div class="pad">
+        <h1 class="h">Packing list</h1>
+        <div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="${all.length}" aria-valuenow="${count}">
+          <div class="pg-bar"><i style="width:${(count / all.length) * 100}%"></i></div>
+          <span>${count} of ${all.length} packed</span>
+        </div>
+        ${TRIP.packing.map((g) => {
+          const gDone = g.items.filter(([id]) => done.has(id)).length;
+          return `<h2 class="h2">${g.group} <span class="g-count">${gDone}/${g.items.length}</span></h2>
+          <ul class="checklist compact">${g.items.map(([id, text]) => `
+            <li><label class="${done.has(id) ? "done" : ""}">
+              <input type="checkbox" data-id="${id}" ${done.has(id) ? "checked" : ""}>
+              <span class="box" aria-hidden="true"></span>
+              <span class="ct"><b>${text}</b></span>
+            </label></li>`).join("")}</ul>`;
+        }).join("")}
+        <p class="fine">Ticks are saved on this phone only.</p>
+        ${count ? `<button type="button" class="btn ghost" id="resetPack">Clear all ticks</button>` : ""}
+      </div>`;
+      view.querySelectorAll("input[type=checkbox]").forEach((cb) => cb.addEventListener("change", () => {
+        cb.checked ? done.add(cb.dataset.id) : done.delete(cb.dataset.id);
+        store.set("bali2026-pack", [...done]);
+        const y = window.scrollY; render(); window.scrollTo(0, y);
+      }));
+      $("#resetPack", view)?.addEventListener("click", () => { done.clear(); store.set("bali2026-pack", []); render(); });
+    };
+    render();
+  }
+
+  function newsView() {
+    const filter = store.get("bali2026-news-filter", "all");
+    const FILTERS = [["all", "All"], ["alerts", "⚠️ Alerts"], ["seminyak", "Seminyak"], ["penida", "Nusa Penida"], ["gili", "Gili T & Lombok"], ["amed", "Amed"], ["ubud", "Ubud"], ["airport", "Airport"]];
+    const match = (it) => filter === "all" ? true : filter === "alerts" ? it.alert
+      : filter === "gili" ? it.places.some((p) => p === "gili" || p === "lombok") : it.places.includes(filter);
+    const render = () => {
+      const d = news && news.data;
+      const items = d ? d.items.filter(match) : [];
+      view.innerHTML = `<div class="pad">
+        <div class="news-head"><h1 class="h">Local news</h1>
+          <button type="button" class="btn sm" id="newsRefresh">↻ Refresh</button></div>
+        <p class="fine news-meta">${d ? `Updated ${ago(d.updated)}${d.stale ? " (sources unreachable, showing last good copy)" : ""} · refreshes every 2 hours` : "Loading…"}</p>
+        <div class="filters" role="group" aria-label="Filter news">${FILTERS.map(([k, l]) =>
+          `<button type="button" data-f="${k}" aria-pressed="${k === filter}">${l}</button>`).join("")}</div>
+        ${!d ? `<div class="empty">The news feed is starting up. It refreshes every 2 hours, so check back soon.</div>`
+          : !items.length ? `<div class="empty">Nothing in the last two weeks for this filter. That's usually good news.</div>`
+          : `<ul class="news-list">${items.map((it) => `
+            <li class="${it.alert ? "alert" : ""}">
+              <a href="${esc(safeUrl(it.link))}" target="_blank" rel="noopener">
+                <span class="n-title">${it.alert ? '<span class="flag alert">Alert</span> ' : ""}${esc(it.title)}</span>
+                ${it.detail ? `<span class="n-detail">${esc(it.detail)}</span>` : ""}
+                <span class="n-meta">${esc(it.source)} · ${ago(it.published)}${it.places.length ? " · " + it.places.map((p) => esc(PLACE_LABEL[p] || p)).join(", ") : ""}</span>
+              </a>
+            </li>`).join("")}</ul>`}
+        <h2 class="h2">In an emergency</h2>
+        <ul class="safety">
+          <li><b>Call 112</b> from any phone in Indonesia (police, ambulance, fire).</li>
+          <li><a class="place" href="https://www.bmkg.go.id/gempabumi/gempabumi-dirasakan" target="_blank" rel="noopener">BMKG earthquakes &amp; tsunami warnings</a> (official)</li>
+          <li><a class="place" href="https://magma.esdm.go.id/" target="_blank" rel="noopener">MAGMA Indonesia volcano status</a> (Agung, Batur, Rinjani)</li>
+          <li><a class="place" href="${mapUrl("Consulate General of India", "Consulate General of India Denpasar Bali")}" target="_blank" rel="noopener">Consulate General of India, Bali</a> (lost passport, serious trouble)</li>
+        </ul>
+        <p class="fine">Headlines are pulled automatically from Google News, The Bali Sun and BMKG, then matched to your stops. They can miss things or be off-topic; for anything serious, check official sources and your hotel.</p>
+      </div>`;
+      view.querySelectorAll(".filters button").forEach((b) => b.addEventListener("click", () => {
+        store.set("bali2026-news-filter", b.dataset.f); newsView();
+      }));
+      $("#newsRefresh", view).addEventListener("click", async (e) => {
+        e.currentTarget.disabled = true; e.currentTarget.textContent = "Refreshing…";
+        await loadNews(true); if (document.body.dataset.view === "news") render();
+      });
+    };
+    render();
+    if (!news) loadNews(false).then(() => { if (document.body.dataset.view === "news") render(); });
+  }
+
   function faqView() {
     view.innerHTML = `<div class="pad">
       <h1 class="h">FAQs</h1>
@@ -360,11 +493,13 @@
 
   // ---------- router ----------
   function route() {
+    clearInterval(tickerTimer);
+    if (typeof closeMenu === "function") closeMenu(false); // e.g. phone Back button while the menu is open
     const h = location.hash.replace("#", "");
     let name = "day", n = null;
     const m = /^day-(\d+)$/.exec(h);
     if (m) { n = Math.min(Math.max(Number(m[1]), 1), N); }
-    else if (["table", "glance", "dive", "checklist", "party", "faq", "drive"].includes(h)) name = h;
+    else if (["table", "glance", "dive", "checklist", "party", "faq", "drive", "packing", "news"].includes(h)) name = h;
     else if (h === "day" || h === "") n = tripDayToday() || store.get("bali2026-day", 1);
     else n = 1;
 
@@ -375,6 +510,8 @@
     else if (name === "party") partyView();
     else if (name === "faq") faqView();
     else if (name === "drive") driveView();
+    else if (name === "packing") packingView();
+    else if (name === "news") newsView();
     else checklistView();
 
     $("#viewTitle").textContent = name === "day" ? `Day ${n} · ${TRIP.days[n - 1].base}` : TITLES[name];
@@ -474,7 +611,7 @@
   setInterval(tick, 15000);
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 24 Nov, 05:27 UTC";
+  const BUILD = "Updated 24 Nov, 05:55 UTC";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support ----------

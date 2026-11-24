@@ -20,7 +20,6 @@ const TRIP = {
   },
   dates: "Fri 18 Dec – Sun 27 Dec 2026",
   group: "5 friends",
-  pnr: "[removed]",
   baggage: "20 kg check-in + 7 kg cabin per person",
 
   stays: [
@@ -40,7 +39,7 @@ const TRIP = {
         { url: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=900&q=70", caption: "Sunset drinks by the sea" }
       ],
       rows: [
-        ["00:55 AM - 10:15 AM", "Flight: BLR to DPS on IndiGo <b>6E 1605</b>", "Non-stop flight (6 hours 50 minutes). PNR: <code>[removed]</code>. Check-in baggage 20 kg and cabin baggage 7 kg included. Leave home on the night of <b>Thu, Dec 17</b>."],
+        ["00:55 AM - 10:15 AM", "Flight: BLR to DPS on IndiGo <b>6E 1605</b>", "Non-stop flight (6 hours 50 minutes). Check-in baggage 20 kg and cabin baggage 7 kg included. Leave home on the night of <b>Thu, Dec 17</b>."],
         ["10:15 AM - 12:00 PM", "Arrival formalities at {{✈️ Ngurah Rai International Airport}}", "Clear immigration with e-VoA (B213), scan customs QR from All Indonesia Arrival Card, show Bali Tourist Levy voucher, and collect bags."],
         ["12:00 PM - 01:15 PM", "Private car transfer: DPS Airport to Seminyak", "Pre-booked air-conditioned private car (~12 km, ~40 to 60 minutes depending on mid-day traffic)."],
         ["01:15 PM - 04:00 PM", "Hotel check-in and rest in Seminyak", "Drop bags, freshen up, and recover from the overnight flight at your Seminyak base."],
@@ -306,6 +305,62 @@ const TRIP = {
       "<b>Nusa Penida roads are steep and broken.</b> Stick to a driver there, which the plan already does."
     ]
   },
+
+  // Packing list (menu → Packing list). Item ids keep ticks stable if the list changes.
+  packing: [
+    { group: "Documents & money", items: [
+      ["pp", "Passport (6+ months valid) + a photocopy"],
+      ["evoa", "e-VoA approval (PDF on phone + printout)"],
+      ["aiac", "All Indonesia Arrival Card QR (fill in within 72 h of landing)"],
+      ["levy", "Bali Tourist Levy QR voucher"],
+      ["ins", "Travel insurance policy + emergency number"],
+      ["idp", "Indian DL + International Driving Permit (only if riding scooters)"],
+      ["forex", "Forex card + some rupiah cash for the islands"],
+      ["inr", "A little INR for the cab home from BLR"]
+    ]},
+    { group: "Clothes", items: [
+      ["light", "Light, breathable clothes for 9 days (hot and humid)"],
+      ["swim", "2–3 swimsuits"],
+      ["rash", "Rash guard or quick-dry tee (sun + snorkelling)"],
+      ["temple", "Sarong or a top that covers shoulders (temples)"],
+      ["nice", "One smarter outfit (beach clubs, Christmas dinners)"],
+      ["rain", "Light rain jacket or poncho (December showers)"],
+      ["hat", "Cap or hat + sunglasses"],
+      ["sleep", "Something warm for the overnight flight"]
+    ]},
+    { group: "Shoes", items: [
+      ["flip", "Flip-flops / sandals"],
+      ["reef", "Reef or water shoes (Tulamben's pebble beach, coral)"],
+      ["walk", "Comfortable walking shoes (Nusa Penida, rice terraces)"]
+    ]},
+    { group: "Beach & water", items: [
+      ["dry", "Dry bag (boat days, wet phones)"],
+      ["daypack", "Small daypack (15–20 L) for the Nusa Penida day trip"],
+      ["pouch", "Waterproof phone pouch"],
+      ["towel", "Quick-dry towel"],
+      ["mask", "Own snorkel mask (optional; rentals are easy)"]
+    ]},
+    { group: "Health", items: [
+      ["sun", "Reef-safe sunscreen SPF 50"],
+      ["mozzie", "Mosquito repellent"],
+      ["motion", "Motion-sickness tablets (3 boat days)"],
+      ["ors", "ORS sachets + something for upset stomach"],
+      ["meds", "Personal medicines (with prescriptions)"],
+      ["aid", "Plasters, antiseptic, after-sun / aloe"]
+    ]},
+    { group: "Tech", items: [
+      ["adapter", "Plug adapter (Type C/F; Indian 2-pin fits, 3-pin doesn't)"],
+      ["power", "Power bank (in cabin bag, not checked in)"],
+      ["cables", "Charging cables"],
+      ["esim", "eSIM installed before flying (or buy a SIM at DPS)"],
+      ["offline", "Offline Google Maps for Bali + this app's photos saved for offline"]
+    ]},
+    { group: "Before you lock the bag", items: [
+      ["weight", "Check-in bag under 20 kg, cabin bag under 7 kg"],
+      ["space", "Leave space for shopping on the way back"],
+      ["liquids", "Liquids in cabin bag in 100 ml bottles"]
+    ]}
+  ],
 
   // FAQs (menu → FAQs)
   faq: [

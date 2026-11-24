@@ -1,0 +1,50 @@
+# Refreshes the app's Local news feed every 2 hours.
+# Builds news.json with scripts/fetch-news.mjs and publishes it to the `news-feed` branch,
+# which the app reads from raw.githubusercontent.com (so the Pages branch isn't touched).
+name: Local news feed
+
+on:
+  schedule:
+    - cron: "23 */2 * * *"   # every 2 hours (GitHub may start it a few minutes late)
+  workflow_dispatch:          # "Run workflow" button in the Actions tab
+  push:
+    branches: [claude/wizardly-feynman-2ugicp]
+    paths:
+      - scripts/fetch-news.mjs
+      - .github/workflows/news.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: news-feed
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Get the current feed (kept if every source fails)
+        run: curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/news-feed/news.json" -o prev.json || echo '{}' > prev.json
+
+      - name: Build news.json
+        run: node scripts/fetch-news.mjs prev.json news.json
+
+      - name: Publish to the news-feed branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir out && cp news.json out/ && cd out
+          git init -q -b news-feed
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add news.json
+          git commit -qm "Update local news feed"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" news-feed

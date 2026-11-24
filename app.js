@@ -41,26 +41,63 @@
     return { start: trimZero(a), end: trimZero(b) };
   }
 
-  // Which trip day is "today" in Bali (falls back to Day 1)
-  function todayIndex() {
+  // ---------- Bali clock ----------
+  // Preview any moment with ?now=2026-12-22T13:00 (Bali time) in the URL.
+  const NOW_OVERRIDE = (() => {
+    const v = new URLSearchParams(location.search).get("now");
+    const m = v && /^(\d{4})-(\d\d)-(\d\d)T(\d\d):(\d\d)$/.exec(v);
+    return m ? { ymd: `${m[1]}-${m[2]}-${m[3]}`, mins: Number(m[4]) * 60 + Number(m[5]) } : null;
+  })();
+  function baliNow() {
+    if (NOW_OVERRIDE) return NOW_OVERRIDE;
     try {
-      const d = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Makassar" }).format(new Date()); // YYYY-MM-DD
-      const m = /^2026-12-(\d\d)$/.exec(d);
-      if (m) { const n = Number(m[1]) - 17; if (n >= 1 && n <= N) return n; }
-    } catch (e) {}
-    return 1;
+      const p = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
+        timeZone: "Asia/Makassar", year: "numeric", month: "2-digit", day: "2-digit", hour: "2-digit", minute: "2-digit", hourCycle: "h23"
+      }).formatToParts(new Date()).map((x) => [x.type, x.value]));
+      return { ymd: `${p.year}-${p.month}-${p.day}`, mins: Number(p.hour) * 60 + Number(p.minute) };
+    } catch (e) { return null; }
+  }
+  // Trip day number for today in Bali, or null outside 18–27 Dec 2026
+  function tripDayToday() {
+    const now = baliNow();
+    const m = now && /^2026-12-(\d\d)$/.exec(now.ymd);
+    if (m) { const n = Number(m[1]) - 17; if (n >= 1 && n <= N) return n; }
+    return null;
+  }
+  const todayIndex = () => tripDayToday() || 1;
+
+  // "08:30 AM" → minutes after midnight
+  function toMins(s) {
+    const m = /(\d+):(\d+)\s*(AM|PM)/.exec(s || "");
+    if (!m) return null;
+    let h = Number(m[1]) % 12; if (m[3] === "PM") h += 12;
+    return h * 60 + Number(m[2]);
+  }
+  // Index of the activity happening now and the next one (only on today's date)
+  function nowNext(d) {
+    if (tripDayToday() !== d.day) return { now: -1, next: -1 };
+    const t = baliNow().mins;
+    let now = -1, next = -1;
+    d.rows.forEach(([time], i) => {
+      const [a, b] = time.split(" - ");
+      const s = toMins(a); let e = toMins(b); if (e !== null && e < s) e += 1440;
+      if (now === -1 && s <= t && t < e) now = i;
+      if (next === -1 && s > t) next = i;
+    });
+    return { now, next };
   }
 
   // ---------- views ----------
   const TITLES = { day: "Day by day", table: "Full table", glance: "Trip at a glance", dive: "Two-dive plan", checklist: "Before you go", party: "Party guide", faq: "FAQs", drive: "Driving permit" };
 
   function chipBar(active) {
-    return `<div class="chips" role="tablist" aria-label="Choose a day">${TRIP.days.map((d) => {
+    const today = tripDayToday();
+    return `<nav class="chips" aria-label="Choose a day">${TRIP.days.map((d) => {
       const kind = d.day === 1 ? "half" : d.day === N ? "fly" : "full";
       const [dow, md] = d.date.split(", ");
-      return `<a class="chip ${kind}${d.day === active ? " on" : ""}" href="#day-${d.day}" role="tab" aria-selected="${d.day === active}" aria-label="Day ${d.day}, ${d.date}">
+      return `<a class="chip ${kind}${d.day === active ? " on" : ""}${d.day === today ? " today" : ""}" href="#day-${d.day}"${d.day === active ? ' aria-current="page"' : ""} aria-label="Day ${d.day}, ${d.date}${d.day === today ? " (today)" : ""}">
         <span class="c-dow">${dow}</span><span class="c-num">${md.replace("Dec ", "")}</span><span class="c-bar"></span></a>`;
-    }).join("")}</div>`;
+    }).join("")}</nav>`;
   }
 
   function dayView(n) {
@@ -74,6 +111,15 @@
     </div>`;
 
     const label = `Day ${d.day} of ${N} · ${d.date}`;
+    const nn = nowNext(d);
+    const rowCls = (i) => (i === nn.now ? "is-now" : i === nn.next ? "is-next" : "");
+    const flag = (i) => (i === nn.now ? '<span class="flag now">Now</span>' : i === nn.next ? '<span class="flag next">Next</span>' : "");
+    const strip = (s) => s.replace(/\{\{([^}|]+)(?:\|[^}]+)?\}\}/g, "$1").replace(/<[^>]+>/g, "");
+    const nextRow = nn.next >= 0 ? d.rows[nn.next] : null;
+    const banner = (nn.now >= 0 || nextRow) ? `<div class="nowbar" role="status">
+        ${nn.now >= 0 ? `<div><span class="flag now">Now</span> ${strip(d.rows[nn.now][1])}</div>` : ""}
+        ${nextRow ? `<div><span class="flag next">Next</span> ${splitTime(nextRow[0]).start} · ${strip(nextRow[1])}</div>` : ""}
+      </div>` : "";
 
     let body;
     if (mode === "photos") {
@@ -95,10 +141,11 @@
         ${places.length ? `<div class="sec-t">Places today</div><div class="places">${places.map((p) =>
           `<a class="place-chip" href="${p.url}" target="_blank" rel="noopener">${p.label}</a>`).join("")}</div>` : ""}
         <div class="sec-t">Plan</div>
-        <ol class="timeline">${d.rows.map(([t, act, log]) => {
+        ${banner}
+        <ol class="timeline">${d.rows.map(([t, act, log], i) => {
           const { start, end } = splitTime(t);
-          return `<li>
-            <div class="tl-time"><b>${start}</b><span>${end}</span></div>
+          return `<li class="${rowCls(i)}">
+            <div class="tl-time"><b>${start}</b><span>${end}</span>${flag(i)}</div>
             <div class="tl-body"><div class="tl-act">${linkify(act)}</div><div class="tl-det">${linkify(log)}</div></div>
           </li>`;
         }).join("")}</ol>`;
@@ -109,12 +156,13 @@
           <h1>${d.title}</h1>
           <span class="base">🏨 ${d.base}</span>
         </header>
+        ${banner}
         <div class="tbl-card">
           <table class="daytable">
             <thead><tr><th scope="col">Time</th><th scope="col">Activity &amp; details</th></tr></thead>
-            <tbody>${d.rows.map(([t, act, log]) => {
+            <tbody>${d.rows.map(([t, act, log], i) => {
               const { start, end } = splitTime(t);
-              return `<tr><td class="t"><b>${start}</b><span>${end}</span></td>
+              return `<tr class="${rowCls(i)}"><td class="t"><b>${start}</b><span>${end}</span>${flag(i)}</td>
                 <td><div class="a">${linkify(act)}</div><div class="det">${linkify(log)}</div></td></tr>`;
             }).join("")}</tbody>
           </table>
@@ -193,6 +241,24 @@
       const [dow, md] = d.date.split(", ");
       return `<a class="ds ${kind}" href="#day-${d.day}" aria-label="Day ${d.day}, ${d.date}"><span>${dow}</span><b>${md.replace("Dec ", "")}</b><i></i></a>`;
     }).join("");
+    // Countdown: departure is 00:55 IST on 18 Dec = 19:25 UTC on 17 Dec
+    const dep = Date.UTC(2026, 11, 17, 19, 25);
+    const today = tripDayToday();
+    let cd;
+    if (today) cd = `🌴 <b>Day ${today} of ${N}</b> · enjoy it!`;
+    else if (NOW_OVERRIDE ? NOW_OVERRIDE.ymd > "2026-12-27" : Date.now() > Date.UTC(2026, 11, 27, 9, 45)) cd = "✅ Trip complete. Terima kasih, Bali!";
+    else {
+      // calendar days (India time) until the night of Thu 17 Dec
+      let days;
+      try {
+        const ist = new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata" }).format(new Date()).split("-").map(Number);
+        days = Math.round((Date.UTC(2026, 11, 17) - Date.UTC(ist[0], ist[1] - 1, ist[2])) / 86400000);
+      } catch (e) { days = Math.ceil((dep - Date.now()) / 86400000); }
+      cd = days > 1 ? `⏳ <b>${days} days to go</b> · fly out Thu night, 17 Dec`
+        : days === 1 ? "⏳ <b>Tomorrow night!</b> Be at BLR T2 by ~10 PM."
+        : "✈️ <b>Flying tonight!</b> Be at BLR T2 by ~10 PM.";
+    }
+    $("#countdown", view).innerHTML = cd;
     $("#stays", view).innerHTML = TRIP.stays.map((s) =>
       `<li><span class="st-n">${s.nights}N</span><span><b>${s.place}</b><small>${s.dates}</small></span></li>`).join("");
     tick();
@@ -299,7 +365,7 @@
     const m = /^day-(\d+)$/.exec(h);
     if (m) { n = Math.min(Math.max(Number(m[1]), 1), N); }
     else if (["table", "glance", "dive", "checklist", "party", "faq", "drive"].includes(h)) name = h;
-    else if (h === "day" || h === "") n = store.get("bali2026-day", todayIndex());
+    else if (h === "day" || h === "") n = tripDayToday() || store.get("bali2026-day", 1);
     else n = 1;
 
     if (name === "day") { store.set("bali2026-day", n); dayView(n); }
@@ -367,6 +433,14 @@
     } catch (e) { /* user cancelled */ }
   });
 
+  $("#offlineBtn").addEventListener("click", async () => {
+    const urls = [...new Set(TRIP.days.flatMap((d) => d.photos.map((p) => p.url)))];
+    toast(`Saving ${urls.length} photos…`);
+    const res = await Promise.allSettled(urls.map((u) => fetch(u, { mode: "no-cors" })));
+    const ok = res.filter((r) => r.status === "fulfilled").length;
+    toast(ok === urls.length ? `All ${ok} photos saved for offline` : `${ok} of ${urls.length} photos saved. Try again on Wi-Fi.`);
+  });
+
   function toast(msg) {
     const t = $("#toast"); t.textContent = msg; t.classList.add("show");
     setTimeout(() => t.classList.remove("show"), 2000);
@@ -400,7 +474,7 @@
   setInterval(tick, 15000);
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 23 Nov, 18:07 UTC";
+  const BUILD = "Updated 24 Nov, 05:27 UTC";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support ----------

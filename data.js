@@ -107,7 +107,7 @@ const TRIP = {
         ["06:00 PM - 07:30 PM", "Sunset swings and cocktails", "Watch the sun dip behind Bali's Mount Agung from the beach swings on the west coast."],
         ["07:30 PM - 09:30 PM", "Seafood dinner at {{🐟 Gili T Night Market|Gili Trawangan Night Market}}", "Pick fresh snapper, prawns, and chicken satay grilled over coconut husks on the spot."]
       ],
-      tip: "Boat times differ by operator (Eka Jaya, Bluewater, etc.). Confirm the exact departure when booking and book early for Christmas week. Gili T had water-supply cuts in Sept 2026, so ask your hotel whether it has its own water supply or storage.",
+      tip: "Boat times differ by operator (Eka Jaya, Bluewater, etc.). Confirm the exact departure when booking and book early for Christmas week. Gili T's mains water went out on 3 Sept 2026 and no fix had been reported by late November. Ask your hotel to confirm in writing that it has its own water supply or storage. If it can't, Gili Air (piped water from Lombok, same boats, also good for Discover Scuba) is the easy backup.",
       extras: null
     },
     {

@@ -530,3 +530,21 @@ table.full { width: 100%; border-collapse: separate; border-spacing: 0; table-la
 .faq details p a { color: var(--link); font-weight: 600; }
 
 .ver { margin-top: 8px; font-size: 11px; color: var(--muted); opacity: .8; }
+
+/* ---------- Now / Next (on the trip day) ---------- */
+.flag { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; padding: 1px 6px; border-radius: 999px; margin-top: 4px; }
+.flag.now { background: var(--accent); color: var(--on-accent); }
+.flag.next { background: var(--surface-3); color: var(--text); }
+.nowbar { display: grid; gap: 6px; margin: 0 0 12px; padding: 10px 12px; border-radius: var(--radius); background: var(--accent-soft); font-size: 13px; font-weight: 600; }
+.nowbar .flag { margin: 0 6px 0 0; vertical-align: 1px; }
+.timeline li.is-now, .daytable tr.is-now td { background: var(--accent-soft); }
+.timeline li.is-now { box-shadow: inset 3px 0 0 var(--accent); }
+.daytable tr.is-now td:first-child { box-shadow: inset 3px 0 0 var(--accent); }
+.chip.today:not(.on) { border-color: var(--accent); }
+.chip.today .c-dow::after { content: " •"; color: var(--accent); }
+
+/* ---------- Countdown ---------- */
+.countdown { margin: -4px 0 12px; padding: 10px 12px; border-radius: var(--radius); background: var(--surface-2); font-size: 14px; }
+.countdown:empty { display: none; }
+#offlineBtn { border-top: 1px solid var(--line); }
+.tl-time .flag, .daytable td.t .flag { display: table; }

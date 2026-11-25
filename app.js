@@ -640,7 +640,7 @@
   setInterval(tick, 15000);
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 25 Nov, 05:02 UTC";
+  const BUILD = "Updated 25 Nov, 05:21 UTC";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support ----------

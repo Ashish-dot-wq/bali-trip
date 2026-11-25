@@ -1,6 +1,6 @@
 // Goa 2026: offline support, limited to this app's own folder (its scope).
 // Site files: network first, cached copy when offline. Photos: cached after first view.
-const CACHE = "goa2026-v3";
+const CACHE = "goa2026-v4";
 const SCOPE = self.registration.scope; // e.g. https://…/goa/
 const CORE = ["./", "index.html", "manifest.json", "icon-192.png"];
 

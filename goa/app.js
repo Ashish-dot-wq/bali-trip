@@ -566,7 +566,7 @@
   });
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 25 Nov · alerts refined";
+  const BUILD = "Updated 25 Nov · separate install";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support + auto-update on resume ----------

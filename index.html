@@ -7,6 +7,9 @@
   <meta name="description" content="Day-by-day itinerary for 5 friends: Seminyak, Gili T, Amed and Ubud, 18–27 Dec 2026." />
   <meta name="theme-color" content="#0e0f11" />
   <script>
+    // The Bali app's install scope is this page only (so the Goa app in /goa/ can be installed separately).
+    // Show the same page at …/index.html instead of …/ without reloading.
+    if (/\/bali-trip\/$/.test(location.pathname)) history.replaceState(null, "", "index.html" + location.search + location.hash);
     // Apply the saved theme before first paint (dark by default)
     (function () {
       var t = "dark";
@@ -21,7 +24,7 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon-192.png" />
   <link rel="apple-touch-icon" href="icon-180.png" />
-  <link rel="stylesheet" href="style.css?v=202611250502" />
+  <link rel="stylesheet" href="style.css?v=202611250521" />
 </head>
 <body>
   <a class="skip" href="#view">Skip to content</a>
@@ -157,7 +160,7 @@
     </section>
   </template>
 
-  <script src="data.js?v=202611250502"></script>
-  <script src="app.js?v=202611250502"></script>
+  <script src="data.js?v=202611250521"></script>
+  <script src="app.js?v=202611250521"></script>
 </body>
 </html>

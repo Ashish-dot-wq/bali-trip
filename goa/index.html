@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Goa 2026 Road Trip</title>
-  <meta name="description" content="Day-by-day plan for a Goa road trip, 26 Nov – 1 Dec 2026." />
+  <title>Goa & Gokarna 2026</title>
+  <meta name="description" content="Day-by-day plan for a Goa and Gokarna road trip, 26 Nov – 1 Dec 2026." />
   <meta name="theme-color" content="#0e0f11" />
   <script>
     // Apply the saved theme before first paint (dark by default)
@@ -21,7 +21,7 @@
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon-192.png" />
   <link rel="apple-touch-icon" href="icon-180.png" />
-  <link rel="stylesheet" href="style.css?v=1" />
+  <link rel="stylesheet" href="style.css?v=2" />
 </head>
 <body>
   <a class="skip" href="#view">Skip to content</a>
@@ -43,7 +43,7 @@
     <div class="menu-head">
       <div>
         <div class="menu-t">Goa 2026</div>
-        <div class="menu-s">Thu 26 Nov – Tue 1 Dec · road trip</div>
+        <div class="menu-s">Goa &amp; Gokarna · 26 Nov – 1 Dec</div>
       </div>
       <button class="icon-btn" id="menuClose" aria-label="Close menu">
         <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
@@ -55,9 +55,9 @@
       <li><a href="#glance" data-view="glance"><span class="mi">🏖️</span><span><b>Trip at a glance</b><small>Nights, stays, the drive, countdown</small></span></a></li>
       <li><a href="#road" data-view="road"><span class="mi">🚗</span><span><b>Road trip</b><small>Routes, ghats, tolls, documents</small></span></a></li>
       <li><a href="#checklist" data-view="checklist"><span class="mi">✅</span><span><b>Before you go</b><small>Tick-off checklist</small></span></a></li>
-      <li><a href="#news" data-view="news"><span class="mi">📰</span><span><b>Local news &amp; alerts</b><small>Goa and the route</small></span></a></li>
+      <li><a href="#news" data-view="news"><span class="mi">📰</span><span><b>Local news &amp; alerts</b><small>Goa, Gokarna and the route</small></span></a></li>
       <li><a href="#packing" data-view="packing"><span class="mi">🧳</span><span><b>Packing list</b><small>Tick off what's in the car</small></span></a></li>
-      <li><a href="#party" data-view="party"><span class="mi">🎉</span><span><b>Party guide</b><small>North and South Goa nights</small></span></a></li>
+      <li><a href="#party" data-view="party"><span class="mi">🎉</span><span><b>Party guide</b><small>Goa nights and Gokarna evenings</small></span></a></li>
       <li><a href="#faq" data-view="faq"><span class="mi">❓</span><span><b>FAQs</b><small>Weather, swimming, getting around…</small></span></a></li>
     </ul>
     <button type="button" class="menu-row" id="themeBtn" role="switch" aria-checked="true">
@@ -69,7 +69,7 @@
     <button type="button" class="menu-share" id="shareBtn"><span class="mi">📤</span><span><b>Share the trip</b><small>Send the link on WhatsApp</small></span></button>
     <p class="menu-tip">Tip: add this to your home screen (Share → Add to Home Screen on iPhone, ⋮ → Install app on Android). It then opens like an app and works offline once loaded.</p>
     <div class="menu-foot">
-      Road trip · Bengaluru ⇄ Goa (start city to be confirmed)<br>
+      Road trip · Bengaluru → Goa → Gokarna → Bengaluru (start city to be confirmed)<br>
       Photos: Wikimedia Commons (credits on each photo)
       <div class="ver" id="appVer"></div>
     </div>
@@ -93,15 +93,15 @@
       <div class="draft" id="draftNote"></div>
       <div class="stats">
         <div class="stat"><span class="num">5</span><span class="lbl">Nights</span></div>
-        <div class="stat main"><span class="num">4½</span><span class="lbl">Days in Goa</span></div>
-        <div class="stat"><span class="num">~1,200</span><span class="lbl">km driving</span></div>
+        <div class="stat main"><span class="num">4½</span><span class="lbl">Holiday days</span></div>
+        <div class="stat"><span class="num">~1,250</span><span class="lbl">km driving</span></div>
       </div>
 
       <div class="card">
         <div class="days" id="dayStrip"></div>
         <div class="legend">
           <span><i class="key drive"></i>Drive day</span>
-          <span><i class="key full"></i>Full days in Goa</span>
+          <span><i class="key full"></i>Full days</span>
         </div>
       </div>
 
@@ -110,14 +110,15 @@
 
       <h2 class="h2">The drive</h2>
       <div class="card">
-        <p class="lead"><b>~560–620 km each way</b>, about <b>10–12 hours</b> with stops.</p>
-        <p class="lead">Leave by <b>5:30 AM</b> on Thu 26 Nov; start home by <b>7 AM</b> on Tue 1 Dec.</p>
+        <p class="lead"><b>Out:</b> Bengaluru → Goa, ~560–620 km, 10–12 h. Leave by <b>5:30 AM</b> on Thu 26 Nov.</p>
+        <p class="lead"><b>Middle:</b> Palolem → Gokarna, ~100 km, 2–2.5 h on Mon 30 Nov.</p>
+        <p class="lead"><b>Back:</b> Gokarna → Bengaluru, ~490 km, 9–10 h. Leave by <b>9 AM</b> on Tue 1 Dec.</p>
         <a class="btn" href="#road">Routes, ghats &amp; tolls →</a>
       </div>
     </section>
   </template>
 
-  <script src="data.js?v=1"></script>
-  <script src="app.js?v=1"></script>
+  <script src="data.js?v=2"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>

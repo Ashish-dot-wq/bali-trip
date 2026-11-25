@@ -109,7 +109,7 @@
     if (!r.ok) throw new Error(r.status);
     return r.json();
   }
-  const PLACE_LABEL = { north: "North Goa", panaji: "Panaji & Old Goa", south: "South Goa", route: "On the route", airport: "Airports" };
+  const PLACE_LABEL = { north: "North Goa", panaji: "Panaji & Old Goa", south: "South Goa", gokarna: "Gokarna", route: "On the route", airport: "Airports" };
   function ago(iso) {
     const m = Math.round((Date.now() - Date.parse(iso)) / 60000);
     if (!isFinite(m)) return "";
@@ -322,13 +322,15 @@
     if (!TRIP.draft) $("#draftNote", view).remove();
   }
 
+  const routeCard = (o) => `<div class="route-opt"><h3>${o.name}</h3><div class="ro-meta">${o.km}</div><p>${o.text}</p><span class="ro-best">${o.best}</span></div>`;
   function roadView() {
     const r = TRIP.road;
     view.innerHTML = `<div class="pad">
       <h1 class="h">Road trip</h1>
       <p class="intro">${r.intro}</p>
-      <h2 class="h2">Route options from ${TRIP.home}</h2>
-      ${r.routes.map((o) => `<div class="route-opt"><h3>${o.name}</h3><div class="ro-meta">${o.km}</div><p>${o.text}</p><span class="ro-best">${o.best}</span></div>`).join("")}
+      <h2 class="h2">Getting there from ${TRIP.home}</h2>
+      ${r.routes.map(routeCard).join("")}
+      ${r.homeRoutes ? `<h2 class="h2">Coming home</h2>${r.homeRoutes.map(routeCard).join("")}` : ""}
       ${r.sections.map((s, i) => `
         <h2 class="h2">${s.title}</h2>
         <ul class="safety${i === 0 ? " primary" : ""}">${s.items.map((x) => `<li>${x}</li>`).join("")}</ul>`).join("")}
@@ -406,7 +408,7 @@
 
   function newsView() {
     const filter = store.get("news-filter", "all");
-    const FILTERS = [["all", "All"], ["alerts", "⚠️ Alerts"], ["north", "North Goa"], ["panaji", "Panaji & Old Goa"], ["south", "South Goa"], ["route", "On the route"], ["airport", "Airports"]];
+    const FILTERS = [["all", "All"], ["alerts", "⚠️ Alerts"], ["north", "North Goa"], ["panaji", "Panaji & Old Goa"], ["south", "South Goa"], ["gokarna", "Gokarna"], ["route", "On the route"], ["airport", "Airports"]];
     const match = (it) => filter === "all" ? true : filter === "alerts" ? it.alert : it.places.includes(filter);
     const render = () => {
       const d = news && news.data;
@@ -435,7 +437,7 @@
           <li><b>1033</b>: NHAI national highway helpline (breakdowns and accidents on the highway).</li>
           <li><a class="place" href="https://mausam.imd.gov.in/" target="_blank" rel="noopener">IMD weather warnings</a> (official)</li>
         </ul>
-        <p class="fine">Headlines are pulled automatically from Google News and matched to Goa and the route. They can miss things or be off-topic; for anything serious, check official sources and your stay.</p>
+        <p class="fine">Headlines are pulled automatically from Google News and matched to Goa, Gokarna and the route. They can miss things or be off-topic; for anything serious, check official sources and your stay.</p>
       </div>`;
       view.querySelectorAll(".filters button").forEach((b) => b.addEventListener("click", () => {
         store.set("news-filter", b.dataset.f); newsView();
@@ -562,7 +564,7 @@
   });
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 25 Nov";
+  const BUILD = "Updated 25 Nov · Gokarna added";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support + auto-update on resume ----------

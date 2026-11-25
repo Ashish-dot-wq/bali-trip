@@ -1,22 +1,23 @@
 // Goa 2026 — trip data (DRAFT: start city, stays and timings to be confirmed)
-// Road trip, Thu 26 Nov – Tue 1 Dec 2026.
+// Road trip Bengaluru → Goa → Gokarna → Bengaluru, Thu 26 Nov – Tue 1 Dec 2026.
 //
 // Place links: write {{🏖️ Place Name}} or {{🏖️ Label|search query}} inside an activity.
 // They render as Google Maps links (" Goa" is added to the search unless a query is given).
 
 const TRIP = {
   name: "Goa 2026",
-  title: "Goa Road Trip",
+  title: "Goa & Gokarna Road Trip",
   dates: "Thu 26 Nov – Tue 1 Dec 2026",
   start: "2026-11-26",          // Day 1 (India time)
   tz: "Asia/Kolkata",
   departure: "2026-11-26T05:30", // leave home (India time)
   home: "Bengaluru",            // assumed start city: TO CONFIRM
-  draft: "Draft plan: start city (assumed Bengaluru), stays and timings are still to be confirmed.",
+  draft: "Draft plan: start city (assumed Bengaluru), stays, nights per place and timings are still to be confirmed.",
 
   stays: [
     { place: "North Goa", nights: 3, dates: "26–29 Nov", note: "Area TBC (e.g. Candolim / Calangute / Anjuna)" },
-    { place: "South Goa", nights: 2, dates: "29 Nov – 1 Dec", note: "Area TBC (e.g. Palolem / Agonda)" }
+    { place: "South Goa", nights: 1, dates: "29–30 Nov", note: "Area TBC (e.g. Palolem)" },
+    { place: "Gokarna", nights: 1, dates: "30 Nov – 1 Dec", note: "Area TBC (e.g. Kudle / Om Beach)" }
   ],
 
   days: [
@@ -93,66 +94,76 @@ const TRIP = {
         ["12:00 PM - 01:30 PM", "Walk {{🏘️ Fontainhas|Fontainhas Panaji}}, Panaji", "Colourful Latin Quarter lanes, plus the white {{⛪ Immaculate Conception Church|Our Lady of the Immaculate Conception Church Panaji}} steps."],
         ["01:30 PM - 02:30 PM", "Goan lunch in Panaji", "Xacuti, cafreal, bebinca for dessert."],
         ["02:30 PM - 04:30 PM", "Drive to South Goa", "About 70 km / 1 h 45 min to Palolem, depending on traffic."],
-        ["04:30 PM - 05:30 PM", "Check in to the South Goa stay", "Stay TBC."],
-        ["05:30 PM - 07:00 PM", "Sunset at {{🏖️ Palolem Beach}}", "Calm crescent bay lined with palm trees."]
+        ["04:30 PM - 05:30 PM", "Check in to the South Goa stay", "Stay TBC (one night)."],
+        ["05:30 PM - 07:00 PM", "Sunset at {{🏖️ Palolem Beach}}", "Calm crescent bay lined with palm trees."],
+        ["07:30 PM - 09:30 PM", "Dinner in Palolem", "Beach restaurants along the bay."]
       ],
       tip: "Parking near the Old Goa churches and in Fontainhas is tight. Use the paid lots, and don't leave bags in the car while you walk.",
       extras: null
     },
     {
-      day: 5, date: "Mon, Nov 30", base: "South Goa", kind: "full",
-      title: "South Goa beaches and Cabo de Rama",
+      day: 5, date: "Mon, Nov 30", base: "Gokarna", kind: "full",
+      title: "South Goa morning, on to Gokarna",
       photos: [
-        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/The_shore_of_Arabian_sea_from_Cabo_de_Rama_Fort.jpg/960px-The_shore_of_Arabian_sea_from_Cabo_de_Rama_Fort.jpg", "caption": "View from Cabo de Rama Fort", "credit": "Photo: iMahesh · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:The_shore_of_Arabian_sea_from_Cabo_de_Rama_Fort.jpg"},
-        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b6/Agonda_Beach_in_the_Evening.jpg/960px-Agonda_Beach_in_the_Evening.jpg", "caption": "Agonda Beach in the evening", "credit": "Photo: JosephAssisFernandes · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Agonda_Beach_in_the_Evening.jpg"},
         {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Butterfly_Beach_-_panoramio.jpg/960px-Butterfly_Beach_-_panoramio.jpg", "caption": "Butterfly Beach", "credit": "Photo: Deepak Patil · CC BY-SA 3.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Butterfly_Beach_-_panoramio.jpg"},
-        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Beach_shack_at_sunset%2C_Palolem%2C_Goa.jpg/960px-Beach_shack_at_sunset%2C_Palolem%2C_Goa.jpg", "caption": "Beach shack at sunset, Palolem", "credit": "Photo: Niranjan Ramamurthy · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Beach_shack_at_sunset,_Palolem,_Goa.jpg"}
+        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Kali_river_bridge.jpg/960px-Kali_river_bridge.jpg", "caption": "Kali river bridge, Karwar", "credit": "Photo: Rane.abhijeet · CC BY 3.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Kali_river_bridge.jpg"},
+        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/PXL_20260103_101009613_People_and_Beach_Om_Beach_Gokarna%2C_Karnataka_27.jpg/960px-PXL_20260103_101009613_People_and_Beach_Om_Beach_Gokarna%2C_Karnataka_27.jpg", "caption": "Om Beach, Gokarna", "credit": "Photo: Sourabh.biswas003 · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:PXL_20260103_101009613_People_and_Beach_Om_Beach_Gokarna,_Karnataka_27.jpg"},
+        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Kudle_Beach%2C_Gokarna.jpg/960px-Kudle_Beach%2C_Gokarna.jpg", "caption": "Kudle Beach, Gokarna", "credit": "Photo: Malavikanandan30 · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Kudle_Beach,_Gokarna.jpg"},
+        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/PXL_20260103_091848995.MP_Half_Moon_Beach_Gokarna_Karnatak_01.jpg/960px-PXL_20260103_091848995.MP_Half_Moon_Beach_Gokarna_Karnatak_01.jpg", "caption": "Half Moon Beach, next to Om Beach", "credit": "Photo: Sourabh.biswas003 · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:PXL_20260103_091848995.MP_Half_Moon_Beach_Gokarna_Karnatak_01.jpg"}
       ],
       rows: [
         ["07:30 AM - 09:00 AM", "Dolphin / Butterfly Beach boat trip from Palolem", "Local boats leave from the beach in the morning. Agree the price and route first; life jackets on."],
-        ["09:30 AM - 10:30 AM", "Breakfast", "Palolem cafés."],
-        ["11:00 AM - 12:30 PM", "{{🏰 Cabo de Rama Fort}}", "Clifftop fort ruins with big sea views (~30 min drive)."],
-        ["01:00 PM - 03:00 PM", "Lunch and swim at {{🏖️ Agonda Beach}}", "Long, quiet beach. Turtles nest here in season, so stay away from any fenced nesting areas."],
-        ["03:30 PM - 05:30 PM", "Relax at {{🏖️ Patnem Beach}}", "Small, calm beach next to Palolem."],
-        ["06:00 PM - 09:30 PM", "Farewell dinner in Palolem", "Pack tonight for the early start home."]
+        ["09:00 AM - 10:00 AM", "Breakfast and check out", "Palolem cafés."],
+        ["10:00 AM - 12:30 PM", "Drive Palolem → Gokarna", "About 100 km / 2–2.5 h on NH66 via {{🌉 Karwar|Karwar}} (crossing the Kali river bridge), then Ankola."],
+        ["12:30 PM - 02:00 PM", "Lunch and check in at Gokarna", "Stay TBC. Many stays are near {{🏖️ Kudle Beach|Kudle Beach Gokarna}} or {{🏖️ Om Beach|Om Beach Gokarna}}; ask where to park."],
+        ["02:30 PM - 05:00 PM", "Beach time at {{🏖️ Kudle Beach|Kudle Beach Gokarna}}", "Laid-back beach with cafés. Strong currents are common on Gokarna beaches, so stay in your depth."],
+        ["05:00 PM - 06:45 PM", "Walk over the headland to {{🏖️ Om Beach|Om Beach Gokarna}} for sunset", "About 20–30 min on a rocky trail with sea views. Carry a phone torch for the way back, or take an auto."],
+        ["07:30 PM - 09:30 PM", "Dinner at a beach café", "Last night of the trip; pack the car tonight for the drive home."]
       ],
-      tip: "Swim only where lifeguards are posted and stay between the flags. Never swim after drinking or after dark.",
-      extras: null
+      tip: "Gokarna is a temple town as well as a beach town: dress modestly away from the beach. Swim only where it's calm and lifeguards are present; drownings happen here.",
+      extras: "Instead of the boat trip: a quick morning visit to {{🏰 Cabo de Rama Fort}} (~30 min from Palolem) before driving south."
     },
     {
       day: 6, date: "Tue, Dec 1", base: "Drive home", kind: "drive",
-      title: "Road trip home",
+      title: "Gokarna, then home to Bengaluru",
       photos: [
-        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Kali_river_bridge.jpg/960px-Kali_river_bridge.jpg", "caption": "Kali river bridge, Karwar", "credit": "Photo: Rane.abhijeet · CC BY 3.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Kali_river_bridge.jpg"},
-        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Majali_Beach%2C_Devabhaga%2C_Karwar.jpg/960px-Majali_Beach%2C_Devabhaga%2C_Karwar.jpg", "caption": "Majali Beach, Karwar", "credit": "Photo: Kondephy · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Majali_Beach,_Devabhaga,_Karwar.jpg"},
+        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Entrance_to_Gokarna_Mahabaleshwar_Temple_-_panoramio.jpg/960px-Entrance_to_Gokarna_Mahabaleshwar_Temple_-_panoramio.jpg", "caption": "Mahabaleshwar Temple entrance, Gokarna", "credit": "Photo: Deepak Patil · CC BY-SA 3.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Entrance_to_Gokarna_Mahabaleshwar_Temple_-_panoramio.jpg"},
+        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Gokarna.JPG/960px-Gokarna.JPG", "caption": "Gokarna", "credit": "Photo: Uleli · CC BY-SA 3.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Gokarna.JPG"},
+        {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a4/Yana_Rocks_Karnataka_India.jpg/960px-Yana_Rocks_Karnataka_India.jpg", "caption": "Yana Rocks", "credit": "Photo: Photos Worldwide · CC0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Yana_Rocks_Karnataka_India.jpg"},
         {"url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/Forests_of_the_Western_Ghats_Karnataka.jpg/960px-Forests_of_the_Western_Ghats_Karnataka.jpg", "caption": "Western Ghats forest, Karnataka", "credit": "Photo: Naik2408 · CC BY-SA 4.0 · Wikimedia Commons", "source": "https://commons.wikimedia.org/wiki/File:Forests_of_the_Western_Ghats_Karnataka.jpg"}
       ],
       rows: [
-        ["06:30 AM - 07:00 AM", "Check out early", "Fill up with fuel in Goa (usually a bit cheaper than Karnataka)."],
-        ["07:00 AM - 10:00 AM", "Coast road north: Karwar, then Ankola", "Via {{🌉 Karwar|Karwar}} on NH66, then inland to Yellapur through the ghats. Check the Road trip page for alternatives."],
-        ["10:00 AM - 10:45 AM", "Breakfast break", "Around Ankola–Yellapur."],
-        ["10:45 AM - 01:30 PM", "Yellapur → Hubballi", "Winding ghat section; slow down on bends."],
-        ["01:30 PM - 02:30 PM", "Lunch in Hubballi", "Swap drivers."],
-        ["02:30 PM - 09:00 PM", "Hubballi → Bengaluru on NH48", "Long highway stretch; take a 15-minute break every 2 hours. Expect city traffic near Bengaluru in the evening."]
+        ["06:30 AM - 08:00 AM", "Sunrise and {{🛕 Mahabaleshwar Temple|Mahabaleshwar Temple Gokarna}}", "Ancient Shiva temple in the town centre. Dress modestly and follow the dress rules at the entrance."],
+        ["08:00 AM - 09:00 AM", "Breakfast and check out", "Fill up with fuel before leaving the coast."],
+        ["09:00 AM - 11:00 AM", "Gokarna → Kumta → Sirsi", "Inland through the Western Ghats (~85 km). Winding ghat road; take it slow."],
+        ["11:00 AM - 12:00 PM", "Optional stop: {{🪨 Yana Rocks|Yana Rocks Kumta}}", "Huge black limestone rock formations in the forest, a short detour off this road. Skip it if you're running late."],
+        ["12:30 PM - 01:30 PM", "Lunch in Sirsi", "Swap drivers."],
+        ["01:30 PM - 03:00 PM", "Sirsi → Haveri, join NH48", "About 75 km."],
+        ["03:00 PM - 09:00 PM", "Haveri → Bengaluru on NH48", "About 335 km; take a 15-minute break every 2 hours. Expect city traffic near Bengaluru in the evening."]
       ],
-      tip: "Leaving by 7 AM gets you through the ghats in daylight. If anyone is tired, stop; don't push the last stretch.",
-      extras: null
+      tip: "Total ~490 km, 9–10 hours with stops. Leaving by 9 AM gets you through the ghats in daylight. If anyone is tired, stop; don't push the last stretch.",
+      extras: "Alternative route home: Gokarna → Ankola → Yellapur → Hubballi → NH48 (~500 km)."
     }
   ],
 
   road: {
-    intro: "About <b>560–620 km each way</b> and <b>10–12 hours</b> with stops, depending on the route and traffic. Always check Google Maps live traffic on the morning you leave.",
+    intro: "Out: Bengaluru → Goa, about <b>560–620 km</b> and <b>10–12 hours</b> with stops. Back: Gokarna → Bengaluru, about <b>490–500 km</b> and <b>9–10 hours</b>. Always check Google Maps live traffic on the morning you leave.",
     routes: [
       { name: "Via Belagavi and Chorla Ghat", km: "~600 km · 10–12 h", best: "Best for North Goa", text: "NH48 to Belagavi, then the Chorla Ghat road down to Sanquelim and Mapusa. Scenic but narrow and winding; drive it in daylight." },
       { name: "Via Dharwad and Anmod Ghat", km: "~570 km · 10–11 h", best: "Best for Panaji / central Goa", text: "NH48 to Hubballi–Dharwad, then Ramnagar, Anmod Ghat, Mollem and Ponda. Road quality on the ghat stretch varies; check recent reviews and traffic." },
-      { name: "Via Yellapur and Karwar (coast)", km: "~610 km · 11–12 h", best: "Best for South Goa", text: "NH48 to Hubballi, then Yellapur and Ankola down to Karwar and NH66 into Canacona/Palolem. Good for the drive home from South Goa." }
+      { name: "Via Yellapur and Karwar (coast)", km: "~610 km · 11–12 h", best: "Best for South Goa", text: "NH48 to Hubballi, then Yellapur and Ankola down to Karwar and NH66 into Canacona/Palolem." }
+    ],
+    homeRoutes: [
+      { name: "Gokarna → Kumta → Sirsi → Haveri → NH48", km: "~490 km · 9–10 h", best: "Planned route", text: "Ghat road inland from Kumta to Sirsi, then down to Haveri to join NH48. Optional Yana Rocks detour on the way." },
+      { name: "Gokarna → Ankola → Yellapur → Hubballi → NH48", km: "~500 km · 9–10 h", best: "Alternative", text: "Via the Ankola–Yellapur ghat road to Hubballi, then NH48 all the way. Good if the Sirsi road has delays." }
     ],
     sections: [
       { title: "⏰ Timing & safety", items: [
         "<b>Leave by 5:30–6 AM.</b> You'll clear Bengaluru traffic and reach the ghats in daylight.",
         "<b>Avoid ghat roads after dark</b>: sharp bends, trucks, and fog early or late in the day.",
         "<b>Break every 2 hours</b> and swap drivers. Tiredness is the biggest risk on this drive.",
-        "Late November is normally dry, but check for any rain or landslide warnings the day before (see Local news)."
+        "Late November is normally dry, but check for any rain or landslide warnings the day before (see Local news).",
+        "<b>Goa → Gokarna (Day 5):</b> about 100 km / 2–2.5 h on NH66 via Karwar and Ankola."
       ]},
       { title: "⛽ Tolls, fuel & food", items: [
         "<b>FASTag:</b> keep a healthy balance (₹1,500+ for both ways is a safe buffer). Tolls without FASTag cost double.",
@@ -196,13 +207,22 @@ const TRIP = {
         ]
       },
       {
-        place: "South Goa", when: "29–30 Nov · 2 nights", vibe: "Quieter: beach bars, music and the odd headphone party.",
-        best: "<b>Sun 29 / Mon 30:</b> beach bars in Palolem; low-key.",
+        place: "South Goa", when: "29 Nov · 1 night", vibe: "Quieter: beach bars, music and the odd headphone party.",
+        best: "<b>Sun 29:</b> beach bars in Palolem; low-key.",
         venues: [
           { name: "Palolem beach bars", q: "Palolem beach bars", tag: "Evenings", text: "Relaxed bars and shacks along the beach." },
           { name: "Silent noise / headphone parties", q: "Silent noise party Palolem", tag: "Some nights", text: "Palolem is known for headphone parties; days change by season, so ask locally." }
         ],
         note: "South Goa is calmer; most places wind down by midnight."
+      },
+      {
+        place: "Gokarna", when: "30 Nov · 1 night", vibe: "Not a party town: beach cafés, bonfires and stargazing. It's also a temple town, so keep it respectful.",
+        best: "<b>Mon 30:</b> sunset at Om Beach, dinner at a beach café, early night before the drive home.",
+        venues: [
+          { name: "Om Beach cafés", q: "Om Beach cafe Gokarna", tag: "Sunset", text: "Cafés and shacks around the Om-shaped bay." },
+          { name: "Kudle Beach cafés", q: "Kudle Beach cafe Gokarna", tag: "Evenings", text: "Relaxed cafés with music on the sand." }
+        ],
+        note: "Most places close early. You're driving ~490 km the next day, so keep it light."
       }
     ],
     safety: [
@@ -216,7 +236,7 @@ const TRIP = {
   },
 
   faq: [
-    { q: "How long is the drive?", a: "About <b>560–620 km each way</b>, usually <b>10–12 hours</b> with stops. See the Road trip page for route options." },
+    { q: "How long are the drives?", a: "Bengaluru → Goa: about <b>560–620 km</b>, 10–12 hours with stops. Gokarna → Bengaluru: about <b>490–500 km</b>, 9–10 hours. See the Road trip page for routes." },
     { q: "What's the weather like in late November?", a: "Usually dry and sunny, around <b>22–33 °C</b>, with calmer seas than in monsoon. An odd late-season shower is possible." },
     { q: "Is it peak season?", a: "Late November is just before peak; the weekend (28–29 Nov) is busier. Book weekend dinners or club tables if you have a favourite." },
     { q: "Is it safe to swim?", a: "Swim only at beaches with lifeguards, between the flags. Red flag means no swimming. Never swim after dark or after drinking." },
@@ -225,6 +245,8 @@ const TRIP = {
     { q: "Any rules about alcohol?", a: "Drinking in the open on beaches and roadsides can be fined, and drink-driving checks are common at night. Drink at bars, shacks or your stay." },
     { q: "Dress code for churches?", a: "Cover shoulders and knees and keep quiet during mass, especially on Sunday at Old Goa." },
     { q: "Mobile signal on the way?", a: "Good on NH48 and in Goa towns; patchy in the ghats. Download offline maps before you leave." },
+    { q: "Is it safe to swim in Gokarna?", a: "Be careful: Gokarna's beaches can have strong currents and drownings are reported. Swim only where it's calm and lifeguards are present, stay in your depth, and never swim after dark or after drinking." },
+    { q: "Any dress code in Gokarna?", a: "Beachwear is fine on the beach, but cover up in town and at the Mahabaleshwar Temple. Follow the dress rules posted at the temple entrance." },
     { q: "Emergency numbers?", a: "<b>112</b> any emergency, <b>108</b> ambulance, <b>1033</b> NHAI highway helpline." }
   ],
 

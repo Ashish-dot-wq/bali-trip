@@ -44,7 +44,7 @@ const PLACES = {
   ubud: /\b(ubud|gianyar|tegallalang)\b/i,
   airport: /\b(ngurah rai|bali airport|denpasar airport|i gusti ngurah)\b/i
 };
-const ALERT = /\b(earthquake|quake|tremor|tsunami|erupt\w*|volcan\w*|ash cloud|flood\w*|landslide\w*|evacuat\w*|warning|state of emergency|emergency|closed|closure|cancel\w*|suspend\w*|strike|protest|riot|outage|blackout|water crisis|without water|disrupt\w*|shortage|delay\w*|outbreak|rabies|dengue|methanol|poison\w*|drown\w*|rip current|storm|cyclone|high waves|extreme weather|missing)\b/i;
+const ALERT = /\b(earthquake|quake|tremor|tsunami|erupt\w*|volcan\w*|ash cloud|flood\w*|landslide\w*|evacuat\w*|warning|state of emergency|emergency|closed|closure|cancel\w*|suspend\w*|strike|protest|riot|outage|blackout|water crisis|without water|disrupt\w*|shortage|delay\w*|outbreak|rabies|dengue|methanol|poison\w*|drown\w*|rip current|storm|cyclone|high waves|extreme weather|missing|injur\w*|plunge\w*|killed|dies|died|dead|death|overturn\w*|toppl\w*|collaps\w*|stranded|rescued)\b/i;
 // Must also be about one of our areas to count as an alert
 const AREA = /\b(bali|lombok|gilis?|nusa penida|seminyak|kuta|canggu|ubud|amed (?:beach|bali|village)|tulamben|karangasem|agung|padang ?bai|sanur|denpasar|ngurah rai|rinjani)\b/i;
 

@@ -38,7 +38,7 @@ const PLACES = {
   airport: /\b(goa airport|dabolim|mopa|manohar international)\b/i
 };
 const ROAD = /\b(road|roads|highway|nh ?\d+|ghat|traffic|accident|crash|closed|closure|diversion|toll|landslide|bridge|potholes?)\b/i;
-const ALERT = /\b(flood\w*|landslide\w*|cyclone|storm|red alert|orange alert|yellow alert|heavy rain|rough sea|high waves|drown\w*|rip current|accident|crash|road closed|closure|diversion|traffic jam|bandh|strike|curfew|section 144|protest|power cut|outage|blackout|water cut|water shortage|outbreak|dengue|fire|evacuat\w*|warning|emergency|cancel\w*|delay\w*|missing|injur\w*|plunge\w*|killed|dies|died|dead|death|overturn\w*|toppl\w*|collaps\w*|stranded|rescued)\b/i;
+const ALERT = /\b(flood\w*|landslide\w*|cyclone|storm|red alert|orange alert|yellow alert|heavy rain|rough sea|high waves|drown\w*|rip current|accident|crash|road closed|closure|diversion|traffic jam|bandh|strike|curfew|section 144|protest|power cut|outage|blackout|water cut|water shortage|outbreak|dengue|fire|evacuat\w*|warning|emergency|cancel\w*|delay\w*|missing|injur\w*|plunge\w*|killed|overturn\w*|toppl\w*|collaps\w*|stranded|rescued)\b/i;
 const AREA = /\b(goa|goan|panaji|panjim|calangute|baga|candolim|anjuna|vagator|palolem|agonda|canacona|margao|madgaon|mapusa|mopa|dabolim|karwar|anmod|chorla|gokarna|kumta|sirsi|uttara kannada)\b/i;
 
 // Same word, different topic: FC Goa / cricket fixtures, and Indonesian "goa" (cave) place names
@@ -47,7 +47,7 @@ const NOISE = /\b(fc goa|isl|indian super league|ranji|vijay hazare|syed mushtaq
 const NOISE_CAPS = /\b(GOA|BAGA)\b/;
 
 // Words that make a story NOT an alert even if it mentions floods, protests etc. (drills, campaigns, events elsewhere)
-const NOT_ALERT = /\b(mock drill|drills?|awareness|campaign|seminar|workshop|exhibition|jantar mantar)\b/i;
+const NOT_ALERT = /\b(mock drill|drills?|awareness|campaign|seminar|workshop|exhibition|jantar mantar|dining|restaurant|menu|chef|cocktails?)\b/i;
 
 const UA = { "User-Agent": "Mozilla/5.0 (compatible; trip-news-bot/1.0)" };
 

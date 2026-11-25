@@ -41,7 +41,7 @@ const ALERT = /\b(flood\w*|landslide\w*|cyclone|storm|red alert|orange alert|yel
 const AREA = /\b(goa|goan|panaji|panjim|calangute|baga|candolim|anjuna|vagator|palolem|agonda|canacona|margao|madgaon|mapusa|mopa|dabolim|karwar|anmod|chorla|gokarna|kumta|sirsi)\b/i;
 
 // Same word, different topic: FC Goa / cricket fixtures, and Indonesian "goa" (cave) place names
-const NOISE = /\b(fc goa|isl|indian super league|ranji|vijay hazare|syed mushtaq|batting|century|innings|wickets?|goa (gajah|lawah|pindul|jomblang|maria)|gua|gold rate|gold price)\b/i;
+const NOISE = /\b(fc goa|isl|indian super league|ranji|vijay hazare|syed mushtaq|batting|century|innings|wickets?|goa (gajah|lawah|pindul|jomblang|maria)|gua|gold rate|gold price|puja|pooja|homam|nakshatra|locomotive|wap ?\d+|wdg ?\d+\w*)\b/i;
 // All-caps acronyms that aren't the place (e.g. a "GOA report", "BAGA" organisations) — case-sensitive
 const NOISE_CAPS = /\b(GOA|BAGA)\b/;
 

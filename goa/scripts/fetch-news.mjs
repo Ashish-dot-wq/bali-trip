@@ -46,6 +46,9 @@ const NOISE = /\b(fc goa|isl|indian super league|ranji|vijay hazare|syed mushtaq
 // All-caps acronyms that aren't the place (e.g. a "GOA report", "BAGA" organisations) — case-sensitive
 const NOISE_CAPS = /\b(GOA|BAGA)\b/;
 
+// Words that make a story NOT an alert even if it mentions floods, protests etc. (drills, campaigns, events elsewhere)
+const NOT_ALERT = /\b(mock drill|drills?|awareness|campaign|seminar|workshop|exhibition|jantar mantar)\b/i;
+
 const UA = { "User-Agent": "Mozilla/5.0 (compatible; trip-news-bot/1.0)" };
 
 async function get(id, url) {
@@ -115,7 +118,7 @@ async function main() {
       // The headline itself must be about our area (search engines match loosely)
       const places = Object.entries(PLACES).filter(([, re]) => re.test(text)).map(([k]) => k);
       if (!places.length && !AREA.test(text)) continue;
-      const alert = ALERT.test(text);
+      const alert = ALERT.test(text) && !NOT_ALERT.test(text);
       items.push({ title: it.title, link: it.link, source: it.source, published: it.published, places, alert, kind: "news" });
       kept++;
     }

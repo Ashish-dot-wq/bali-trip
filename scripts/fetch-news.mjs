@@ -51,6 +51,9 @@ const AREA = /\b(bali|lombok|gilis?|nusa penida|seminyak|kuta|canggu|ubud|amed (
 // Same word, different topic (e.g. Odisha's "Bali Yatra" festival, brands and people called Bali)
 const NOISE = /\b(odisha|cuttack|kalinga|paradip|bali ?(yatra|jatra)|bali lawal|bali curls|amed (sk|sportif|spor)|rizespor|diyarbak\w*|kurdistan|amed\.du)\b/i;
 
+// Words that make a story NOT an alert even if it mentions floods, protests etc. (drills, campaigns, events elsewhere)
+const NOT_ALERT = /\b(mock drill|drills?|awareness|campaign|seminar|workshop|exhibition|jantar mantar)\b/i;
+
 const UA = { "User-Agent": "Mozilla/5.0 (compatible; trip-news-bot/1.0)" };
 
 async function get(id, url) {
@@ -130,7 +133,7 @@ async function main() {
       // The headline itself must be about our area (search engines match loosely)
       const places = Object.entries(PLACES).filter(([, re]) => re.test(text)).map(([k]) => k);
       if (!places.length && !AREA.test(text)) continue;
-      const alert = ALERT.test(text);
+      const alert = ALERT.test(text) && !NOT_ALERT.test(text);
       const natural = /\b(erupt\w*|volcan\w*|earthquake|quake|tsunami)\b/i.test(text);
       items.push({ title: it.title, link: it.link, source: it.source, published: it.published, places, alert, kind: "news",
         ...(alert && natural ? { detail: "News report: check BMKG / MAGMA for the current official status" } : {}) });

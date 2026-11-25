@@ -39,7 +39,9 @@ const ALERT = /\b(flood\w*|landslide\w*|cyclone|storm|red alert|orange alert|yel
 const AREA = /\b(goa|goan|panaji|panjim|calangute|baga|candolim|anjuna|vagator|palolem|agonda|canacona|margao|madgaon|mapusa|mopa|dabolim|karwar|anmod|chorla)\b/i;
 
 // Same word, different topic: FC Goa / cricket fixtures, and Indonesian "goa" (cave) place names
-const NOISE = /\b(fc goa|isl|indian super league|ranji|vijay hazare|syed mushtaq|goa (gajah|lawah|pindul|jomblang|maria)|gua)\b/i;
+const NOISE = /\b(fc goa|isl|indian super league|ranji|vijay hazare|syed mushtaq|batting|century|innings|wickets?|goa (gajah|lawah|pindul|jomblang|maria)|gua|gold rate|gold price)\b/i;
+// All-caps acronyms that aren't the place (e.g. a "GOA report", "BAGA" organisations) — case-sensitive
+const NOISE_CAPS = /\b(GOA|BAGA)\b/;
 
 const UA = { "User-Agent": "Mozilla/5.0 (compatible; trip-news-bot/1.0)" };
 
@@ -105,7 +107,7 @@ async function main() {
     for (const it of parseRss(xml, feed)) {
       if (Date.parse(it.published) < cutoff) continue;
       const text = isGoogle ? it.title : it.text;
-      if (NOISE.test(text)) continue;
+      if (NOISE.test(text) || NOISE_CAPS.test(it.title)) continue;
       if (feed.requireRoad && !ROAD.test(text)) continue;
       // The headline itself must be about our area (search engines match loosely)
       const places = Object.entries(PLACES).filter(([, re]) => re.test(text)).map(([k]) => k);

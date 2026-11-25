@@ -24,6 +24,7 @@ const FEEDS = [
   { id: "panaji", url: gnews("Panaji OR Panjim OR \"Old Goa\" when:7d") },
   { id: "south", url: gnews("Palolem OR Agonda OR Canacona OR Colva OR Benaulim OR Margao OR \"South Goa\" when:10d") },
   { id: "gokarna", url: gnews("Gokarna OR Kumta OR \"Om Beach\" when:14d") },
+  { id: "alerts-uk", url: gnews("(\"Uttara Kannada\" OR Gokarna OR Karwar OR Kumta OR Sirsi) (rain OR \"red alert\" OR \"orange alert\" OR landslide OR flood OR drowning OR drowned OR accident OR closed OR cyclone) when:7d") },
   { id: "route", url: gnews("(Hubballi OR Dharwad OR Belagavi OR Karwar OR Yellapur OR Sirsi OR \"Anmod ghat\" OR \"Chorla ghat\" OR NH48 OR NH66) (road OR highway OR traffic OR accident OR closed OR ghat OR landslide) when:7d"), requireRoad: true },
   { id: "airport", url: gnews("\"Goa airport\" OR Mopa OR Dabolim when:7d") }
 ];
@@ -32,13 +33,13 @@ const PLACES = {
   north: /\b(north goa|calangute|baga|candolim|sinquerim|anjuna|vagator|chapora|arpora|morjim|ashwem|mandrem|arambol|siolim|mapusa|nerul)\b/i,
   panaji: /\b(panaji|panjim|old goa|fontainhas|miramar|dona paula|porvorim|ribandar)\b/i,
   south: /\b(south goa|palolem|agonda|patnem|canacona|colva|benaulim|varca|cavelossim|margao|madgaon|cabo de rama|vasco)\b/i,
-  gokarna: /\b(gokarna|om beach|kudle|kumta|yana|mirjan|honnavar)\b/i,
+  gokarna: /\b(gokarna|om beach|kudle|kumta|yana|mirjan|honnavar|uttara kannada)\b/i,
   route: /\b(hubballi|hubli|dharwad|belagavi|belgaum|anmod|chorla|karwar|ankola|yellapur|sirsi|haveri|mollem|ponda|nh ?48|nh ?66|ramnagar)\b/i,
   airport: /\b(goa airport|dabolim|mopa|manohar international)\b/i
 };
 const ROAD = /\b(road|roads|highway|nh ?\d+|ghat|traffic|accident|crash|closed|closure|diversion|toll|landslide|bridge|potholes?)\b/i;
 const ALERT = /\b(flood\w*|landslide\w*|cyclone|storm|red alert|orange alert|yellow alert|heavy rain|rough sea|high waves|drown\w*|rip current|accident|crash|road closed|closure|diversion|traffic jam|bandh|strike|curfew|section 144|protest|power cut|outage|blackout|water cut|water shortage|outbreak|dengue|fire|evacuat\w*|warning|emergency|cancel\w*|delay\w*|missing)\b/i;
-const AREA = /\b(goa|goan|panaji|panjim|calangute|baga|candolim|anjuna|vagator|palolem|agonda|canacona|margao|madgaon|mapusa|mopa|dabolim|karwar|anmod|chorla|gokarna|kumta|sirsi)\b/i;
+const AREA = /\b(goa|goan|panaji|panjim|calangute|baga|candolim|anjuna|vagator|palolem|agonda|canacona|margao|madgaon|mapusa|mopa|dabolim|karwar|anmod|chorla|gokarna|kumta|sirsi|uttara kannada)\b/i;
 
 // Same word, different topic: FC Goa / cricket fixtures, and Indonesian "goa" (cave) place names
 const NOISE = /\b(fc goa|isl|indian super league|ranji|vijay hazare|syed mushtaq|batting|century|innings|wickets?|goa (gajah|lawah|pindul|jomblang|maria)|gua|gold rate|gold price|puja|pooja|homam|nakshatra|locomotive|wap ?\d+|wdg ?\d+\w*)\b/i;

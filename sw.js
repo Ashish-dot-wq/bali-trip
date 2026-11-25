@@ -1,6 +1,6 @@
 // Bali 2026: offline support. Site files: network first, cached copy when offline.
 // Photos: cached after first view so they show offline too.
-const CACHE = "bali2026-v13";
+const CACHE = "bali2026-v14";
 const CORE = ["./", "index.html", "manifest.json", "icon-192.png"];
 
 self.addEventListener("install", (e) => {

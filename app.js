@@ -111,6 +111,9 @@
     const h = Math.round(m / 60); if (h < 24) return `${h} h ago`;
     const d = Math.round(h / 24); return `${d} day${d > 1 ? "s" : ""} ago`;
   }
+  // A story only counts as an alert while it's recent (older ones show as normal news)
+  const ALERT_HOURS = 72;
+  const isAlert = (it) => !!it.alert && Date.now() - Date.parse(it.published) < ALERT_HOURS * 3600000;
   let news = store.get("bali2026-news", null); // { data, fetchedAt }
   let newsTried = false;
   async function loadNews(force) {
@@ -133,8 +136,7 @@
     const el = $("#ticker", view);
     if (!el || !news || !news.data.items.length) return;
     const items = news.data.items;
-    const fresh = (x) => Date.now() - Date.parse(x.published) < 72 * 3600000;
-    const alerts = items.filter((x) => x.alert && fresh(x)).slice(0, 3);
+    const alerts = items.filter(isAlert).slice(0, 3);
     const pick = [...alerts, ...items.filter((x) => !alerts.includes(x)).slice(0, 5)].map((x) => ({ ...x, alert: alerts.includes(x) }));
     let i = 0;
     const show = () => {
@@ -450,7 +452,7 @@
   function newsView() {
     const filter = store.get("bali2026-news-filter", "all");
     const FILTERS = [["all", "All"], ["alerts", "⚠️ Alerts"], ["seminyak", "Seminyak"], ["penida", "Nusa Penida"], ["gili", "Gili T & Lombok"], ["amed", "Amed"], ["ubud", "Ubud"], ["airport", "Airport"]];
-    const match = (it) => filter === "all" ? true : filter === "alerts" ? it.alert
+    const match = (it) => filter === "all" ? true : filter === "alerts" ? isAlert(it)
       : filter === "gili" ? it.places.some((p) => p === "gili" || p === "lombok") : it.places.includes(filter);
     const render = () => {
       const d = news && news.data;
@@ -465,9 +467,9 @@
         ${!d ? `<div class="empty">The news feed is starting up. It refreshes every 2 hours, so check back soon.</div>`
           : !items.length ? `<div class="empty">Nothing in the last two weeks for this filter. That's usually good news.</div>`
           : `<ul class="news-list">${items.map((it) => `
-            <li class="${it.alert ? "alert" : ""}">
+            <li class="${isAlert(it) ? "alert" : ""}">
               <a href="${esc(safeUrl(it.link))}" target="_blank" rel="noopener">
-                <span class="n-title">${it.alert ? '<span class="flag alert">Alert</span> ' : ""}${esc(it.title)}</span>
+                <span class="n-title">${isAlert(it) ? '<span class="flag alert">Alert</span> ' : ""}${esc(it.title)}</span>
                 ${it.detail ? `<span class="n-detail">${esc(it.detail)}</span>` : ""}
                 <span class="n-meta">${esc(it.source)} · ${ago(it.published)}${it.places.length ? " · " + it.places.map((p) => esc(PLACE_LABEL[p] || p)).join(", ") : ""}</span>
               </a>
@@ -638,7 +640,7 @@
   setInterval(tick, 15000);
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 24 Nov, 14:43 UTC";
+  const BUILD = "Updated 25 Nov, 05:02 UTC";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support ----------

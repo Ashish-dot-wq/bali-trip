@@ -122,14 +122,23 @@ async function main() {
     feedStats[feed.id] = kept;
   }
 
-  // Dedupe by normalised title, keep the earliest-published copy's source
+  // Dedupe: exact title matches, then near-duplicates (the same story worded differently by
+  // different outlets, e.g. "Fire guts four Calangute shacks" / "Aid for fire-hit Calangute shacks").
+  const STOP = new Set("the a an and or of in on at to for from with by after as is are was were be this that its it new over amid into after says said".split(" "));
+  const words = (t) => new Set(norm(t).split(" ").filter((w) => w.length > 3 && !STOP.has(w)).map((w) => (w.length > 4 ? w.replace(/s$/, "") : w)));
+  // share at least 3 key words AND at least half of the shorter headline's key words
+  const similar = (a, b) => { let n = 0; for (const w of a) if (b.has(w)) n++; return n >= 3 ? n / Math.min(a.size, b.size) : 0; };
   const seen = new Map();
-  for (const it of items) {
+  const kept = [];
+  for (const it of items.sort((a, b) => Date.parse(b.published) - Date.parse(a.published))) {
     const k = norm(it.title);
-    const prev = seen.get(k);
-    if (!prev) seen.set(k, it);
-    else prev.alert = prev.alert || it.alert;
+    if (seen.has(k)) { seen.get(k).alert = seen.get(k).alert || it.alert; continue; }
+    const w = words(it.title);
+    const dup = kept.find((x) => Math.abs(Date.parse(x.published) - Date.parse(it.published)) < 4 * 86400000 && w.size >= 3 && x._w.size >= 3 && similar(w, x._w) >= 0.5);
+    if (dup) { dup.alert = dup.alert || it.alert; dup.places = [...new Set([...dup.places, ...it.places])]; continue; }
+    it._w = w; seen.set(k, it); kept.push(it);
   }
+  kept.forEach((x) => delete x._w);
   // Balance: every alert, up to PER_PLACE stories per area, then a few general Goa stories
   const byDate = (a, b) => Date.parse(b.published) - Date.parse(a.published);
   const all = [...seen.values()].sort(byDate);

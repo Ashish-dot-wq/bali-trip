@@ -2,8 +2,7 @@
 // (run by .github/workflows/goa-photo-lookup.yml; the results are reviewed by hand).
 import { writeFileSync } from "node:fs";
 const QUERIES = [
-  "Candolim beach Goa", "Fort Aguada Goa", "Sinquerim beach", "Chapora Fort", "Vagator beach", "Anjuna beach",
-  "Baga beach Goa", "Calangute beach", "Morjim beach", "Ashwem beach", "Mandrem beach", "Arambol beach",
+  "Mandrem beach", "Arambol beach",
   "Fontainhas Panaji", "Basilica of Bom Jesus", "Se Cathedral Old Goa", "Panaji church Immaculate Conception",
   "Palolem beach", "Agonda beach", "Cabo de Rama fort", "Butterfly beach Goa", "Patnem beach",
   "Anmod ghat", "Karwar beach", "Kali river bridge Karwar", "Western Ghats road Karnataka", "Goa fish thali",
@@ -16,10 +15,19 @@ const api = (q) => "https://commons.wikimedia.org/w/api.php?" + new URLSearchPar
 });
 const strip = (s = "") => s.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 const out = [];
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+async function getJson(url) {
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const r = await fetch(url, { headers: { "User-Agent": "trip-itinerary-app/1.0 (one-off photo lookup; low volume)" } });
+    const t = await r.text();
+    try { return JSON.parse(t); } catch { await sleep(5000 * (attempt + 1)); } // rate-limited: back off
+  }
+  throw new Error("rate limited");
+}
 for (const q of QUERIES) {
+  await sleep(2000);
   try {
-    const r = await fetch(api(q), { headers: { "User-Agent": "trip-itinerary-app/1.0 (photo lookup)" } });
-    const j = await r.json();
+    const j = await getJson(api(q));
     const pages = Object.values(j.query?.pages || {}).sort((a, b) => a.index - b.index);
     out.push({ q, results: pages.map((p) => {
       const ii = p.imageinfo?.[0] || {}; const m = ii.extmetadata || {};

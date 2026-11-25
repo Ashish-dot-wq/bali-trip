@@ -1,6 +1,6 @@
 // Bali 2026: offline support. Site files: network first, cached copy when offline.
 // Photos: cached after first view so they show offline too.
-const CACHE = "bali2026-v12";
+const CACHE = "bali2026-v13";
 const CORE = ["./", "index.html", "manifest.json", "icon-192.png"];
 
 self.addEventListener("install", (e) => {
@@ -10,7 +10,7 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then((keys) => Promise.all(keys.filter((k) => k.startsWith("bali2026-") && k !== CACHE).map((k) => caches.delete(k)))) // only this app's old caches
       .then(() => self.clients.claim())
   );
 });
@@ -19,6 +19,8 @@ self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
+  // The Goa app (/goa/) has its own offline cache; never handle or cache its files here.
+  if (url.origin === location.origin && url.pathname.includes("/goa/")) return;
 
   if (url.hostname === "images.unsplash.com") {
     e.respondWith(

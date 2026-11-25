@@ -1,0 +1,79 @@
+# Goa app: refreshes its Local news feed about every 2 hours.
+# Each run refreshes the feed, waits 2 hours, then starts the next run itself (GitHub's cron
+# proved unreliable here; the 6-hourly cron is only a backup that can restart the loop).
+# Runs queue (never overlap), so there is only ever one loop. It stops by itself after the trip.
+# Builds news.json with goa/scripts/fetch-news.mjs and publishes it to the `news-feed-goa` branch.
+name: Goa local news feed
+
+on:
+  schedule:
+    - cron: "41 */6 * * *"   # backup only
+  workflow_dispatch:
+  push:
+    branches: [claude/wizardly-feynman-2ugicp]
+    paths:
+      - goa/scripts/fetch-news.mjs
+      - .github/workflows/news-goa.yml
+
+permissions:
+  contents: write   # publish news.json to the news-feed-goa branch
+  actions: write    # start the next run
+
+concurrency:
+  group: news-feed-goa
+  cancel-in-progress: false
+
+env:
+  LOOP_UNTIL: "20261202"   # stop scheduling new runs after this date (UTC, YYYYMMDD)
+  WAIT_MINUTES: "120"
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Get the current feed (kept if every source fails)
+        run: curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/news-feed-goa/news.json" -o prev.json || echo '{}' > prev.json
+
+      - name: Build news.json
+        run: node goa/scripts/fetch-news.mjs prev.json news.json
+
+      - name: Publish to the news-feed-goa branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir out && cp news.json out/ && cd out
+          git init -q -b news-feed-goa
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add news.json
+          git commit -qm "Update Goa news feed"
+          git push -qf "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" news-feed-goa
+
+  next-run:
+    needs: refresh
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 135
+    steps:
+      - name: Wait, then start the next refresh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ "$(date -u +%Y%m%d)" -gt "$LOOP_UNTIL" ]; then
+            echo "Trip is over; not scheduling more runs."
+            exit 0
+          fi
+          sleep $(( WAIT_MINUTES * 60 ))
+          curl -fsS -X POST \
+            -H "Authorization: Bearer ${GH_TOKEN}" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/news-goa.yml/dispatches" \
+            -d "{\"ref\":\"${{ github.ref_name }}\"}"
+          echo "Next refresh started."

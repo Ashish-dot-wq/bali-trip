@@ -8,7 +8,7 @@ import { join } from "node:path";
 
 const [, , PREV = "prev.json", OUT = "news.json"] = process.argv;
 const FIXTURE_DIR = process.env.FIXTURE_DIR || "";
-const MAX_AGE_DAYS = 10;
+const MAX_AGE_DAYS = 7;   // only keep the last 7 days of news
 const MAX_ITEMS = 80;
 const PER_PLACE = 10;     // keep up to this many stories for each area
 const MAX_GENERAL = 20;   // general Goa stories (no specific area)
@@ -22,8 +22,8 @@ const FEEDS = [
   { id: "alerts-goa", url: gnews("Goa (flood OR landslide OR drowning OR drowned OR accident OR \"red alert\" OR \"orange alert\" OR cyclone OR \"rough sea\" OR curfew OR bandh OR \"power cut\" OR \"water cut\") when:7d") },
   { id: "north", url: gnews("\"North Goa\" OR Calangute OR Baga OR Candolim OR Anjuna OR Vagator OR Arpora OR Morjim when:7d") },
   { id: "panaji", url: gnews("Panaji OR Panjim OR \"Old Goa\" when:7d") },
-  { id: "south", url: gnews("Palolem OR Agonda OR Canacona OR Colva OR Benaulim OR Margao OR \"South Goa\" when:10d") },
-  { id: "gokarna", url: gnews("Gokarna OR Kumta OR \"Om Beach\" when:14d") },
+  { id: "south", url: gnews("Palolem OR Agonda OR Canacona OR Colva OR Benaulim OR Margao OR \"South Goa\" when:7d") },
+  { id: "gokarna", url: gnews("Gokarna OR Kumta OR \"Om Beach\" when:7d") },
   { id: "alerts-uk", url: gnews("(\"Uttara Kannada\" OR Gokarna OR Karwar OR Kumta OR Sirsi) (rain OR \"red alert\" OR \"orange alert\" OR landslide OR flood OR drowning OR drowned OR accident OR closed OR cyclone) when:7d") },
   { id: "route", url: gnews("(Hubballi OR Dharwad OR Belagavi OR Karwar OR Yellapur OR Sirsi OR \"Anmod ghat\" OR \"Chorla ghat\" OR NH48 OR NH66) (road OR highway OR traffic OR accident OR closed OR ghat OR landslide) when:7d"), requireRoad: true },
   { id: "airport", url: gnews("\"Goa airport\" OR Mopa OR Dabolim when:7d") }

@@ -121,6 +121,8 @@
   // A story only counts as an alert while it's recent (older ones show as normal news)
   const ALERT_HOURS = 72;
   const isAlert = (it) => !!it.alert && Date.now() - Date.parse(it.published) < ALERT_HOURS * 3600000;
+  // Only show the last 7 days of news (older stories are dropped, even from a saved copy)
+  const within7 = (it) => Date.now() - Date.parse(it.published) < 7 * 86400000;
   let news = store.get("news", null); // { data, fetchedAt }
   let newsTried = false;
   async function loadNews(force) {
@@ -142,7 +144,8 @@
   function fillTicker() {
     const el = $("#ticker", view);
     if (!el || !news || !news.data.items.length) return;
-    const items = news.data.items;
+    const items = news.data.items.filter(within7);
+    if (!items.length) return;
     const alerts = items.filter(isAlert).slice(0, 3);
     const pick = [...alerts, ...items.filter((x) => !alerts.includes(x)).slice(0, 5)].map((x) => ({ ...x, alert: alerts.includes(x) }));
     let i = 0;
@@ -414,7 +417,7 @@
     const match = (it) => filter === "all" ? true : filter === "alerts" ? isAlert(it) : it.places.includes(filter);
     const render = () => {
       const d = news && news.data;
-      const items = d ? d.items.filter(match) : [];
+      const items = d ? d.items.filter((it) => within7(it) && match(it)) : [];
       view.innerHTML = `<div class="pad">
         <div class="news-head"><h1 class="h">Local news</h1>
           <button type="button" class="btn sm" id="newsRefresh">↻ Refresh</button></div>
@@ -423,7 +426,7 @@
         <div class="filters" role="group" aria-label="Filter news">${FILTERS.map(([k, l]) =>
           `<button type="button" data-f="${k}" aria-pressed="${k === filter}">${l}</button>`).join("")}</div>
         ${!d ? `<div class="empty">The news feed is starting up. It refreshes every 2 hours, so check back soon.</div>`
-          : !items.length ? `<div class="empty">Nothing recent for this filter. That's usually good news.</div>`
+          : !items.length ? `<div class="empty">Nothing in the last 7 days for this filter. That's usually good news.</div>`
           : `<ul class="news-list">${items.map((it) => `
             <li class="${isAlert(it) ? "alert" : ""}">
               <a href="${esc(safeUrl(it.link))}" target="_blank" rel="noopener">
@@ -566,7 +569,7 @@
   });
 
   // Version label in the menu footer (helps spot a stale cached copy)
-  const BUILD = "Updated 25 Nov · separate install";
+  const BUILD = "Updated 26 Nov · news: last 7 days";
   $("#appVer").textContent = BUILD;
 
   // ---------- offline support + auto-update on resume ----------

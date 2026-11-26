@@ -154,6 +154,9 @@ async function main() {
   if (okFeeds === 0 && existsSync(PREV)) {
     try {
       const prev = JSON.parse(readFileSync(PREV, "utf8"));
+      // (still drop anything older than MAX_AGE_DAYS)
+      if (prev.items) prev.items = prev.items.filter((x) => Date.parse(x.published) >= cutoff);
+      if (prev.items) prev.alerts = prev.items.filter((x) => x.alert).length;
       if (prev.items?.length) { prev.stale = true; writeFileSync(OUT, JSON.stringify(prev, null, 1)); console.log("All sources failed; kept previous feed"); return; }
     } catch {}
   }

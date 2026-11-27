@@ -455,6 +455,7 @@ const TRIP = {
     { icon: "📶", title: "SIM & apps", text: "Buy an eSIM before flying or a Telkomsel SIM at the airport. Grab and Gojek work in Seminyak and Ubud." },
     { icon: "🧳", title: "Luggage", text: "Soft bags are easier on Gili T (no vehicles, sandy paths). Leave space under 20 kg for shopping." },
     { icon: "🛡️", title: "Travel insurance", text: "Get a policy that covers boat delays or cancellations and water activities." },
-    { icon: "🛵", title: "Driving permit (only if renting scooters)", text: "Get an International Driving Permit from your RTO by early December. Your Indian DL must have the two-wheeler class. See Driving permit in the menu." }
+    { icon: "🛵", title: "Driving permit (only if renting scooters)", text: "Get an International Driving Permit from your RTO by early December. Your Indian DL must have the two-wheeler class. See Driving permit in the menu." },
+    { icon: "🚰", title: "Gili T hotel water", text: "Gili T's mains water was cut on 3 Sept 2026 and no fix had been confirmed by late November. Ask the hotel to confirm in writing (email or WhatsApp) that it has its own water supply or storage tanks for 21–23 Dec. If it can't, switch to Gili Air: same boats, piped water from Lombok, and good for Discover Scuba too." }
   ]
 };

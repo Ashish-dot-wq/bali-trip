@@ -1,0 +1,754 @@
+{
+ "updated": "2026-11-28T14:17:09.989Z",
+ "sources": 9,
+ "alerts": 9,
+ "feeds": {
+  "goa": 67,
+  "alerts-goa": 12,
+  "north": 22,
+  "panaji": 51,
+  "south": 30,
+  "gokarna": 0,
+  "alerts-uk": 1,
+  "route": 8,
+  "airport": 6
+ },
+ "items": [
+  {
+   "id": 1,
+   "title": "Goa govt to equip primary schools with tablets, professional colleges with AI labs",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPZkdJU2NnZ1VINVRCWjh3bndnR0c1blFWQkdYSV9ob1pWdXVFbFp4Y3k0UUtYdUhoNmdEV2llUjVQOGxmOWx0OTJoN0NkbkJ0VFFOM3pqLUNndlJDSHhHRnBOTlhHdmYtcHVpSFVoRTFnUTAzYzh2MWZ5Rl9xY25QMTRYOThuLXZJTFhzNnppRFdHNmRfS2U2TlY5OGRienU2MGRnc2ZpaU9Pd2pxZkNGM9IBvgFBVV95cUxNQnU5NDhMQWZBaVJXT0xRc3dOdmVYU0VYcHNPX0pvMlJEOGVuUjRUeF9GZVhhai1UcDZwYlc4ZXZvMkVVazE5WnhkNEd4SW9KUUdyUTRzVDZqdEtzOEg2QW9sZnRxZlBKXzN4dXBxWThjWVRrRzdqNVkyMC1Qc3VBb0lIR25DdzFKbEYwN1hleFlZOVpYTmlfWHNTSzVTakdPVDVFT1JjTlVBQkRvM0JLZHk3T3lkbm03T2VzTDNn?oc=5",
+   "source": "EdexLive",
+   "published": "2026-11-28T12:00:00.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 2,
+   "title": "Atal Setu crash raises question over road transport of Goa’s fish containers",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPeDZIZ1VjVzU2LXRfamVTTjJzcEp1VTJMVmNBWUx3WkhyYjFzRmRMcTlkUTBINmZVR21Ma1NjV2QxVm90anh5c0NqWHJfNnFLdGZwWEdOeEJrbnBtMVowRVNHT2wwaWtXLVJOLU5mX3ZSaGZNR1dqNGxYS3hEUWtJaXVQWnhmVGg4OWt2czV3SUcyWF80QjFCNC16MTZaelh5ZWc?oc=5",
+   "source": "Goemkarponn",
+   "published": "2026-11-28T11:37:02.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 3,
+   "title": "Silver Rate Today in Goa, 28 Nov 2026 - Live Silver Prices Per 10gm & kg",
+   "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE0wTmdqVlVwZTc0TzlhTGh6cjNacDBGakRoRXROTHBTRGtzWGMtQlZJREhVZnlZd0dabHgzNVdCQmlGMmJZanJDRnBTdXphdEJmYU5VckloSjBGODF1SmZfTkdIOHItdU82amZ6c3ZGODc?oc=5",
+   "source": "Kotak Neo",
+   "published": "2026-11-28T11:28:56.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 4,
+   "title": "Anjuna police book club manager for playing loud music beyond permitted hours",
+   "link": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQanFacXlBMkVDYkE5V0xRdE83dWdDRG8yMFVaZDNwTGgtYjdKTjBseFM5ZmdxSnJrQ1RfREEyeGRtMFJBeVJwRE02WTM4ZzNhcVQ3ZVEwYUtiTF9KSFg3ekFaRUFqelcyYzJVLUVBbmZEU1c2RlExWHdtaUpnX0V1anpsUFM2ZHNDcFQ0UzB5VGhIME4wb2xqZGl4eEFIRHZlbklzWQ?oc=5",
+   "source": "Goemkarponn",
+   "published": "2026-11-28T11:24:09.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 5,
+   "title": "Old Goa Police Book Case Over Late-Night Loudspeaker Use at Bainguinim",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPcUVxME1sY2FnUjNhTFh2RVdQWUVLMm9PNjg5TVlSLUhPNEdCdkxyVFFWQ3FwTjdwMXBUUGo1NTNocnNaQ2NGeThqNFdQNzRkMlA1Y3IzWk11MEJ5azRxQ2pkellFekIwQjdOYXE2WldMaFNSd1BxYmVLOGM0bk1TVUV1dmVCMEVUWDFSa09ZSzB0blRZb1dJU0diMA?oc=5",
+   "source": "Goemkarponn",
+   "published": "2026-11-28T11:20:25.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 6,
+   "title": "Traffic diversion on NH-66 in Goa from November 28 to December 10",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPdUw4QjM4VjR5RkJibDVJTnI4cTloNXEyT0VkblJPUXk1cW9Kb1hYbWIxRS1hZ2w2enQzUG1RVTdSTHNtOFhFb1RFVzBGcTMxZzZ0b2FaNm8zMEMzTFNPbkdWSmJLcmxuTmNybmhScEhEYTFsLTY1SlRvSlZBZklScGh0djQ0Y1dNQkpjUWlxbjRkSE9o?oc=5",
+   "source": "Goemkarponn",
+   "published": "2026-11-28T11:17:22.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 7,
+   "title": "Nearly half of the Goan voters are Gen Z + Millennials",
+   "link": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1UQUNuZWVzcTNld0h2cmtHOXdVcXNrZXdieUZXb05ybVpRS2NtVUR6RVZnNG51bEIxMGZMeHRfZjREeXZTOUo0MFJvcExTNHZoTFVUMUtnWUlydWltN3J0SXJTSHRDYlJ1d3FISWZMVF9nX0hEX01pSE5kSU1KQQ?oc=5",
+   "source": "goanews.com",
+   "published": "2026-11-28T11:13:50.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 8,
+   "title": "Majhe App launched to integrate Goa's public transport and mobility services",
+   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQNDA4ZXRnbTQ2VzFYVktGZzdIVGJINlJJanhUbF83VmVod3lnTWJPaG1nVVktRFBqVmlfMExBcHJObFpmdHhKUUlaQV92c284WnVLX3RNdjg4WUFRUjRGaFpkOS1VaF8yUEdaYmVhUEVEZ2w5RUpKUU5GMnozM2FHRUxWLXVWekc4SkgzTkFFMTJHSmVHdGpqWWEzMXJxUV9VSzcwOE54QTFQbXBCNWZjQ0FyOE4zUkVBQXBUMw?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-28T11:02:40.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 9,
+   "title": "South Goa completes supplementary EVM, VVPAT checking ahead of polls",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBwLUYzTkVTM3pJQS1PNUVpX0h1dFRMTkx5cWFtc1FlY1lhZkd5OHY1LUhRbVRiREw5YmZGYk5YMjMwNzNsYmlaaTlaTGNSZjVWdFRUWEJuaTAwMVlfc01DRExxcTVGa1g0Z2c?oc=5",
+   "source": "Daijiworld",
+   "published": "2026-11-28T10:24:57.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 10,
+   "title": "The Art of Wellness by Luke Coutinho at The St. Regis Goa Resort",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOaXIxREx3X2gyN19zaEJFN1dUeVJmTUFaSzdPdWxKc2llS2FnZnFlS1E2eV9WMzhKaHJhTFZRZUdWQ3ZhUS1WRjBsdThmN094TDhHZE5uLVBkUWFXbVdZS05iUThBR21BU01mLW5jc1cyTlBHczJJUWU2cGI2S01hbUlIbk1GMnNWT05MdkZvUEJCZ2trUHMwNkthQlhySE9qY3hVeUhRRGtialAzU3pNNXFwUXhWQdIBtgFBVV95cUxOaXIxREx3X2gyN19zaEJFN1dUeVJmTUFaSzdPdWxKc2llS2FnZnFlS1E2eV9WMzhKaHJhTFZRZUdWQ3ZhUS1WRjBsdThmN094TDhHZE5uLVBkUWFXbVdZS05iUThBR21BU01mLW5jc1cyTlBHczJJUWU2cGI2S01hbUlIbk1GMnNWT05MdkZvUEJCZ2trUHMwNkthQlhySE9qY3hVeUhRRGtialAzU3pNNXFwUXhWQQ?oc=5",
+   "source": "HospiBuz",
+   "published": "2026-11-28T10:18:21.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 11,
+   "title": "Man approaches foreign woman sitting alone at Goa cafe, films her. And then...",
+   "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPNWlrU013Mjl3YlQ3SE9tNWNLT3R5TGJMLVQ4TDBySER6NTZPUHJLVFlLZ3VqVzZTcEhVLUppMDc4dWQyTHd3ZzZLUHVPZ180RXYyMjdzN0dIbWhoZjliQTRoU3VsR1pmWnY5OHQ0UENKZFpHdnZCMDIyTTY1YjZrZ0xIYUxEWE1mYzFPeVVjeXdUbFFvcjRGMWlEeWlZUFA1S011RmJMUmdWMjlYek1vZE1BOFFlRmdES2xfUDZ5MlJHRm5jcWc0Y0NKZ3JRUjhZQ3pVTEhCWERYUdIB2gFBVV95cUxPNWlrU013Mjl3YlQ3SE9tNWNLT3R5TGJMLVQ4TDBySER6NTZPUHJLVFlLZ3VqVzZTcEhVLUppMDc4dWQyTHd3ZzZLUHVPZ180RXYyMjdzN0dIbWhoZjliQTRoU3VsR1pmWnY5OHQ0UENKZFpHdnZCMDIyTTY1YjZrZ0xIYUxEWE1mYzFPeVVjeXdUbFFvcjRGMWlEeWlZUFA1S011RmJMUmdWMjlYek1vZE1BOFFlRmdES2xfUDZ5MlJHRm5jcWc0Y0NKZ3JRUjhZQ3pVTEhCWERYUQ?oc=5",
+   "source": "India Today",
+   "published": "2026-11-28T09:46:36.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 12,
+   "title": "₹11-Crore Lsd Drugs Case: North Goa Sessions Court Grants Bail To Accused",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOVWhYSEU4SFMzVWJwQkpqZHl0WlJmcHh3cEtKS1Y0czF3U3ZTWUt0QXBFREVtOW8xTmpUOFg5VWZPS0stUFpVdmdyeHpWVHpEckVrRElWNXdJM0Zia0xJYk9VZ0l6eWNBLTlOMk0wWk4zLXR3aTFsZ29ndUZPSE1iMEZ6WkNRVDk1MTNzUThfeVlETmdEcW5KU0Z2QWJ4UGwwYnc5anMwQm1KWlA2eVhlVg?oc=5",
+   "source": "Prudent Media Goa",
+   "published": "2026-11-28T09:05:00.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 13,
+   "title": "57th International Film Festival of India to conclude in Goa today after nine days of cinematic celebration",
+   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxPcmh4Wm5JbE1TNjZqQ3FyMDctN1BUUWx5bDJrRldwYnUtN2VhT2tYa3NsTS1xanJhcGZyRzZ1dFlLSEFrMGc3ZWxaWnppV29MRTF3dldTS2JuUlpEcjdBWHRwOGxQUFVkMkVXdGtsWXJaU1pDbU05OGQxWEU3My1JTmRlX2hFMnQxX3diV0UwLTVhdjlVLWN1cExEYno4S1p6YjJQNEtGMXRIMjYxSmM2ZVNfTGl2OGNscmc4RVRBVkM5VXRBd3JvdlZWNXhqUQ?oc=5",
+   "source": "News On AIR",
+   "published": "2026-11-28T08:57:10.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 14,
+   "title": "Morning Fire: An early morning house fire in Moira North Goa caused extensive damage to vehicles.",
+   "link": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE85LVROaEw3Z3JnVE1oV1JRSU5adlQyZVZudFJVeVRONV9RemJuY2VFem4zVEdBYmdxTlZ1clNFckdMS3VYMnFPT0xGLTdyOVNwaTFIWUxKNkllNC1QMkE?oc=5",
+   "source": "AIMA Media",
+   "published": "2026-11-28T08:14:33.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 15,
+   "title": "Anil Ravipudi announces animated 'Ramayana' film at IFFI Goa, calls it his lifelong 'dream project'",
+   "link": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNUUx5VVd1S1RBZ0lKOWs1aXppVGhCamM5OHhDWEkzT1FqcEU5aFgzMHBtcXJOOEhFV1U1UXlkTUVKaVdiXy05SWNWcUF1ZGNYWUtDUVRQa01NV2x0a2RNNGdvRUpBOGpYSzZaSkswUXF6d3JwbmJ4LWJmZHBpOXFvWENOMzZZVnlQTndMakdjN3JhTU1kaHYwSUd5bWoyMTZxYTB3SWJnTk9Va2ZnR2ZpaTdmeTA0dDJROFNDRjZmWWpjVWs4U2pxTUd0V1ZWTlB4OUFLZWZ5d1hhcHduTWc?oc=5",
+   "source": "Deccan Herald",
+   "published": "2026-11-28T08:14:30.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 16,
+   "title": "IHCL advances renewable energy adoption with solar project at Taj Fort Aguada, Goa",
+   "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxQaWJjbFl3STRMdVI1aF9jRV9YVEtudm1NWEcydjRLSm03dDYwVzFvTFZmS3dpVmlFd08tQnFaWXV3dElFVTZtbDVjZmkyTWU4ZnVmVFJqT2k0UHZSSDdiX2w1N01UVnhxbU84TWJzc0g4SHlIVGFvZTJ1Tmg4b2xuOGI0YlhFcFMxR1ZkZVduZGNjemRLa2premw5TmJTMGZNanhsRzluMGtDZUc4eWJCejRuR0hCcHV3dDhGbGtTN1h4UWM5WDB6UWUtWGZkdGxRU21Fa1BHbmNUR1JCRmRtakhYN1B3ZkHSAewBQVVfeXFMTXpGSnQ5VFBtSG1MclkwSVB5ZkhtRkZXVXpvb2Y1R0o1Mm5MMTZhVTM4dHFJckZaYlVJTHJGbVB4VnFHSXZjQzZCdVFTNzluUmZVZWd0R3NzbWR3dVRDOE9WY3hmZWRTd3QxREdmNjhTUTJaNVlISXltOENuVndqYU9aaHVpbGtqUDB5bjdSSFU0cU04a2lFczdpX3dnRU9PNjRlWXJwSDZwcFE0RlZRanU0R214ZXNXZTZHWmlwdmVCS2tSRDQtRTNpNnZYTlpYMGpSTmlpMm5CS1RZU096NTFGNXFmbGpZTkd4NUc?oc=5",
+   "source": "ETHospitalityWorld",
+   "published": "2026-11-28T06:33:45.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 17,
+   "title": "ABVP wins all nine posts in Goa University student council polls",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxOMzh1azJZMy1maEt0X3pudlRJN0Y1MXBod1VZdnFaNGszTFpidC1aRTJDdGFvVG1WbDlMY1lfT0xiempBRlFCQ2N1dUE2eGpHTnZ6MlBsVXVzSC1rWkVEM19nY0FRbldNdUxNMnZTT3NkU29jYjB0LUVuYVYxX2p6ZUZoRDlfQ3pKWjZDc1oxN1JUWlFUeFpqM2FOeEJwUQ?oc=5",
+   "source": "The Navhind Times",
+   "published": "2026-11-28T06:11:55.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 18,
+   "title": "Prime Video premieres Panchayat Season 5 first episode at IFFI 2026 in Goa",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPX3A3S19RYzRZLWZKTGtmYlJlbmd0cVVHVTRDWXN0RE4waXloZHU4cUVxNHJGTkxHcnIzSW90RmU3NWVkSWp5REVqYUVxbDVSOXBjdWt5T1FNbTFha2VTZjBTT2wtZm5IV2Rub21QRjN6ekp5ZDdXWXgwS2tXZEdmbFU4TVR3R0w0X29pLUdzQWNoUndRVWk0MUlwbzR6azQ?oc=5",
+   "source": "MediaBrief",
+   "published": "2026-11-28T05:48:58.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 19,
+   "title": "Hemrajanis win gold at ICN Goa meet",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQVC1DVXVsRVhWd3pYdlhtWGozbU1NMWpmYnBkdWhFX2hiZDR0R3pDaVlRQXFoUGFZbi1td3NsazZ1N3FsTHhrUU5KUUgta2ZzVmY5YUhrY1JqOXVJSVJYczBkVTFTY2FOc0lUSkJLZ3dTbVg5cU5BcmNXdlhRTmVDMlRHSWZxakctSWE0akF5UQ?oc=5",
+   "source": "The Hitavada",
+   "published": "2026-11-28T04:01:47.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 20,
+   "title": "Cong high command directs Goa functionaries to finalise GFP, RG alliance",
+   "link": "https://news.google.com/rss/articles/CBMiqgJBVV95cUxOMzNubXpONkdwYkE1cGZKZ2ktdUhwZlZQbkZmOTVTQ2ktMWtVYW9uUXRGaHhMWWtLSzlKeWRUbzdWQWYycmE3Uk1aNmY2SEtWd1VYdHdzcUVjTjFUZVUyc3pvaTJPMjJ4WS03OWZPSVVzV2FRREFMTWdBUkZDWENGQ2ZjdzdHZjVPblZId1dWWWwxUTIwWDJSVTZJZUNzRVVYd2dhV2xwY2w5OHd1U3RmbTJhME5tUjJhUFlabVFhejEwS2lwZURwd0lLZW5qVWVZTlpTTWlSRVBlQ3dCS09QSjFTanVSOFNwWmpmSE5mTi16QzFzM2dUU3VydHplOUFwLWZacGEza2NBVE5DaFlIOU91TmRGQ3RsczZZZ216eEdiazhsSlNjQ3NR0gHfAUFVX3lxTFBWak9pZGpWRmtQZmwwTDh3TkxDZzl0aTRfbkVTWFlxY1dEQlBDOFA1VHB3OW5NWHNLVWdGQlpfVlVIeDZMS0pvZW9FbUphekxsNVdPMHJ2SFd0cmRNYWVBS29FNFN1ZjF3RHpPRlh6N0hqQnVVWFZ1V0F1VTk1VG04ODhIeWxkYzRpSG4xNDB5OFpseFJFRmlpZ2xwMFhIZ2l2aDVIZVdzRDRUSHVVdTNyTml0S3BTa0w2OTlSYU1aMGlJeVdSMUQwQVV6T0xWNElxWnBnQjljWVNsa2dTWnc?oc=5",
+   "source": "The Times of India",
+   "published": "2026-11-27T23:50:00.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 21,
+   "title": "South Goa completes first-level checks of voting machines",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPcTdSNm8xNjh3T2RHZVVKT09oVlRlcll5bUpmcW1uYk12S1NQOWNyc2JVdFdJUFQ3VWVHNnVaSGI1RDZna3ZsT1pkYW9lOWtyNE1zQU14QzRrd3pkOTBBcnNtNWE2dmY1SFUzNGtEQ0NKX2s1UjlIU1RGTWU1N21xY0xIQW1Sd29LNmNZLUhNbmE4WEhtZ3hJRmt4N1RVQnZtVWluSEk0Z1dyNFpNV3F1cy1qQVFWbGRlaWxyaWVsdEw1d9IBxwFBVV95cUxOUFRtNU9VSkE5YW9QVzJXMUlHVzF3MFBmWTcxcVgtSExJbHBZSkl1ck5IODRCaXRON2N3WUFXOGNENjY5QXNraU1fNUc5Xy1nOXJyM01QdGctVzl1aVRwa1RSc2tId1Z0ZXVhX041VXMwcXJJeko2UE5LeWtkZlJhc0VUSVNkOHA5TEVYZmF6OXNMeHVfQjFDbWVva2JwdjJSMDZZWFdtZlBZOVh0YkFJR1E0R3M2QTVMOFlLN3djOWxPdFM3bm9n?oc=5",
+   "source": "The Times of India",
+   "published": "2026-11-27T23:32:00.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 22,
+   "title": "Bisleri in fresh trouble, after Goa FSSAI finds bacteria in West Bengal water sample",
+   "link": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOT0IxZkh3NjRUb2xsNXNQVzJVLTVGS0ZaSmcwR0xCRDViTUhIT2hLSXlCMXJYRHBjTVFRZC1VSFg4NkdPNUtZY19KbVRnTHB3NWU5SGFmSkJkdWpuMWlHLUU5aXhKT05zb2FLcm5PNlhEMVUyb3owNldGU0xSWnF5ZjA0MnBOVHozUGNjSGVUVFE5MFpZX1NpUExiaEYxUmYtUFlqU2ZlYVRadno0aFpFcWg5LVZLbHhZaXh1TDFqSmNnZ2RvbXZ5VkJOSmJTempFV1B4anRNUk1veDhKbDBfemhlamVFQdIB6wFBVV95cUxOX2V0UGxBQVJxTEVkeE94UUJVLXNsbkFydFZibUpuaEExS3VUQmRuSzlvM1hNT0pMNWNhT0RVRlhidW1DVThvQ1dKZVR6dzg3dC02eVVDNzMwN3NOVTBIV0lWeEtva2M5NUhFelF3UDhYWUFBdGJHMFBYVU9UcUcyY0NCU3ZsSHJuZjFZTGtpaDE4OWRjZGJLVC03TFNhU001QVdwenR0cjhZa3BFcWFYdktQMDdKRVFZMXZrX1B0R2tuUEk5WUsyS3pZWExpRUY4MGJGMDZNZVllN1ViTElWSmtEQU9aTDVjajNB?oc=5",
+   "source": "The Times of India",
+   "published": "2026-11-27T20:02:00.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 23,
+   "title": "Concrete slab collapses at Mapusa market; no injuries",
+   "link": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQmZWckNvNW5TbFEyV0R5cEJoRmdnQTRiVDBvT0doX0UzdEd4LVRReWpNMXJaUnpSTTBmcXNQOE4weVl2LWhEM1RhUnNLSHVOLVQ2YXFuSTd3Y3VsYlh5WVNUVzJiM3NPc2RvMmRwUkUwQmNvNzVkUjRCaVFjRWFRQkNpNUJQNkIxNXVaSVRsUTBzUWhJcjRpc2hfVl9zQQ?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-27T19:32:40.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 24,
+   "title": "Unsafe Vasco building to be demolished, rebuilt",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPOUlJUEl1b3pSREpSQ05mQUFlNG1CSXc1YTZzRkVhS2hmVnN5U0dWeW9KNHlIZ0VfSzVjYVRndUw3TmRhZ1loNmIzclphU3B5a0hMdDVWR0Rmdm9zdkVFTnhTQy1GX0RpcDU1MlhBME5QLURuWmpoNnJQMzJOQk5EbGpBcnNzbjZ6UFpyX0VKaHFQN0dCQlE?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-27T19:26:09.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 25,
+   "title": "Goan prelate resigns as Bishop of Daltonganj",
+   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNNkhnMjJEMmswd3ZPRnFhVXhhZzdTTjRyRTI1Z0VpZEFKczdscGpqTzRPQ1JTaEFvRFpSV1FCVTFMYVBYSFcwMm5JdEpIRE9nNjhxMmVLUmMtdUhjMEJ5NUt4Tzc4NTFoLVFZTFlFN09md0x5WXNfUS1Zd0ZkVzBGcER6aWg5bjNtSjZqWm1PQjFOcjQ?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-27T19:13:45.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 26,
+   "title": "South Goa achieves Saksham district status under HIV control targets",
+   "link": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOZEhOUVlhNW1STjJ5QUE5OEJ1TXJMZTVzNzdKS0xrVmhxcFFrQVZIQ1JrWmxPakl2VGVKRHkwc0k5OUF4OHJHTmp6bndITjlYcXFEdXkwSFM5WmEwWWxfbEJSSjhpV1ROY3pLXzBUWHYxSVhXek5JZWlyUVNWNlZJUkFDUkl4eFp5YWFvalhSTlRNa0h3dWZPRlBITV8weWVTaW9DX1Q1ZHlCVzhza3hWSk9DN0xUaW1L?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-27T19:12:17.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 27,
+   "title": "Quieter beaches? Tourism hotspot Goa may feel the chill this winter",
+   "link": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPVW5nTzhHSHdIWGZ6YXhWdkxESExsMGItZV83cUhvTFhMQ2xucVFtc3V6bTV0YkZtZ1pwTlc1dHUwZTYwZWFJbjJtaFhMZkszSXBianVFUl9uYXZwRDJ6UWVLeEJLX0FZdzJqbm9IWm9venBIOUJ0QWk0VUJjN2RPX1VBamdnZEx3SEd3clFuWU54Y0ZYZVZTeGUtbF9kYnhnVmRJNm5xS0RvbXBhU250ZUU5OGJtemI4T1k4T191RnBoUjFIX0hPWEZBQjE3UDDSAdQBQVVfeXFMTVFKcllKSGxWVVdTN0NaUUpYS3hQeC1lcTBFdGJFQTAzWHZ6NzV1ZjA1Ykl1amNndGp3V3FNc0h6a1NlbTU3cTN6LXlqcDBRV3Jnck4ySElxb09xQVRqNl9PODhqOTc1RmV0bWdYd0xPOFZhSjd1WmxpTTJfdkZBdnVQTWUzN2UtSUpyRENHVDVZXzVEd0d0ZWp5ZmRQcFpreXdTc3pSR1BwODBLQXpWZWdQdW5FVmI1OTVyQmE5X2VWZ3JCdFVQdE5KOVBlUjhmOHE3dlM?oc=5",
+   "source": "Business Standard",
+   "published": "2026-11-27T18:55:22.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 28,
+   "title": "Goan tour operator awarded in Israel on 100th pilgrimage to Holy Land",
+   "link": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOVDg2a2tTWUZERm1INVg0WXY3ZC1rWGdVM2t1N21oZVBCc1NvdzZUMEV2ZU0wMWdGOFo3TW5tRkdFWU55X0YzVzhnQm5pLWRiNThINHlibzNVZU5xWVpva0dOU0dCUTBZR2YxTnRPdG0wZ3RGbEdYbEtQbzBwSWZPeWtQaGJDd2Mtdm9ybmZYdUdEaUR1ME9fNzRNUk4zZ094ZWVHbDAwcVlqVWhDMlc0c0Y0TU1PRWZJRFloVg?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-27T18:17:21.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 29,
+   "title": "Goan actor stars in Hollywood movie, London’s West End",
+   "link": "https://news.google.com/rss/articles/CBMisgFBVV95cUxOZzBUcVRtekkzc2NTWGVMQ0kxNkZET29wMnIzbnpQWnFlWUZSMnZaa0E1Tm5GaUNxLUNSQjMwZWlMTDk3TjJSOFpCZFJYY19uN044U0prM3d5TE95MmZjR1lPS1lPcGNYVVBGMG41Q18tSkdBUHJlSVlodXV2eERYd1J4a19GSkxpbHRLTTNITE1JT3ZlYUw5cFo1di1XWHpZd193X0FIR0FpZEUxdy1Tam9n?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-27T18:08:58.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 30,
+   "title": "Goan community marks Diwali in Aberdeen",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUUJSTW9XT0wtRFdmaG1MUTBUakdYdGh5SFhmODJPWUlSVUIwY0dKVDFmQm5TTnJEWjdwWVFrVEl4OG9kR1pPZ0lyN3VfcVc4dnNZNjg1ZXN5TTFrdzNsaW1INmJjR0U4S2pQaEw4MnZVTEJUT2l2QnBHLUZqc0YxMF9lTjdCbkpQbEFZT2tiSU1QcER5?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-27T18:04:32.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 31,
+   "title": "IFFI parade brings Goa’s cultural heritage to Panaji streets in celebration of cinema",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPU3ZrRlhzSmNRVUFRSU5pb2xLVUVGcDFLa0FLOW1lZndvcEtIeDBRWGhmRG1NbXNjcnpPUnhVcVYxenRPN2tDZ1h5ckFZaVI3dGh0bEZ4LTVfRHgwRFNMMXdiTW9LQjdqNVhTNjdvbzB3X0NWQWI0a2lvTDdKMkMzWWlwTFAwSHRmUGVISmFpZHZ3cFRmNlZYcDQ0VFZIaS1CSDZjeDQ0aGRuUzRQOU5hbTczeDBRdw?oc=5",
+   "source": "DD India",
+   "published": "2026-11-27T16:03:47.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 32,
+   "title": "IFFI evenings bring cinema, culture and creative exchanges to Goa",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxOM0FBOGpNZWpoNWRCZXVsc09QRGstSUZYcEo5X29DaVlRNk00RHNvd2t0ZER3eldsaV9HT0FqWjdOd3BlNmEyRHBodHIzTTgxeHhhWUt0ekh1czFLRWloRHYxdTlUTExDeGlMVmJ6Q25QNFR3YkxNZ1R1Q3JsUnNBbHVxV09oQ0xiWkp2elNxeWJyZDJZZnRkR01Uaw?oc=5",
+   "source": "DD India",
+   "published": "2026-11-27T16:00:23.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 33,
+   "title": "57th IFFI: Beyond Goa’s susegad charm, a festival reflecting India’s political climate",
+   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQQl9wSUJ1TVVVYWZiemk3WjRrV3hDZHhhZWFTLTRiVHNIY21MOEdoc2NkSzlYRHpuWjFYcno0RG1PWXpIUW5PaWYydFg2R3Z6bFJBWW5xaUdMLXJIUk5kSnRlUUNBTGlON09OdVNMQXhwbzFMdldSR3RCc1RXcDdETURiVkVCVjZkQWlEb3hRZDJFalBCYUpXWmIzMFBaR2ptVnhZaTFwQVo0eGtCM0Y1NFpUbnA4NUZBNGxqekdhQ05tZHh4TXRLcjNBLWc0QQ?oc=5",
+   "source": "Deccan Herald",
+   "published": "2026-11-27T15:49:35.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 34,
+   "title": "IORA backs Gujarat Maritime Law Centre, recognises Goa institute as Digital Hub; identifies cybersecurity, AI as key cooperation areas",
+   "link": "https://news.google.com/rss/articles/CBMikgJBVV95cUxOSHNwblVsWmdhbkp6dUFyRHZ2VDhpQ3ViRk0wY25oOGhiRldZSXBzVmNuVVdrdExHY3kwMkt6RmF2NW5UMUhuQU9MN0FqRDFQNW9BQU9vbVZWOWtHSFpaRHRTQkY0a0JjUncyQ3hXcy1SOVJtR09nUGo0cVk1TDdHREtFWW9tZ3FkV2pjWkdJdVNvcEZwWXNvS1hZYlZZRzVWejAwa3c5ZUphZDBSWV9OUERudFM4YW1GUzFTU3RzbjdHWWY0TExSRlUzSUl1YnJxelFvRUdDVUhMYm1FMEVDc1AwaUg3Mm9GSWxfMklIalB1NTk0Ynl2a2tBbkQ3RDRmYm1VcHhVNUlMSjBZeXItMWVR?oc=5",
+   "source": "ANI News",
+   "published": "2026-11-27T14:58:00.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 35,
+   "title": "Vagator club manager booked for noise pollution",
+   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBNM01BWjJvZlJUSEJIYjI4T0dCRmhIZ3MtY05oZnRoZmxoeEl0Vk42R2w3d3Y3UENkdmg5TDZhd3pjOE54cDN6a0lQSnFEc3N3VEU2SmhxZjR6U0pWcXFrcEQ1YkZvRTdNNVY4WXNSNGpaSDI2dUk1Q3NPZw?oc=5",
+   "source": "digitalgoa",
+   "published": "2026-11-27T13:15:00.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 36,
+   "title": "Traffic restrictions on Dona Paula-Bambolim road on Nov 28, 29 for SSC physical tests",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxNNG1TLTdocm1wWEdoaFhKaTd4YVk5Qi1WTjVOUTdYeVA5YUs2U0k1bm0zTWhZeGRMRmxYdmlCczYzM3VCNW9oLTExbEZGT1IyRG1MdUJmc2ZnT2ZPTWRBT3hMemVJUFNGdDAySk5pN3ZicGxwcXUwcDJmc0NTejFCakwyRmEyZk9wZFlWaloxcmhUV0VfWElSa2dFVUpTWGgtR3hKbTF3NERkQ0NzS2V4OGlfZ1Z3cmFJY1UySE5ENnVHYVFHRS1J?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-27T12:45:52.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 37,
+   "title": "Hubballi, Body Cameras Made Mandatory for Traffic Police While Imposing Fines",
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQeXhGREhKWWw2MDlfYmpONTVMQTRfNmwzTi1iaENOZDN6SlkxdjJtVnlfcTJQNGlvejVoc19oVk9xRE4waDVYUGdvS19tOENCSHZYZjNUOVJiZGcxUFhZSWcxS2Q5LWRYWVJpdUhIbEJWVDdGRy0xT0JPMEVSRVlkeGdpSmR2dFdJT1dTMnFBdWlja3IwQnJaZk5DT185c2VNTlhNbjJ3?oc=5",
+   "source": "Hubballi Times",
+   "published": "2026-11-27T12:11:28.000Z",
+   "places": [
+    "route"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 38,
+   "title": "Canacona delegation urges CM to scrap proposed turtle nesting site notifications",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOdHI4NTlpeU9CWFgwVzRKMmZpS1RXQTMyYi0waDdZUEhEMnRCY0RYWGtWNkdhYVJyVUptTHhJS1FnNVBWS3psa1I5THVrM2hyTFZRYnFNU3BuRFZXdlI1ZHZVWklDdXFCcTV0ek01X1ItYklEcVdfWjJ4Wjc0Z3c0MDdyZjNDdk1mc3VoY1ZsLTY1MEdLQjQ5T1Q2Y0dKOXc4cXlQVEtZT1U?oc=5",
+   "source": "Goemkarponn",
+   "published": "2026-11-27T11:11:08.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 39,
+   "title": "Novotel Goa Candolim Appoints New Front Office Manager",
+   "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTE8zN2hYUkZwMm85ekxHdHhTaWc3QUtJTDlxTFRSZjN5UkUyRl9iZWoxTldMckpGTnNjZExHbmFNdnFXWjluNzFrMjNrZ3NrZDBVSXg0TkpxMDBnejhlZ1ZCUV8tVVVZY3kyb3FmbkRwcGxUc2s4?oc=5",
+   "source": "safariindia.com",
+   "published": "2026-11-27T11:09:40.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 40,
+   "title": "Pagi community leader questions sudden OBC officers’ transfers in Canacona",
+   "link": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNeVBQUXJ2Qlh6bjlQS2otYjZQbll2MjJMUFhuTnJJSFFVTk9jS01YdmU4RWVyVS1lV01NQU1waE5mV0VabnZCcHg2SW5LRG5xR0U5TDkyQm50REtOX1l2SUNiMjF4bE05XzVzSWtHSVkyXzl5V2VEY1JQRWdfLXo1cHdTam5RX0RKbTd6dnROanhuMVJWOTM3RjVLbWk5RTA?oc=5",
+   "source": "Goemkarponn",
+   "published": "2026-11-27T11:03:03.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 41,
+   "title": "South Goa Holds 25th District-Level NCORD Meeting to Strengthen Anti-Drug Measures",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNb2F3Vi1KR0lSU1RqTmpIVXA5SEVOZlo5SFFxWmY3U2REQzdzRnVIcjZoem1MdlJMN21rVnlod3NwRWJqbmd6UUVTUzNDdlZpWDMwZjhKelRrdzhRb3cxTUlUaW9raTh4SkJZd1A3RzNndUpVU2tiSTlUT3E0X0NUenpfajBWNlFFdFJZMEpvM0lwSzZmV1p0MnJJUFcxZFdWTzFlNjhLZERKcjA?oc=5",
+   "source": "Goemkarponn",
+   "published": "2026-11-27T10:57:54.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 42,
+   "title": "Woman Dies Days After Scooter Accident in Mandrem | Goa News",
+   "link": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQTUlKZUlVd2F0MldhS1pJQk5SMzRSc1N6VlA4aFBza0xBSTVyMHpJVjdiSnVnQm5mUkVnaHNJOEFvcTQ5RkhtX2xJdVNmZHREaEpvNHpNQkRtck1xUjJocUtXb0xpSFNDTU5YTWtFYVRVYlplZU1KOExjVmdPNGg1VW92dmVHQ2xmOTF5Y1hMVmU3VzdEVU1B?oc=5",
+   "source": "Prudent Media Goa",
+   "published": "2026-11-27T10:32:30.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 43,
+   "title": "Stagnant Water and Algal Growth in Dry Artificial Stream at Margao Municipal Garden Raise Health Concerns",
+   "link": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxPRlJLTVRfS3RuZ3pJT3ZLTGE0d05VZUpzRGdGZWgtcDdUUkxzSmhVb0JFQmdfaVM2ZHNHX3dPQmU3bFBTYVE0bnczd2ViVjZZd0VfVHNieF9HRlRKa3FsTVdwNGtyYVNnTVVnM2hfaWFSNk82OThiZ3VIaU5JTy1FcDBNRUNYdkgxRUxLdWJ3SlJvYTYyZ3ViQTNNMGdxUVVjS1g3VXlYejNLUGk3R3dqNEU4N01BdkJoLWdCYl9xTFl3ZnVlSUNUSkVVLVNyYmYyV0w0bE8zcW1EQQ?oc=5",
+   "source": "Oherald",
+   "published": "2026-11-27T09:38:29.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 44,
+   "title": "Information Board Near Historic Jama Masjid in Panjim Lies in Neglected Condition",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcVQtXzNZSmYzQVZ5TzZmcTFSWENtcUpUZV85NkxkVzR5M2NqM1g1emI1SHBReUJhVUJVU1BZSlZNWGg2T2R1ME1NLUZZbXBFRy03MjE0aGJVQXR1bkJXTzlKSzUtTGV6SENOWFFQSlBHNHlqRXNiQmc0aG9PLTZKc0hNUWphVE56R1JBcDFXcENTZ0hnZ3VfdVAyQWw4Y3BicDEyMkZaMTk2TUh5MlY4S1FVR2V2SjVrUXc?oc=5",
+   "source": "Oherald",
+   "published": "2026-11-27T09:23:24.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 45,
+   "title": "Seawater Surges Onto Streets in Mala, Panjim, Reaches Shops and Commercial Establishments",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQd3A4eVZodEgxQkphRjk3WmMwNzg3YU84ejV1LTJURllhM2g1S19GUlhWZnUzblgtR0Y2eS1jV1hJay1jdzhCdEdoT01WdWtpMFZNVXR5UmViYWlnR3F1ZEZEQ1pObkRfNkVxempEQmFMd0RtMy1WZFdRMWFYV3RiOUNHWXNlV3lfbW90UERmMmRxQWMzS2hiTW9ZSUptTzU3a1N4VFJjNUVhNnBjcmdsWjJHMTEzRWlMZnRBTVBPeU1LZw?oc=5",
+   "source": "Oherald",
+   "published": "2026-11-27T09:18:06.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 46,
+   "title": "Anjuna BMC seeks probe into alleged environmental violations on Comunidade Land",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE53Qng1cUt1UWxjQ3ZzbW5oaHNKblVsS3RfM0ZzZThyRmdmaWJKNjBWOGVydVNUWmZYLTllbFpndC15NHV4bmZfelhDUzdnRWlmMWJRT0Fqc05GblVpVEdZLVNKazQ?oc=5",
+   "source": "Daijiworld",
+   "published": "2026-11-27T06:34:22.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 47,
+   "title": "AAP launches 'Mhargai Mukti Yatra' in Goa, promises benefits worth Rs 15,000 per family",
+   "link": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOeHBfd2NOQlZuR0g5UVhSMlhFUU5DZDlqQmhaREpRb0Ywdzk3V2gyME1JLTcyYVI2VW5sdFRDVFVCUjJxNEJnTFd5eXNVOFJmbWZHekVHZHN1Yng4dWdYb3hYc2U4b0djU1l2QmZxdTJTc25mNllKU2xndThGZDIyOXpkNm1MaERFYzBlWTdXQ1BPaWt2TGJ5QnhzdTRUZlVaekp1d2JvV09QMTJIeHRMdWU5cHU2S0ZxdWlHS1JFcmlXV1dWYV9GM2diT0NTem9xSmJYUXRCenBMX3o3bWp6QS0zc3RIdWhhVHfSAe8BQVVfeXFMTVJZNDRjTWJVby0wa08tU3c1SmtpUFc1dWVHUm5QT2VRYWZ0bFVOaFN3cDV0VVRmdHMwakZoT2RvYTdIdHhOd2lmdG56cUZzMGI0bFRtVlNYVmI5Y1MzUEZKRzFJXzVzQXppMnYtZ3BCSktGNGoxVXZBUHRZLUtMcVdJV1gwQTdPZ0dsZ0t5d2oyVTBUYmg1RTN1emFfcXk5TU12SGVLNkNJNDBLclZaaUpaQW8zdjloY2FMNVBSTl9NX01fRmV4QnVHaHRJcGdITjhyWTNIRHdOby1DWjBkUlFCZU9KbUFlUkRkM0xnV0U?oc=5",
+   "source": "The Times of India",
+   "published": "2026-11-27T05:54:00.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 48,
+   "title": "Interfaith meeting at Old Goa highlights harmony, national unity",
+   "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPcldVMXl3Q085b1RScWFHeDE5b2R2dExUMUpnUEJxR2gtUG1oWXNpZklQS2pGQkRyaUdyWEs5WTRnRHJkUjBIa2ZPZVpxVGpDQXhaekJZOHpLektjaTFoTUhzN1BUOWtVTFZCRmhMenlkUmlxV2h3MEo2YW0tdFBoZnRvMVc5WnFqUnZaakgtb1JTMjJDaUFtWlJNY2o5NThXNkE?oc=5",
+   "source": "Oherald",
+   "published": "2026-11-27T03:31:07.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 49,
+   "title": "NCC cadets begin 220-km maritime expedition along Karwar-Goa coast",
+   "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQVXcwQUtwV3ZqSVQxS1J4V0NqWFE5ZlFYYjJqUzFmbXE2a1pkX2ttQnJiY0ktSmFYWldqUmxXUlVtVk9tY08zemRxdXZ3bVdrSjMwTzVKSHpqbEtlNDZYLUZFNWFkNlo0UE9EUUJ4dWhKR1hoRU5aUWRjYy05XzFHSHU2X2tySkdmOW1vbWJLc3plQTYwNGVpRkp6Unc4VmVqSGVpY051MnhrSTVReVd2XzRmdmdGT0N1QnV5QWpFeG5RdXU5QzMxMFJDWjJVdkdZLVVSNG1xR19WNWoxSUJ4NUx30gHnAUFVX3lxTE9UdmhLZDNNVzNOOGxPYTNQN2xqVDd5bjNDMXF4aURqeFd4OHRXOHZVbS02V2tnZUtrSzR4Y2pETWpMTmJqcm1QdE5SYWxLb2wzWjlNUW5HVjhpVnZ0dmRGckt5Z2ZxWVE3RkJPUkJSaWREOGZJU2FwTEluT2t2UzhoT2g4Y2l6LWhfSkFHQ1ZyY0FxYkU4YWJHQ0lVRElfdFBWY2xFOWNvRTA3TDlkTVlYUTd1bTk0bVlzMHNRc0FXbXd3NU9kMk9BdV9JVmlGSGctUDYxYTJoNGVzQ3BUVlhUZGNZWjBfOA?oc=5",
+   "source": "Bangalore Mirror",
+   "published": "2026-11-27T01:00:00.000Z",
+   "places": [
+    "route"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 50,
+   "title": "Anjuna CRZ Complaint Raises Questions on Event-Site Rules",
+   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMlVNUEYtQ3MzbS1yMExQOGJEYURSZEhyMFpQV1dUMFpYT281N0pmMUVZMmJ6a01iRHQ5Si1UU3QyWVlLN0t4UVY5cmo4TWl1NlBodmg0b1g0eW1KdEVfTFQxLUU0WDc3NUZRdUlsaFo3RWFTdS1ldHdGa1Q2RkFCRDZ4VVZ1bXhfZTZoVHZUeHdBMkZfWjZvZG5jcXI5RU1KZ2szeTlhMA?oc=5",
+   "source": "Urban Acres",
+   "published": "2026-11-26T20:35:34.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 51,
+   "title": "Two years on, Margao finally gets its missing Western Bypass link",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNOURRd1NIQ1BNVDQ4M1drZ2FXVFJyNk4wMFVQSm9NcVpXdk5WZTNRTHJEcDB0Y3pSQTNuTXlpQjFPMHN4ejBKUWkxbVRwMTFTc1lxYjR0Y055ZUJ5OEZFd1dxc01sRDF5N0M3czlKaEpmLTVuRzdZaTNQalc3U3BOdVVMbXZOZHNfc0J5VGQxX3liQ0VDZ3RjWVJzeER5VjlIQ3U1Z1N4OXlVZDJHUlE?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-26T19:27:26.000Z",
+   "places": [
+    "south"
+   ],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 52,
+   "title": "panaji - News On AIR",
+   "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9aUnpWYi1fRW1kS2QydVNwaVZBa3FHRlVqV2lMRk1mZjA5YllhWnZiQmlIU2tDVVVtYy1pNUlmS05wck1LcExmSUd1Wk15NmV1bE9RcjRlTzM4ZE9VdGNFaUlTenRyUQ?oc=5",
+   "source": "News On AIR",
+   "published": "2026-11-26T10:20:52.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 53,
+   "title": "The Evren and Nines Open in Goa’s Vagator",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE45M1B3NkswWkFuZHFVWmdnbXVpUFBpSzZkaU1rYzVjLVRIekJzd0U1enFjTmhaekRDdlJhelJaUVdlUXVKcFNUZ2FUMGRneXlXakFYOE05aTRUNjE0QlBHdVV3N3BDVWpQ?oc=5",
+   "source": "https://safariindia.com/",
+   "published": "2026-11-26T10:17:10.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 54,
+   "title": "Footpaths Taken Over By Stalls At Old Goa Fair; Devotees Flag Safety Concerns",
+   "link": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPMEo0T0N0V2ZfVlRJeUNMVGpNOVd6UUttZzhzUTZzUFk3STBCVTFlZVUzTzF6dl9GSjlVVFZpVi0tYXNOMjNqY2pna181QUY1ZWpod3V1QVdyZmNTbkttZlprdjRNbHdvSjZ5anF4Rml0ckpKT0t4Y0JJM1YtUUJTUGdEbDVNU3M0Sy1mOHJjXy03UVpCMkplbUxPaW81eER2N3lQQlNhNlV0UjFvNFZaTHR3WkE3RTNaRGtB?oc=5",
+   "source": "Prudent Media Goa",
+   "published": "2026-11-26T09:10:24.000Z",
+   "places": [
+    "panaji"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 55,
+   "title": "em-smart Expands Desktop Laser Portfolio, Integrating Fiber, MOPA, and 3D Marking Technologies",
+   "link": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxQWDVscmNzRXdIR2YtdmxxRktEcllmbkJ6U0RpM3NqV3dGQ0d2WGN1Y0gwS3RINWhVYlJLR1M5a2tkSEFPOERxci14OTVrVGxIM0Z4ejRhM2ZXT21WLTRjU2dTa1dZVVRJWUpPa3l4a3dNN1dxTFBWaWdwU3cyU0RGRC1pVDRLUExMQWVncWdUOEtUOTg3ZWN2alR6a3V3LVp5dXNMbDNxSDY4WHRCa1NfRklhdlI5NDBYNjQ0UnFBMWZkS0JhajB4WDJYbXplRHVPSC1OeQ?oc=5",
+   "source": "EIN Presswire",
+   "published": "2026-11-26T07:08:00.000Z",
+   "places": [
+    "airport"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 56,
+   "title": "High Court of Bombay at Goa Quashes Criminal Proceedings Against Boat Owner in Bumper Ride Accident Due to Lack of Evidence of Negligence. Petitioner not present at scene and no material to show rash or negligent act under Sections 279, 337, 304A IP",
+   "link": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1vdXhQVXhvSl9kWXNoVl9NNERQN0tvNXRBZExHNXJLeFpRYmZqWGEyZG5OckRMeFpJdFVpNU9KV0FLUUt2dXplaG5CRmU4a1NUMU02TFhhUk1YdlR4eWdlLTBkVkxjcWVE?oc=5",
+   "source": "Lawtext",
+   "published": "2026-11-26T04:49:49.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 57,
+   "title": "Driver injured as truck plunges in Anmod Ghat",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNMHZlODFacG92MXNOazJGZ3NqSl91RHBkWVJ5aUk5OUI1Ul9BM2U4dFhWQ3ZGanFSWUdsRVY4UElpWnA0OWNZcWpoRkJ2bkIxVF9FSmdsSUx1T0hhR19oNWRSczItbDJISGJrZmZDYmdoUjdCTTZMRWtqUG43b19NU0Nyd2tOQ1ZPRzdxOElnZHBYZlBx?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-24T18:45:21.000Z",
+   "places": [
+    "route"
+   ],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 58,
+   "title": "ANMOD GHAT - The Goan",
+   "link": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9SNE1ZTkZreDhzTzVwMXpINGNhLVFVblJncVJVSjRZdkh0QThxZkdveldQNGdiUnNiZ2VTMGozajgtSk4zRE8taGt1eF9LVDNH?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-24T10:49:20.000Z",
+   "places": [
+    "route"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 59,
+   "title": "Belagavi MLA Asif Sait Launches ₹6 Cr Camp Road & Drain Works",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOWEd2bGxNa3haaTd6MUhVeGg4LW1CS1dnSnllVDVBOWlQMU9oRTlHdC1wY1BGaTZlRTFEOU1Ecmk4ajVleGw0ZU1MRkp4OHRSRzdaWFpmWTI0ZVlteDh1cEpLMm9NNHRjQjNKRllud3F0NmZPRkotVlhtblRqTFZyWTdsR0JCNHRiVGpaNjhKMGlxc0tacUE?oc=5",
+   "source": "PanAsiaBiz",
+   "published": "2026-11-24T08:00:00.000Z",
+   "places": [
+    "route"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 60,
+   "title": "Uttara Kannada Hill-District Demand Puts Infrastructure Planning Under Focus",
+   "link": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPZU1vS0JOdmdjYi1QWnZMSGd5ZDNrQy1FczRtSEVueklCTzNVNEtHY0hJTjdJMGtKS3hQMlo0cF83QnhlRlphdnVPSW55c1AyMnctdkxZYTBibmxHcWQ1ZlJUaXFXbTZCaWk1blNhbFduOGZkRTQ4X3RNcFJWeDI4WmZjcFVzTEhrWnFxOGt5b21OdmJoa0hNanRpbXNRN3h4eXlrRy01NDZ4YklkVzNzWVJsRXltdTQ0WFE?oc=5",
+   "source": "Urban Acres",
+   "published": "2026-11-24T06:52:38.000Z",
+   "places": [
+    "gokarna"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 61,
+   "title": "Hubballi: Meat Shops To Remain Closed Tomorrow",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE01cEtDSHFxcGlta0owMGxyeVVRaXQxbmluV05EQTRiamxmaG5EeGRkVG00RkRnRlJSNFc1enpRSGM3MzRzX0JHeVhmeU84NHkyeG1QaWdXbk00X1h0b3N5blMxT0FQMndvTHJmVU5pdTBqMEJZMWxYVWhpdG4?oc=5",
+   "source": "Hubballi Times",
+   "published": "2026-11-24T04:45:40.000Z",
+   "places": [
+    "route"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 62,
+   "title": "The San Diego Museum of Art & MOPA@SDMA: Tickets & Tips",
+   "link": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBZM1cwX1BVSHlQcW80Q3BzR281YjE2X09Ud2dOVENOZ25JeGRrX2tSaVJvS2E3WWw1QUVDcHNfVVhsU0w1bmg1cHp4bklqejVfMk9vdDl4M29zVVU?oc=5",
+   "source": "La Jolla Mom",
+   "published": "2026-11-23T08:00:00.000Z",
+   "places": [
+    "airport"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 63,
+   "title": "Shack owners seek approval for reusable metal frameworks after Calangute fire",
+   "link": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxNaGQ5TWlZS1drTzhVU2tLRmhhN0dVMDFTVEJrQmZGVzhub1pXZlZZM0tvMWJNSUtSZl85VDBJalE4TUx2dGlaUExuWG9obkFNd1pSR0pyQzhISFpfSjd2UGt2MWZUdnNLN0kyRDEtdmdJME1PaHFPZzVSNFJaTXVjUVY5RUpGQTRndnFXUkh6RU5sa0JWSjB6YkJLV3Z4anE3b2J6cmwzV2oxLUM5MGRUbHFMc0RJZUhMeGhBWW1qZXh5X09JTWw4NmxESFFfdFR0ZTVMazY5aUpoQnZJcjgwRFp30gHnAUFVX3lxTFBFdnRsSkUwa09aVloteHlfLWVld25LSm93ZHFnYmlSNW5nb3FQa1lkSUxETFkyZkNiT0UtdjJyUkc4NjZIaEhZU0xQTEpSblNRdmgzUjQ1OTJESm41ZWo3SjRaRnZkd0NiWEFTam9wdHNYaGpmdVJERk5oS3RrbVdsN19Ta3BEalZMM0lWU0ZnVTItaUFfMXJxRmEta2gyWjVlc2FGbmJOcVV3dm1xTE51blRHeXdMaVF3bkxtRjBCUnpGRlI3ak1DNlVndlNza2JPNkxzV1J5T1kta24xdGZCV240dGtmYw?oc=5",
+   "source": "The Times of India",
+   "published": "2026-11-23T01:12:00.000Z",
+   "places": [
+    "north"
+   ],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 64,
+   "title": "427 trees to be felled for Ponda-Bhoma-Old Goa highway project",
+   "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1HMGpUczBzQ0hRRnViV0FpZ3BsWGRxTTQ3SHJBZThpWVZSTmNHMWh2TFAxWjJfYUdlYnNHNldPbU84RjFJOFZGWHVfSmxEUHJhcWRIZjk0RDFEd0ViOS1iZkVtQTJDUnFEQnc?oc=5",
+   "source": "Daijiworld",
+   "published": "2026-11-22T06:39:02.000Z",
+   "places": [
+    "panaji",
+    "route"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 65,
+   "title": "Over 400 trees to face axe for Ponda-Old Goa NH expansion",
+   "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNWM5SUJMTkUyVEpod0RKallXOW11QUNCcXlCTjBJWFNRVjNzZGhpeWdneU5RdnRMQ3hUdG9yWENLQ2dFVm01alNCdTJadEVEamU1eGJ0dHFTSXZmakRNd3VFeFJ2c2VxZ3VuREpVampWZzJIRWVYZnpjSmlnQzBWZFhtalVwZFFCTkpkb0NQVC1ZcWhvTm1oaHFaYnpSTlJvM1RB?oc=5",
+   "source": "The Goan",
+   "published": "2026-11-21T18:54:20.000Z",
+   "places": [
+    "panaji",
+    "route"
+   ],
+   "alert": false,
+   "kind": "news"
+  }
+ ]
+}

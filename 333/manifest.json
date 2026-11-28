@@ -1,0 +1,16 @@
+{
+  "name": "Bali 2026 · 3-3-3 Plan",
+  "short_name": "Bali 3-3-3",
+  "description": "Day-by-day plan for Seminyak, Gili T and Ubud (3 nights each), 18–27 Dec 2026.",
+  "id": "/bali-trip/333/",
+  "start_url": "./index.html",
+  "scope": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

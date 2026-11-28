@@ -1,0 +1,690 @@
+{
+ "updated": "2026-11-28T15:28:30.156Z",
+ "sources": 13,
+ "alerts": 10,
+ "feeds": {
+  "bali": 53,
+  "alerts-bali": 14,
+  "alerts-lombok": 2,
+  "seminyak": 25,
+  "penida": 11,
+  "gili": 1,
+  "amed": 8,
+  "ubud": 7,
+  "airport": 12,
+  "boats": 1,
+  "balisun": 0
+ },
+ "items": [
+  {
+   "id": 1,
+   "title": "12 Papuan Delegates Blocked from Flying to Vanuatu at Bali Airport",
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxNRFYwMVRsY2hCMkJuaEZNeWlNb3RNOTlwWTdqUTNoS3BJSXM1bl9uZDkxeXdsSmJrb0pnQXhxS2dOYUYyYXNVRHIyTWtIQ0c0bHN2anUtWTZNdUJmbmlkWERLdW56T2RnY2lNdFJMaUQybHlfQklRaUZwbUpJd1Y0a3dPSzhaeTRBRzJfMmZsNW5CcmVMUVZUSmdBZXhVSkgxZUNqMC1n?oc=5",
+   "source": "The Bali Times",
+   "published": "2026-11-28T12:25:07.000Z",
+   "places": [
+    "airport"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 2,
+   "title": "Bulog Delivers 23,481 Tons of Rice Aid Across Bali",
+   "link": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPRUFvUnFYQzNSRnZ5cnNWa2RMRFpHRDk4SlcxZTFaaVlZRUhQMHBGTnBGY20zSWlxczdoYXVMZFFHT082SjlPSC1mdmNmcnJPZTVIQlllb1V5QURZdXhNaUY3Rm80UXhkMjB0YmpGbEJkOTd6N0ZGVzZhd1FZQ3ZjajdWb2swYS1heE9V?oc=5",
+   "source": "https://streamlinefeed.co.ke/",
+   "published": "2026-11-28T10:22:00.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 3,
+   "title": "Sun Island Hotel Legian Present at Lifestyle Journalism Infotainment, Agi Sukadhana Strengthen Bali Hospitality Character",
+   "link": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPQldaSENYQ29rMkFYNk93b3ZrZktMN1JSeDZDWXVQaVdaOHdVTEJzY0hlcU1WS25oRTBNLWo3SWtaQXN6cDNtbUpaX3FzYUJ0UVYzaGFWbDJQYUZFd1l0aWlQMGNtNDlxek5HTHFjWnN4SWhPV2FsVUlmREQtS2szZTFNZ1hwdlJoc2NYVU9XVmxrRmZ3bXE2MGVGMHlYclNWRXpIQkRoaGJ6QjhKb3VIVnVHeGgxaWdXUW8wTmsxMGVSejdBeVRkTEJCU2FvX1h2Nmxtby1ya2dRcVozZGNIN2ZQTQ?oc=5",
+   "source": "VOI.ID",
+   "published": "2026-11-28T09:20:00.000Z",
+   "places": [
+    "seminyak"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 4,
+   "title": "Marriage rumours rife after Arjun Kapoor-Sahiba Bali selfie goes viral - CINEMA - CINE NEWS",
+   "link": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOTUpoc1FaczVRZ1dUc0dnZXVudkJkVUJjSEtsMkpsMzdtSDdXaTRSM0hJRUFKS0wzZUlhNnV1MXZuODFJTVVSVndaRFdnbU4ydldqY0liV3Nkc2J6bkNfeEdIaHUwc3NIRUFZZDFoMmFndWhGRUQ2YXhwVFg1aWt5M2YxNjlQdW9iWnA5T1VvbXgtU2U2M3c?oc=5",
+   "source": "Kerala Kaumudi",
+   "published": "2026-11-28T07:31:48.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 5,
+   "title": "Electric buses, new roads and a cable car are changing Bali",
+   "link": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNdjcyWWk1V293RzJuTUN3NEk2M1lQSDQySWdZWUlGaTlwemhWTEM4OW1NUXdrWHlyWDZiWm1QTzcxY3dCTkpKeVo3ZG5ld2JZUjkzTFN1ZEswd09nMGRjN25iTmpKS0VtOFJpQklrbldocllBNW9ERUdjVDlBWjZJczMydDE5WHNyU0gySENLQjhua0syMVdLYVJPSVpTWDlObGlxRnpxZnhETUdLZ3Z2ak9kemQxZWtxcHp4b0lKNHBVd2NPLWtMZQ?oc=5",
+   "source": "The West Australian",
+   "published": "2026-11-28T07:10:00.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 6,
+   "title": "Bali United vs Bhayangkara FC: Score Prediction, Lineups, and Today's Live Streaming Schedule",
+   "link": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5ZcTdVRGszXzk5dS1XN2VQOVZENGNBdDBsOUgyYUd5ODF5RFZLeElHM2R6TUhMX3dfd0VSYzd0M1UtSm5nNEdYSlQ1bHpfUVc5Z3BYR1lWRnZLMDJGcHVYQ2lmNy0yRFpqeVFnMDJVNWFScjlwWlpMMGdKNA?oc=5",
+   "source": "Aktualita.co",
+   "published": "2026-11-28T00:31:06.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 7,
+   "title": "Olowu Of Kuta Congratulates Adeleke’s Reappointed Aides Archives",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNQTFoWGhaSGZ0R2l6MDNTSm12dzZHTWVhV3ZuOEM1aGZDMVpLVjRuTzZ2Z01LM2xMRm1mZ0tlamtmZjNPTkhvcVpoQ2ZKWmExbjd3TWNPNzVQbzVWVmE2WGlDb05GTkN5czJ2aG0yVFlCekNOQWE4NEZlTWdVaGQtNmJwVlg5cnp0cTY1MGFPSQ?oc=5",
+   "source": "New Telegraph",
+   "published": "2026-11-28T00:18:09.000Z",
+   "places": [
+    "seminyak"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 8,
+   "title": "Swiss tourist jailed in Bali for insulting Hindu holiday",
+   "link": "https://news.google.com/rss/articles/CBMikwFBVV95cUxQbGNva0FpVFBuSE1KYzRtbkVjM3RZZlFhVDl3N3hTN1EwMzdIenl3SmtURDdOYzhZLTlsczEwaXJxMEowZTM0TnBjSWJzYXdlWVVsVnVFMGdhb3hMVHFiX0Z1Y2NEOE1HYl85cXRvUXQzak1QOGpDM3RtREVENkpoUTJ1RVRUWWFzcWVGaUxaNHpUaUnSAZMBQVVfeXFMT2E5VWF0VUV0cUNvYkNqNnhvQUhrRnVNNnNqVXh0VzJKRGU1ZkJFam9FRVljUlZDemJkdmVoZWFTYVJxYURoUUlQVVlCaDRwLXdxTVpwLVNjTzc4cW5WZDlYRnlCb0VUeF9vMHlFbnhkRFg0NHotRllCamlHeVlVTVFTNzQwb1RFbWdVNVhnLWJQak5j?oc=5",
+   "source": "DW.com",
+   "published": "2026-11-27T23:26:56.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 9,
+   "title": "Minimum Wage Hike Takes Effect in January 2027, PHRI Bali Warns Hotel and Restaurant Rates Could Rise",
+   "link": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPTmZ3M1B5cGZWMFhoZmlJZEVYc1o1RmYxXzJaVkNpc1M3X3pYR3lEUGpONVFLMnh0YWhDM0RGV2NBUmpnMndCcjMzNGZuY2RhQmlDb2NKaDBUZllGSzQtTTFIZkVyamVoek5tN25DRVNlcUVPZDQxeU1fTW9sZk9SWS04OXROVlc5RXh4bGJVcWFNcVdsaU1kTXc1LW1seFRPVU93RHJyMTBqbXZ6VXJyR3ExaU9KYWpwaDhZUmFQeFkzU2NEQVM4?oc=5",
+   "source": "BaliNews.id",
+   "published": "2026-11-27T22:54:00.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 10,
+   "title": "Bali Minimum Wage Rises 42.15 Percent, Recreation Park Operators Seek More Time to Adjust",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOSXpFVGJ6Rnk1X2tpVDRGUU9DSEl3RGJMY3k2V0wxcWQtS3dvbTBlU3RGeW1xVGs2b0NNeEFKdUhzdUpxYTkzS0xtdkRSNUJLVkVoX2wxY2gzWkczcjFtSGhoaUlaRmFoNG5LUndWeWx6bE5MdmI1blJUQ0ZucHZLVmhvS3FKaUJJOVdFZXViNWdTVnB1X2Q0VGlmaV9hU1dqN0RLQ3pweVdmcHFIb0s0SHlOQUp2Zw?oc=5",
+   "source": "BaliNews.id",
+   "published": "2026-11-27T22:50:37.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 11,
+   "title": "Bali Tourism Board Seeks April Wage Transition, Property Tax Relief After 42% Minimum Wage Hike",
+   "link": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPR0dYVjZhSG8tLU5TbmJnZEhmSEVTb0MtNkg4dXdPbXdjeHpjeHh0NzFCSXJJSDNuNl84bGZCWVVTVEQxXzNtRTY1YWFfS015LTZIWVkwM2J6aWZDYmgtTFI1c0pXeElBYnF3U2xMVkJZd1B3VlRxMVg0YTRVTXhsUTF0UWE2anZiQjI2YnZZQVkxTndENDZ1dnNoT0YtaXVyS1hDZWUwTTZPMUo1U0JHNDk1UHZnTEY1MG9xZnJn?oc=5",
+   "source": "BaliNews.id",
+   "published": "2026-11-27T22:00:40.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 12,
+   "title": "Cop’s Bali rejection, horror act on holiday",
+   "link": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNMmd5UnkzQW1RUEFJTzMxUEplSGFJdEZzSDc1Y2xDZ2h3X251T0kyQ3lPOGlYRlk4WkJmM2xtdHQ5Y3NnX0N4dXVyN0lrZ3pKclRpVkhUQ2VuMmxwYVBSWTF3YUF6QTFyNnBTaVFYNlYzM3dBTXBYNUlXLTg3eWtaMFdTbkVHVFFid0thLVZMRXZXMFhudWtqX0tRc1ZuMmZEX3Y2eGV5ZUw3VWFNcVZHU2F5Z0F0N3JGYVFvOVlPZmVtOThoanAzcjZiT2pQenpJY28xaWdXaS1vT1hPZ3Q3TWM5aG5hNWNKUlVXQjJvclBDN0xSb0J3ajlteW92U1NkbjNHSjAyOXZ5bUdsYWZuZ2JXTErSAZoCQVVfeXFMUHhUZjcwV0hwcHlwRHRPMVBlOUYwenJHNTZ2aEsxOVBkSFZyd01wOEx3MjJGN25YTEc3NG9LRzl2OGwxZDhZWFZEV1c2b05feDhHdDFIdE9rVmZ5Q0EwZHA1SE9WQlVvb29zSGJMRDJLVFM0eEFQeERWT0ZOU0xreWhlc3YxaTVSbS1LYmF5WlVqb0NsWnh3Nk50VGlFdHlYOWZvOWFnRWxOTW14cFo2UWlkYnQwU2tXdEk0NnRJcFQwdmNzcVRteEhva1NxYk9TQzh0LTBvZHhvZTBJNTNBb0dHeEt2QjhaTkY2OFhzVXluVGFjYzM4ZFhHYkpfNXpYeXZGbGYyZE9wWVZMR3BJeFRDbzk0M3gydGtn?oc=5",
+   "source": "News.com.au",
+   "published": "2026-11-27T19:38:56.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 13,
+   "title": "Arjun Kapoor and Sahiba Bali: Dating Rumours Explained",
+   "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE02RDBGZnRZY2xSWWJIXzBuMWRjQVRqMm8tSHNNd0tOenFDOTNUcFk3WFc3ckZnVU50Q2MzZ3hqQ00zWkRTaHQ2Z19sOU1xcTktTF80S1cyMnVnV0g4MUp4c0xlN3pGcmQ4eDBWaXdB?oc=5",
+   "source": "EkSukoon",
+   "published": "2026-11-27T19:27:15.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 14,
+   "title": "Jamaat Indonesia’s contribution to eye donation recognised in Bali",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5VdldUUkVveWJ6M0taQW0wdWRMdHJSMHkxZnZkREdRaDNSb0owU2hGUnhMM3dpczYyQWJ3MUkzTmJ2NXk2WHRtYmdlYi1HRThWVlByQUtPZVUxcTVUbFlqUDNpajVZcXlSZHhzdzI1QTB3czZrVXNaYjRGSmk?oc=5",
+   "source": "Al Hakam",
+   "published": "2026-11-27T16:35:31.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 15,
+   "title": "TikTok Awards Southeast Asia 2026 in Bali",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxPWEZvX1NWaGtOMkNQa1FtNXZhVXlmWFBZb3dDdldqWDN6dVFCclN3OV8xbnhwcDRHOUthbl9qUUJxRXlSSFg0Ri1wcDVac2JLS01CNHZVY3ZCOUJfSHozcGdCZUNRUldKZWhlOUVUaGhIOUJSbG1IVXF6VUVqNWpkeHB6TG56WHY3M3J0SDBn0gGOAUFVX3lxTE9YRm9fU1Zoa04yQ1BrUW01dmFVeWZYUFlvd0N2V2pYM3p1UUJyU3c5XzFueHBwNEc5S2FuX2pRQnFFeVJIWDRGLXBwNVpzYktLTUI0dlVjdkI5Ql9IejNwZ0JlQ1FSV0plaGU5RVRoaEg5QlJsbUhVcXpVRWo1amR4cHpMbnpYdjczcnRIMGc?oc=5",
+   "source": "ANTARA Foto",
+   "published": "2026-11-27T14:35:00.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 16,
+   "title": "Oh Yoon-ah's Bali Wedding Photoshoot With Younger Husband",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOQUdPTUYtQU5nYmRWLTM4XzAwR1JwYWI0MjJaOGllYlhEbDVjU19ZRnNDWWFZUmNVS1BRUEdpVGQyZ2RLc2xhRXBIODNENFY1UklwR3FQbUdXYmlyR1duNDlvZC1QZ1VGbzRINEhKUGEwNWpORXZLZGlSR0RTSmhkdXpKSEJTTnRaU2ZIYl9R?oc=5",
+   "source": "조선일보",
+   "published": "2026-11-27T14:17:20.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 17,
+   "title": "Today's Food Prices (27/11) in Bali: Red Chili Up, Eggs Down",
+   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPYXFvYWlweE55cHFuX0JPYmdPNWE2dXZWWHlmQjd4ZFcyRnpfSHJ3WF9YaVh1VGVndF9UMEdESG1NZmhfaVhHYUpUcTdwMkZVZk9MYWFfV0pXSG1tVGxKRGtYSmlSUnpKQVpaaXpfSWlEWjNrT0xfNWExbll2MGhpUC02Zy1jU3d5LWNnS2lyYzduVUc4SEtmUlJFcnkwb3RMbHFLa0RHT1pSTm1NWlpUQnhENHdmRjVmR1pYQXpZZVdZR2dvbUp2WjFPM1k?oc=5",
+   "source": "Databoks",
+   "published": "2026-11-27T12:22:40.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 18,
+   "title": "TransNusa to Launch Bali-Kuala Lumpur Direct Flight Route",
+   "link": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNaFl4UDI4T3VRMG53NTI0cGZ6WS05WFhrQklvczFCWDEzdlBJYmtKY3FSLV8yTkhvTjJWU2Q1bEFQZ2lzQ2YtRnhVaEhGWm1QOW82cmlQTy1WX0tRR2EtNWRuUVU3MnRGU3J4VUswQ2JFOWF4dnppZWxaV3ZpTnA0eEpXaDR5dzV1VnRDRWR3Y2VzSk8w?oc=5",
+   "source": "Tempo.co English",
+   "published": "2026-11-27T11:46:04.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 19,
+   "title": "Bali’s surging tourism strained by poor infrastructure",
+   "link": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOa00tbGFmd3dJZ2hOM0QwdjIxTTFINk5aYzQ3U1A5VDRhS1lhZ0JDeUk4VXlmWU9mNDhHTXlFR3lQdlQ3Q1NadS13S0dlUkVCWGFvUTdaSXpIOUFoV296dWVvdllzOFBsYTVhczhZZWoyZDdnb0pxX3pmWHhVSlVHaDlXTC1LVHZvWGpFQzFabURJLVdMYTA3TlJ1S0ppVFNHYW1rMkU1dw?oc=5",
+   "source": "The Jakarta Post",
+   "published": "2026-11-27T09:32:29.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 20,
+   "title": "Bali tightens rules for foreign bloggers and influencers",
+   "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1vMEttRUhGR256YU1kZk9JZnREczZRNDE4dkRVNjAyeWlxanZMalNMV0JSSS0tSlh1eGNjX21nVUlubjBRbTY5NnpSQjdVaUpESjVzeXhjblc3dE5TTUVn?oc=5",
+   "source": "Radar.am",
+   "published": "2026-11-27T08:58:39.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 21,
+   "title": "Bali Chairman, Habila Balasa, Condoles Kurmi Counterpart Over Wife’s Death",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQQ2Y1VG5vVDNyYzNDRWI0VGhpQi1nSE9NdzhQbmxIVG9pVEtlbm1BQTdjTUl4T3R5blRhdGk5bzFrUm81Ym5tM1Y3RjB1OFFOckUyWXNka3B5WlRZZ08tdUEtYWcyczdmNGhMNmxlRG1MLThzR0VZQ0VsVEdha3VSN0w2NHhGM0xCWTFCNXNGSC1ZLWFjQWFmMGlmckVRVzZpTzRjXzNEUkM4VXZxR3FsaUVkTQ?oc=5",
+   "source": "https://thenewspointer.com.ng/",
+   "published": "2026-11-27T08:25:05.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 22,
+   "title": "Bihar's Horse 'Bali' Wins Semifinal At Anant Singh's Horse Racing Competition In Mokama",
+   "link": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQbDVuTXRfZE9CRDRSdkNHeTBYaU4tbTV3SnhQTWNBRzZnMTRwa1RIR1E1UlFJUURkS0xWU2txMVloTHNLdnNDSU94NlR4aHNOdDdHck41S0xIZVo1V24wV3JFQ1JxLUZhVmNET1RrNEMyZzlEN091TVBYc05raW5yVHpTZnhzajdYLTlFclVBb3BfNXhqM2llME51ajBvLUlSRFE2Y0xWRHEwLU9kQmdFMmpJWmVwanctVjNOeVl1dUVwbnV3Sl9vQ0ducERBUdIB0wFBVV95cUxNRkRQVkU0UGpMcUlhYTY0VlVTemlOaXI5WWl5dlpmeFNKVWZhWUV5SU03Q0dOQkEzQjlrUTl0WDVIb3c2Y0d0aXE0c2VzY1haUl9IaUw4YnhGVzlnQm5zcFBBY2MxZWpxV1p4X1Z6bjExQmpWdGU2TG0xLVc4TDYzME9vWF9xOUtFaURHRkZ4R1YzRTdkQzhwd3ZWLTRmUzJuYllQaDdSc3pHUzhIRnZwcWdfZkg3eGFUWW5tUnE4emEwNXhsZGgzNUlHOFZQSDBqZGo4?oc=5",
+   "source": "ETV Bharat",
+   "published": "2026-11-27T08:20:45.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 23,
+   "title": "Church & Dwight buys 45% of Vienna's Bali Care for $225M",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeEQyMXRhZzhWakhCeGtwYWJzbExqYkxjaE1meko3UmJEWTA0WDZXcHgwcnQtOWhPWTlqRV9xSGN3c3BGa2p5WFFLNlAxN3BVWWFTa3RacThNdjgxb1NkWkNCYS1HcWdWMHF5NU5ETE55UWs3TVJ6WjdrZUU4OGRfTG5feW1IR1VIVmo3c1ZGaw?oc=5",
+   "source": "Dealroom",
+   "published": "2026-11-27T08:03:53.000Z",
+   "places": [],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 24,
+   "title": "Hyatt Regency Bali is where to dine this Christmas and New Year in Sanur",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQaUVTaGREUlctZng1U2lmbHJrRFU3R3l5WVRoTW9teFc0aXZKWlhtNDNtdEtXVlp4TTJUZzUydFdyakVNM0NWME1jeE1xc2pxNjlaTEs5N2VIM1MxSzVlQkt3VnpzaVQzaEc4NUtpVUo5UmxsdWppUXhBMUxxX05mTVZDZGxFWW8tTHVMOTJaNlY2RXl3WUF2SGQwbTRvY05IM0ZOMTZjRnR5dGFSc1FIdA?oc=5",
+   "source": "Tatler Asia",
+   "published": "2026-11-27T07:26:06.000Z",
+   "places": [
+    "penida"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 25,
+   "title": "Three Protected Primates Rescued in Bali-Lombok Smuggling Attempt",
+   "link": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNV3dfMDZNVmd3QS1YM3dUZTE3ZjVCM1ZINjhGWU1zVXN1cVJjZEh1bTQxcHllZTJTNHpuYllzczJ3NVB3a2lZYUgzZzRoN2FRalMxUWtQM0NPRTgzWFVCRDV0a3RsV1d2elNwc09LMXJLQ085d0JtcWVqRWxGdktEa2Z1eDVKazI2SnU5eDI5eUFXRVdqSURfaTF4OHBMbHFXVGx1RC13bDJuUQ?oc=5",
+   "source": "RRI.co.id",
+   "published": "2026-11-27T05:30:00.000Z",
+   "places": [
+    "lombok"
+   ],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 26,
+   "title": "POST-RUN COFFEE AND RECOVERY: SHERATON BALI KUTA RESORT TAPS INTO KUTA’S RUN-CLUB CULTURE THIS NOVEMBER",
+   "link": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxPS29VZk1OQ3kwSW95QmZMOWVQS19LWTFpZldDbVJPamwwX3lpekFiNng3c3hHdFM3cUVYMnEtYnA4Qm1XYS1KOWs3MW1XdUhQMUxhTFp3WGpkUGdIVDQ5VEZ2TjFYd3ZWYzZtaUR5MkpOM3J6ajRRTnByX21YTExvMjdBdXZPcWdpNl9jRm1tYWE4MDZNc25FSmQ4QWV0cklMQ3ZuSC1TMVF1UWo5NkEzZDBtdGtkYnFkUjBIWlpPRXZkQWdMQy1lY1ZEU2RvNm1qUFNydDRTa2lEWEx6QjVNNEJ4S0gzMFU?oc=5",
+   "source": "Indonesia Expat",
+   "published": "2026-11-27T04:17:36.000Z",
+   "places": [
+    "seminyak"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 27,
+   "title": "Light mag. 3.1 earthquake - Bali Sea, 9.2 km northwest of Mataram, Indonesia, on Friday, Nov 27, 2026, at 03:56 am (GMT +0)",
+   "link": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQYjZPeWpHYkF5MG9RdWJBTzZSX3ZQdVIxSDdCZWVpaG90QzJoazFXM2p5ZVUtUnUxcnV5REpibWZRclR2LVlwRklvU3VIYzdDUk1mVUlaRUExX21UUmx4RFJoZF9yV3Ytd0UtRWdycXI5dzRkUTZ0SkxaNldEZU5FamNTQW1lV0FlamFPV3F5dHR3MVYxZXdLQXJHN0tFTnVDcWp6WFhVa2Y2RkctYTNxSjd6Z3hiZw?oc=5",
+   "source": "Volcano Discovery",
+   "published": "2026-11-27T04:05:38.000Z",
+   "places": [
+    "lombok"
+   ],
+   "alert": true,
+   "kind": "news",
+   "detail": "News report: check BMKG / MAGMA for the current official status"
+  },
+  {
+   "id": 28,
+   "title": "M3.1 earthquake: Pusat gempa berada di laut 18 km barat laut Lombok Barat (felt: III Kota Mataram , III Kab. Lombok Barat)",
+   "link": "https://www.bmkg.go.id/gempabumi/gempabumi-dirasakan",
+   "source": "BMKG (Indonesian earthquake agency)",
+   "published": "2026-11-27T03:56:37.000Z",
+   "places": [
+    "lombok"
+   ],
+   "alert": false,
+   "kind": "quake",
+   "detail": "Depth 10 km"
+  },
+  {
+   "id": 29,
+   "title": "Celebrate Festive Season in Ubud 2026",
+   "link": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9RNXFCZXhLakw5dHZYZS1CMDQwXzFCaWpKQjM1eWxWeVR3Sm1mVktVVHhva1MtRk1oTVJ3OTJKY1pDRFQwWXlvMlZNMXhsTzZZUG1oQmFRdEV3cEFJWHEzMkR3UDNYWE5NR3hUMW1Zbw?oc=5",
+   "source": "epicure Magazine",
+   "published": "2026-11-27T01:30:50.000Z",
+   "places": [
+    "ubud"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 30,
+   "title": "Moon Gang Ubud – Hotel Review",
+   "link": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE14QjRuN1ZKRDE0TWZRTXpwOHVTVjdfclFvVnVralVVaEo2WmZvdXN1V2VMXzhmSmVYQVh2Z00zN1NQY2s2MW92WjNHeTVIRG02SlR6Mm5raDNhcXNNNXJyeS16SDk?oc=5",
+   "source": "CN Traveller",
+   "published": "2026-11-26T20:59:21.000Z",
+   "places": [
+    "ubud"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 31,
+   "title": "Denpasar Ngurah Rai International Airport Arrivals",
+   "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQUEt4UGthaUpXakZ2V2x6WVRYSC1hM0N1eERKWHZuNGV6UTE2QjlPYVVMakpOaks1dklCcEFiMkRIakw2cklxZHZCeURTVWpZeUR3RkpEQkRBR1BINFFQTjd3WEZfUHNOOF92azFwR1ZBaXRIbXZrSjFKU2l3ajNtUXYxdGNyZw?oc=5",
+   "source": "Flightradar24",
+   "published": "2026-11-26T20:57:34.000Z",
+   "places": [
+    "airport"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 32,
+   "title": "Bali residents warned of potential extreme weather through November 30",
+   "link": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNb19xa0MxNjZURFBaZlNGcEczYTJLQkd6MmF0MHdyQVFhMmlvcExPUExkN24xTklBaEtsWFJoM1pOT0pjZk9WcHljbDlYTmd1cmZwMGFXSXA4c203ckN6NERDRUt1a1VESlpyOWJmUUZ6QnBNZVJGYkN3UFUzdGRfUkgtQ2EwRTc0Y1pfLWtkbUNzZEZvX2dOUmZtT1lDdGhIcnQ1QWdRRXBDYkh10gGyAUFVX3lxTFA2a0NLX09BR3lISmc3Y0p0aEgtbFc1UHNFaHMyOUhXcVZYeGMwV2xLRGFOUTZyd2h1YVhEZWlORmZ6QmZENm8yUF9JT3VQa09Fb3JuRDF5d0dpN2daWDhFLWYtUk9PNnpoc21YTS1ibnZadjU4Q1dNa1lFbFRSTUNXYTY1SHRsUmpQYUdqbFZiaHpuSmpaSFM1emJmb2hIbFVwQ2hmYXBOWnpJaWFTMkZkclE?oc=5",
+   "source": "ANTARA News",
+   "published": "2026-11-26T15:57:12.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 33,
+   "title": "2027: Olowu Kuta urges peaceful campaigns in Osun",
+   "link": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNbl8xM18yQVo0dEgtRk1rdTVtYjlEV3VfUnRCM3RkV1dreTZHMHh6TVRUSE5tUjZVVXVOTXFGTFBHUVFMVk9pbUZZS3N1UEZLaVNfbklFclpPbzR0VzdXOUtuWjVnRExDN1FHY2RXQVZTaG55ckdfRkFFSjN6dGhrRHlmNFc4N1JmOUpySmdn0gGTAUFVX3lxTE55aWVfaUpyRDVZeUhuYUJrSDVWZHZjR3ZtSXV0TF9aNXF6OFhuUUJqeEJZR3NTSVRkbmJlWUswVk10MklJSk5xUWVicFVBc09nUEhIVjRVT3NtbFlaa1hfQmJoMGItVUdQQ0VLcTdZdjJYdDBiLVpKWmJsV2RCWldCR3V4OHN6UW11TTFUQVVmZkI5cw?oc=5",
+   "source": "Vanguard News",
+   "published": "2026-11-26T12:26:55.000Z",
+   "places": [
+    "seminyak"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 34,
+   "title": "Kuta Beach Surf Report, Surf Forecast and Surf Cam",
+   "link": "https://news.google.com/rss/articles/CBMifEFVX3lxTE91TUpILUFldlR2VVFMbVBHSVExNnBBYVFXSk95U1d3QlIyN2k1RWoxeVRHTGl3Mzc1LTh5N1JadURrQTk0ZXFnc185MlN5YkNyZ25yMEplN0ZQSHlsdWF2WHFfTXY5TjRMMGc3Zmt1RFRaSkVrZ1FwVGRKSlE?oc=5",
+   "source": "Surfline",
+   "published": "2026-11-26T08:00:00.000Z",
+   "places": [
+    "seminyak"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 35,
+   "title": "Have a coastal Noel at The Meru Sanur and Bali Beach Hotel",
+   "link": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOMmtRRDh5LVlpWlNTR3RiQWU2ejRFcU9kZTZEYmpublpGMG9Ga2p5MEIteC1yRTVLaVFxNnI1NGYwWFlIX3dDSk9RWXdlVW9OWWpocVM1b2hZcnBzVTBCUWVxbGJtWXoyZm9uVEhwV0xsZ2swbGRTOWp6bGltTnRlUGFZYmNxZ2RYTWU0N2haa2RjQQ?oc=5",
+   "source": "Tatler Asia",
+   "published": "2026-11-26T07:06:30.000Z",
+   "places": [
+    "penida"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 36,
+   "title": "Lombok Island, Indonesia, Earthquakes: Latest Quakes",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBGbWtoa2Nib3JEVWZ4cHJUWHdLQ0ZIYkIzbGc3QWtEd3NNZFZaRkJVdXVXNnpXLUR2cDlFRFJZUFg2dGtHZWxGZHBPcnExd3d0RjBmWWFNTTBxcmY0TTkxRzBGUWRycDQ?oc=5",
+   "source": "Volcano Discovery",
+   "published": "2026-11-26T06:19:41.000Z",
+   "places": [
+    "lombok"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 37,
+   "title": "‘Thought she was dead’: Perth teens seriously injured in Bali motorcycle crash",
+   "link": "https://news.google.com/rss/articles/CBMilwJBVV95cUxQb1MxR2pEUWtPNnpZbVk2ZFVUVlRJQVFPc0hUWHRCd21kLXJUWjdEVzV4WnctSG81eG1uLWh3cjFvQ3JlTC1QRUhmUjAzQXZ6UVctVGREcHBKOXhiTDhkNmwxSjE0el9XOEVtR2UzUzVmTS1lODlOMHdpb3ktaVRadWZEYnhhYmxCZGRkYnI2d2hZYUhHdmF0WFZPUTVaYllheUdXdlM4QW45LWl1c1UtWkRpY1lVWWx0ZHZRS2NNdllTWTRabjVESTVsc3RUak53REdSOWtMNGFZN3pUdl9jWlg5LVZjenNkbkNtblp2TmlYVnlPNV8yR2lUY3FOZU1LcDM1WUtncjNJVlN0Nk52NEgyRnZSSlXSAZwCQVVfeXFMT0didjk0QXZKZ2NwbmpwWEhjYlRMdHdNbS1lbjNGWkR3eG5CRXVQZjJFSVRKYTItU010M2c4c1JQWFRueTJBMDZMVnEzWUotNVJKWmxoRVZpWDJjdXctOWFSdFZabkhFN0MxN3h2WUliZWlXWWlOaktRRDRISHdnRWphYjZzdVJNUmFkOWRPS2xkZjJyczZtdEpNeWNsWGtTRE9oVkJMMjlkUlhnSVg2WjdmNTNTWGdyVmRTZ2RkVE5aeFNYWlJMMkVZSjZZRG5oODROWFAyUFZzcXcxRjk0QzBTbENqVVNYU2tnUmNUeFBmanZ1YkZnY0M0cVVpVFBjemxCbWNLcDVyWXAyZDB6UkI5dUNLSmZ4dkZJOW0?oc=5",
+   "source": "News24",
+   "published": "2026-11-25T22:51:49.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 38,
+   "title": "Volcano Gunung Agung with Banyan Trees and Temple in Bali 2005",
+   "link": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOdW5MaU5KeFhMbHN3YzdqWkF5ckNKcl9RRjdRY2FScXRwTmIyZnZpbHU3aUVsUEZvdzJ6RjllWXhCVVM4Z0ZPMUh6YlpNSWJ5aEVzSUo5bDJFUnBPZnhjcE1DSmpVOF9NVHFaRHJzaHlRZ2x5clExaHN0Y0VKTEVzVThSZjdWcWFtcUtpdEM0QnpBbmVYeTJYRjhoc09tMnk1c1loNE84TnExQUhPaHZWNVdjVC1jTXM?oc=5",
+   "source": "Artnet",
+   "published": "2026-11-25T22:19:07.000Z",
+   "places": [
+    "amed"
+   ],
+   "alert": true,
+   "kind": "news",
+   "detail": "News report: check BMKG / MAGMA for the current official status"
+  },
+  {
+   "id": 39,
+   "title": "British diver dies in another Nusa Penida incident",
+   "link": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOaTIxaXZGd2xIamp5YTVQZHRjMV9xTkdrOFpjZVA3dUYwVnpSdW1WZEhzQV92WkJCalQ0ZjhJZUFXUnFFTjNjSmc4Z1h2Y2R0dXZ5bjFISzdocEFwcmxDdEx1RVpocjZOd2tIV3drZVZZVHVDMjUtb3RIRUlZcDFlV3ZXYTVRY05EcUdrT0liVDJ0MUNkbWNvSVlka2hWWGlSMTh3dldB?oc=5",
+   "source": "Divernet",
+   "published": "2026-11-25T17:52:36.000Z",
+   "places": [
+    "penida"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 40,
+   "title": "Is it safe to vacation in Bali right now: tourists warned of new heavy rains",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxNMXUtZjlOTlh5QmhUWE92UldIRXItYU1PRnpZd010TVAyUk1fd3BFM2FMeHdwa2ZRdnc4cVlhaXhCOERrSUtmV1VoRXhwUW5qSzJBM291bGVLY0ZOaG9aOUpGVHotUkRza3Y3RmMwcFJCdjJKcWNvaEFwTldNNFlTSFdSb3kxcFRqT1NVR2VIT0dNTEhmaVEycXNyT3ZYRmgzOTl4dE5YN3A5MHZRSVE?oc=5",
+   "source": "TengriNews",
+   "published": "2026-11-25T15:05:00.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 41,
+   "title": "Families work to fly Australian teens home after pair seriously injured in Bali scooter crash",
+   "link": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNTWEzcmlWakpqVU1GbkF0RldOU2RXdGlneEdINElvOWlaakY5aGFQdDk5U0hZaVpqeC0yS1dhOFZlZTBvZ0FJN1FxWE5UMS1RUzkwZzYtMVlBQVpRdWNQeHdZYVA3OThEd1RIdWVpMnJYaVI4dzBaWXhQMXotdmt6dEZTYXo2Z0J5WGxkQ3A2M09mYUh5UmpOa3NYTE0xUkpFUElKNC1TRmJNem94WVlMQVNwMGRVSF9iYXdaSDI1amc4NFRMNjhLRDhR0gHPAUFVX3lxTE9KUkxYc0RZOWt4ajV4Wm5hc0I5cjFvakU0aG1PMm1wS0ZsUlRzamhvUkVMUUdiNjF0ajBTVnpOT1lxNjRmbkhFU0RvZVFNUHdmSHpQbzU5QUFhSmJXUnhRUFdBMG9UTFEwSnZFWnJlSTRqVC1jQ0wxSTBfTkZmLURyVEQzUE5qVW5BTXhzSHFYcXpVYTl4clpSY1hqdWxFY2xGZVF3VGI5Y29ObExwdmY5eFZJdW5aYVJsQWNSTU91em5xcW96QWNxUFFVMTRiVQ?oc=5",
+   "source": "7NEWS",
+   "published": "2026-11-25T09:44:00.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 42,
+   "title": "Ubud Makes the List of World's Most Charming Towns in 2026",
+   "link": "https://news.google.com/rss/articles/CBMimgFBVV95cUxPYzNubVVBUC1iRkdYMzc5Y2REbjlmODFmZWw2NEhxUXRXQWFka2dDSFd5S19wdHhPYWh3WkpSUmRpYVhtdVE5S0dFRHVyWFRZa0lPZkgxbTV1N3NVUHpfZHFLTlBHeWFtSTgwUExidFIyeUZpOF8xYVVnUGdMUWZnTTlTbU9jeGJHdG1kOW9QMTVVbjdMWUphN2JR?oc=5",
+   "source": "RRI.co.id",
+   "published": "2026-11-25T04:22:00.000Z",
+   "places": [
+    "ubud"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 43,
+   "title": "The Meru Sanur Brings Two Culinary Talents Together for an Exclusive Four-Hands Dinner",
+   "link": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNcUtmb0E2cTZ6RjN2YktYdWdQanhlV19GQ3hzOThzVmNJbS1wVUd2c3RYVUlaZ1I5NGJIOUZkTFRvbVNQYWdiOGdmdkQxVThQN2NVWTYwQkkxUk9iWWlqa0E3STBaSnd3SG4tVWZFVnFWSmNqUEVDalVJeTNoWE93YXJybGtVdnFXdE5wQ3VEVkdSQXgtMlRrdFdpek0yZWctVEVMSDNLNi1FU2JGcUh1SQ?oc=5",
+   "source": "epicure Magazine",
+   "published": "2026-11-25T04:13:50.000Z",
+   "places": [
+    "penida"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 44,
+   "title": "Israeli forces issue demolition notices for structures and homes between Jaba’ and Sanur; Palestinian man, his wife arrested south of Jenin",
+   "link": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1rQ1pVTnRKR3BsUHI4WnlCaHBkNHhERWFoU3ZLLTlQMnRZaHN5V253a082a2FRdFlCV2RvRGNfVjV2Qm5BNGdPS29GMWdjeWc?oc=5",
+   "source": "وكالة سبأ",
+   "published": "2026-11-24T11:56:02.000Z",
+   "places": [
+    "penida"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 45,
+   "title": "Bali Immigration Intercepts Suspected Attempt to Join Russian Military",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxOTXMyLVVlTjl2YUNES2ZDNVJjMnZXdTc2YXViNTAzNWQzRVVqcXVKVzhDc2t2LVdsOTNEM1Z3NHczdERlQktES05sQ3llX2x0UEJEdWlIQXlnOVNfNE1xRDNBTnVzVFdfakI0Y1NvTENDV0dOQTBLUHBsMjFFZGlSclktTUpkd0FMcko1Nk00SnZBX2RqLVE1eWk3S3pvV2paRTRpVEdyM2UzM0RhZVpBWXhXZTYycGF4UHhHVXdYMm5rdw?oc=5",
+   "source": "RRI.co.id",
+   "published": "2026-11-24T05:52:00.000Z",
+   "places": [
+    "airport"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 46,
+   "title": "Warning to Aussie tourists after child killed in Bali floods",
+   "link": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxPNHRFeHg2Z0xYd2c3MDBWWThLUnNNZW1SUGNwTXZPRXJuV3laUnNGU2lTbXc2RHphT0tLVXBNdE8xaFZlWkUxclFEb0pCTkpRTmEyX3l3ZndaMEhRenVUZTRmcTRhdkhIWV9YMFNqOWFpc1JuZWJsLVlqV3l5bUQyUGwyVzhZZkpHTXc1QTVsYS1OeUZVSGVBcEhFakxiQ0JpMjRVTFFRVlp2R3VNMU1Kc19YWE91ckFyN0FFUU9RSlpLUjZkcHV5dnVlaVZuQTFINXEzQTJhM1YtZDk0ZnpCUTBOcUNOSzN5Y0c0dw?oc=5",
+   "source": "PerthNow",
+   "published": "2026-11-24T02:17:00.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 47,
+   "title": "Bio Farma Supports Expanded HPV Immunization Access Through the One Million Vaccines Program in Karangasem",
+   "link": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNc0ZPWFN4SWQ3aTN4aF9Sc1k2WHo5a19mc3lTTFV1X203aW1mZlNTSFc3aldobnUtcjBkRU1jQ2hzenlTYVlFU3FiWktJaHdROXkzMGZEN0Jfdi1mNHlaSlJIZEl4Si1OakVXM2lTbkd1WmZWVnRtS3J3WThHcXVSOU5HNFJIdXF3Nk8tbUxMTGdSUjNXNFAxUk44aHFnREVqalBlUS1NVWNjVF9YaGZnWVFUbkdVZVNrU0xRc3pTMURrSXRsb2hSV3hkQ2NWam81MjBrX1pGV2VUUXpPUjFIVjdrUFNwVU15d2d2ZFdR?oc=5",
+   "source": "www.biofarma.co.id",
+   "published": "2026-11-23T19:57:38.000Z",
+   "places": [
+    "amed"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 48,
+   "title": "Sacred Monkey Forest (Mandala Wisata Wenara Wana) in Ubud",
+   "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1Qb180UFBZM0paby13NXM3VXFXOEEtYWtPb1VXR29vMGotN09XVndTRXYwLXNPOWNoZktBUGdGZjVpUGRSSzJHN0h0RzRDU2FhcVFjQ3BlczI5Slh2cVRaaUFwYVROTU0?oc=5",
+   "source": "Atlas Obscura",
+   "published": "2026-11-23T18:11:00.000Z",
+   "places": [
+    "ubud"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 49,
+   "title": "Bali Floods: 20 Incidents Recorded as Search Continues for Missing Child",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNbVo5ZVFWNUFTNW5JUFRwRnlXX09OSFF2TUY5S0JBVW8wSEpJa2VoNGduRFNrZi12ckJGRDI5ZklFVDMxTFZzN1RmZVFyMUlubmk2Vnd4aEV5YW9lbmdXa29VT2tqWC1sdDhhS0xXZkxVRzVDMGhGVWhrXzFnSWo1eGxNWTdkYzVqNW45OXk2b0IydmNGRE1JdldKWWpJOHF5U2c0YnhjZGxETEduaWt2THhPN05WNmRSRFpkeGNxajFsQQ?oc=5",
+   "source": "Nature World News",
+   "published": "2026-11-23T13:07:58.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 50,
+   "title": "Today's Top 3 News: Potential Coastal Flooding in Bali This Week",
+   "link": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRlIzd1hiekptR0hLOF9BdEstdWN1c2RrU2EyYUhFbGVTbGZYTzBFeTF1aG9Rd0FfOVBqcmRUSlluM08zQ0s3Y2dsOG84ZWY3SnZvQWdycVZmcXFYanJwUmFMZ3YzZTRCMFFVd3p1VEpBRGtOUTFicF9iT1RKZzlJeEhWODQta3Z4RERYLWF1MkhYTllNUTA5YlRhTQ?oc=5",
+   "source": "Tempo.co English",
+   "published": "2026-11-23T12:16:23.000Z",
+   "places": [],
+   "alert": true,
+   "kind": "news"
+  },
+  {
+   "id": 51,
+   "title": "MĀUA Olea Ubud: Where Ubud Keeps Its Counsel",
+   "link": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNUmU0alROYnNWZkhOQTg4LXk0Zllwcm4xMHF6MjNwcHMtTmxmUVdwN05DS1NxMHJoeGFVZ2cxa3dLV085eDllVnZvR196TVZZNHlLNHozQ1VzMy1vaTlENmVieW9CLUdoNnpoLTRKejNCUXBIZVJfclRHWDZlSnpKYWNHSGRITWhZaWc?oc=5",
+   "source": "Yahoo Finance",
+   "published": "2026-11-23T10:21:00.000Z",
+   "places": [
+    "ubud"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 52,
+   "title": "Lava Brings Fire and Volcanic Stone to the Sanur Dining Table",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPRGgyNngzWXVIWmxKaF8zSmZKdHVLczFVcldCRVVRSUtWZnBwbGpzZ0kxYmg3YUhxVzJnSW5pOXV5YmlsczBMUXU1aVg4dldmbFNKT2g4eWN3UXdQN252RE15cTdpVGhpQ0h5c1A0cVlZUnk0ZFVJTHBuc0JSVnlaX1JDVlBCczNZX2JjajhzNzlPLWlQT0ZhM29MaUtocUw5TTU4aTR5alI?oc=5",
+   "source": "TIMES Indonesia",
+   "published": "2026-11-23T07:11:00.000Z",
+   "places": [
+    "penida"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 53,
+   "title": "Amarea Resort Ubud Unveils a New Art and Culture Concept Inspired by the Essence of Balinese Dance",
+   "link": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNbEg2WlN2SUZlWjZ4bDNXdnVhT1FzOFNDcWhJLWpvbDZhZWtLS1NfSEVRcmY0eUx2MmNTbHVmN1FzM0VrU2tDWWtlS09HNzNDWmVtLXBUUW1iOVlCUzM3YjFOYzlFUHdzbTh3TERoeEV3bFM3X2JDUE85NmtnbnZTUWNCOWdyWHJxUkRSazA3QkJiZmVtNUxMSzNyazd4MzFSOVRFa1lsb2o1WGs5ZTlEck0zcnNQYlVvQ0pYWnNNOUJ5MXY1a29DV3dDTEg?oc=5",
+   "source": "Indonesia Expat",
+   "published": "2026-11-23T06:38:42.000Z",
+   "places": [
+    "ubud"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 54,
+   "title": "Aeera Villa Canggu: A Private Pool Hideaway Steps from Berawa’s Beach Clubs",
+   "link": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQdVBQMkpfcWNOQjYwaDZ0QUwtOTFCY1pyeDdjT3J4ZmoyM3JYSEJ2VDJ0Rk9MWWJ1VlFLMllwcDdFVURMWGZ3aDZiRWRIRWZvQWF5RXRJdmZUYjdxLV9oNlh3VU9zMnF0dWpKUW5ob1doSHlTMXdIb1dyUVQxQWFxTTRzRXNNSTVoMmtma1g3RTNadGdPYk5PNW9BWm92Q0xsejIwek9KWUR6YXc?oc=5",
+   "source": "Indonesia Expat",
+   "published": "2026-11-23T06:37:11.000Z",
+   "places": [
+    "seminyak"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 55,
+   "title": "Bule Inggris Tewas Usai Diving di Perairan Toya Pakeh Nusa Penida",
+   "link": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQX3pCX25KQUZqRGVBVXNJek01WHNCTldxdkxxbzI0ZzhncUVKYWJrTDNRV2haZTl0bzNkdWpKWnh1VXkyNV9kUl9UVjNqZmtsQlkwTl9mazYzWjlDWFBhNlBsMEFhbkdBYVZuZ1VhRG0zamRLd3dYZUNIVWx4bU9ZWkFDbm00eF9pMHFsVk1ZQ3poeTZiTDBUeHhuZFNkYjViVzl5RHRTZzlwcVVHRUHSAbMBQVVfeXFMT0pUYUtyOGRCZEVudXExeEtfUXZLeEdCYWNfakEtTW5mbmFZYm9QVGFMdkdLZ09Ld2FVeV9iQ0xDbFBibHlicmVYWWl2S1g0bXNaM2FEc2tIYldkWnJGTElXZE11WGhUeGVxQ092dW8wVDJoV2ZMNVgxdGRMVjltSEY5S05FVDRGVWVVTmFhUDdNYmhQTVRNQks2RDNLbDJNZ0JfazBLNC1lOGs3LUhfeDVNSzg?oc=5",
+   "source": "detikcom",
+   "published": "2026-11-23T05:37:42.000Z",
+   "places": [
+    "penida"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 56,
+   "title": "Man Arrested Over Australian Tourist’s Gold Necklace Snatching in Kuta",
+   "link": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOemZLeXhGajlWNFpKWG5CM3ZpRjltTUJCVm5yamxrTGJZd0x5dFk4Q1ExbnJGNEVYNkFMcldGV0hlZlBNb0puaHl4RG9DTTVabXNjTHZnTGtnRUxGTzlWcHNyQk5FMV9ReU95RVAtemg2MHhldEFibkc4d2F5T3FoMEtNN29xQ3hYTFJ3eGtYZWtaRmlIOXBuRHI4VTNJQzhKV0VuWWlBS0o?oc=5",
+   "source": "The Bali Times",
+   "published": "2026-11-22T07:00:00.000Z",
+   "places": [
+    "seminyak"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 57,
+   "title": "YUKI Ubud puts art on a plate",
+   "link": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBJUWtoQVVsZ1Y0N3JIaTBqbDhkYjV2bUVPRTVMQm9rVzlycERUczRfLTBMckZIVlhRVm4ycFFxQXhuS2R3WFBCaHpONEV3eG5la0haeG1ibXViVEdSeDkzcTdmZU11WHNRenRxRGlpYWlLRVVSS19SeFl3?oc=5",
+   "source": "The West Australian",
+   "published": "2026-11-22T01:43:00.000Z",
+   "places": [
+    "ubud"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 58,
+   "title": "Bali's Sanur Promotes Local Cuisine Through Creative Village Program",
+   "link": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNQ1VkZzhlRTZTd1BGQkdZZnlKd2FnRWp4MnhKTjZEZHpEWU5HaE8wemdqUHhuckl0UHZDaGpWZmxLcVpQLVV5cTdod1BFSjZHeDBZZUVwMEpidjl3QVBtRDBTc24zcWhVTnpESEVCaS14TGdGNWNzVnB6NlFwUVZUYWltWGRjbUZQb2RURnJ3YmNJakpJdld1Y1ZUeFVVb1JSN2JBX0hIRUFURGd0SDBCSFlSMzNwRUxJRjVXTGx5bXJrZw?oc=5",
+   "source": "RRI.co.id",
+   "published": "2026-11-20T03:48:00.000Z",
+   "places": [
+    "penida"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 59,
+   "title": "River Turns Pink in Karangasem, Police Investigate",
+   "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQLTF6OE5UdHVuaFozU0NDZjEtekdXQUFfdllmRVE0bnRKS2Y2Qjk3YzR6Y00xb3BBQU56ZVp2SkMtSllGWW94QVUwcnB4TWo3LWUzLWVUUVlkNlBuVFZYeVlYS0ctOVVRVmROZl9vVXZ3SWxnZmRKVm0zVGVJTGdDTjdXeDU0T0FfekJIbG9fOA?oc=5",
+   "source": "The Bali Times",
+   "published": "2026-11-19T08:00:00.000Z",
+   "places": [
+    "amed"
+   ],
+   "alert": false,
+   "kind": "news"
+  },
+  {
+   "id": 60,
+   "title": "From Mandalika, Explore the Beauty of Lombok's Three Gilis",
+   "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQLUU5X2w0UWQ5OFFCY0tWVWVwVWxsUTN3V2R4Tl9iQXh4WWdEQ09PSDBvMEtaYzR4QXdrelhwLUQ1UUFVQ2tZMmVWRFhlSElkUWZZNjZMTFBXQXNKQ1lfajBNWnNzMXpVWnd6WnZSZElxckdndENtTUFtaWNvQXN5c1NXZUItWVk1RGpLZzBkTi1ld3I5UnF3LXhybzZ0dzRlVzktMklJWWlPTEpSQW9NeWpCcw?oc=5",
+   "source": "RRI.co.id",
+   "published": "2026-11-19T01:40:00.000Z",
+   "places": [
+    "gili",
+    "lombok"
+   ],
+   "alert": false,
+   "kind": "news"
+  }
+ ]
+}
